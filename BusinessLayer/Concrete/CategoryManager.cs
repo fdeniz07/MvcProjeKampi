@@ -15,14 +15,14 @@ namespace BusinessLayer.Concrete
 
         public void CategoryAdd(Category category) // Bu metod gecici olusturulmustur. Daha sonra Validation islemleri yapilacaktir.
         {
-            if (category.CategoryName == "" || category.CategoryName.Length <= 3 || category.CategoryDescription == "" || category.CategoryName.Length >= 51)
-            {
-                //hata mesaji
-            }
-            else
-            {
-                repo.Insert(category);
-            }
+            //if (category.CategoryName == "" || category.CategoryName.Length <= 3 || category.CategoryDescription == "" || category.CategoryName.Length >= 51)
+            //{
+            //    hata mesaji
+            //}
+            //else
+            //{
+              repo.Insert(category);
+            //}
         }
     }
 }
