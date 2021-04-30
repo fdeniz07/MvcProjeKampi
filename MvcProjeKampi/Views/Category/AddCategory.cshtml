@@ -1,8 +1,17 @@
-﻿
+﻿@using EntityLayer.Concrete
 @{
     Layout = null;
 }
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
-<h1>Yeni Kategori Ekleme Sayfasi</h1>
-<br/>
-Hos Geldiniz
+<br />
+
+<h1>Yeni Kategori Ekleme Sayfası</h1>
+<br />
+<form class="form-group" method="post">
+    <input type="text" placeholder="Kategori Adı" name="CategoryName" class="form-control" />
+    <br />
+    <input type="text" placeholder="Açıklama" name="CategoryDescription" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>
