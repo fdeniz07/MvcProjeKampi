@@ -1,8 +1,7 @@
-﻿using DataAccessLayer.Concrete.Repositories;
+﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System.Collections.Generic;
-using BusinessLayer.Abstract;
-using DataAccessLayer.Abstract;
 
 namespace BusinessLayer.Concrete
 {
@@ -14,7 +13,12 @@ namespace BusinessLayer.Concrete
         {
             _categoryDal = categoryDal;
         }
-        
+
+        public void CategoryAdd(Category category)
+        {
+           _categoryDal.Insert(category);
+        }
+
         public List<Category> GetList()
         {
             return _categoryDal.List();
