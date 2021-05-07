@@ -1,2 +1,0 @@
-1- DRY yapisi
-2- Dependency Injection
