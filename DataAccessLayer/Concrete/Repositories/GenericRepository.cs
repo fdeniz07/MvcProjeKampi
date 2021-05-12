@@ -24,6 +24,11 @@ namespace DataAccessLayer.Concrete.Repositories
             context.SaveChanges();
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter); // Bir dizide ya da listede sadece bir tane deger döndürmek icin kullanilan Linq komutudur.
+        }
+
         public void Insert(T entity)
         {
             _object.Add(entity);

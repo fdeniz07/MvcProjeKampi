@@ -7,5 +7,8 @@ namespace BusinessLayer.Abstract
     {
         List<Category> GetList();
         void CategoryAdd(Category category);
+        Category GetByIdCategory(int id); // Dal dan gelen T nesnesini karsilar
+        void CategoryDelete(Category category);
+        void CategoryUpdate(Category category);
     }
 }

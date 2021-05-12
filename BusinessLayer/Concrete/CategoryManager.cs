@@ -19,6 +19,21 @@ namespace BusinessLayer.Concrete
            _categoryDal.Insert(category);
         }
 
+        public void CategoryDelete(Category category)
+        {
+            _categoryDal.Delete(category); // GenericRepository'den gelen Delete() metodu
+        }
+
+        public void CategoryUpdate(Category category)
+        {
+            _categoryDal.Update(category);
+        }
+
+        public Category GetByIdCategory(int id)
+        {
+            return _categoryDal.Get(x => x.CategoryId == id); // DAL dan gelen ilgili alani karsilar
+        }
+
         public List<Category> GetList()
         {
             return _categoryDal.List();
