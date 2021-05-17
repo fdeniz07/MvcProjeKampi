@@ -6,7 +6,7 @@ C#, BOOTSTRAP, NLAYER Architecture, AdminPanel, CodeFirst
 
 ## TASKLIST :
 
-ASP.NET MVC is an online interactive dictionary development project. (Example SourSözlük)
+ASP.NET MVC is an online interactive dictionary development project. (Example EksiSözlük)
 
 
 ### Request 1 : Creating a database using sql server (tables: abouts, categories, contacts, contents, headings, writers)
