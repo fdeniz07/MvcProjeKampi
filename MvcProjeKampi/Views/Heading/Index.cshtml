@@ -4,23 +4,186 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h2>Başlıklar Sayfası</h2>
-<br/>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Başlık</th>
-        <th>Kategori</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+@{ string color = "";}
+
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Başlık İşlemleri</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-striped projects">
+                <thead>
+                <tr>
+                    <th style="width: 1%">
+                        #
+                    </th>
+                    <th style="width: 20%">
+                        Başlık Adı
+                    </th>
+                    <th style="width: 30%">
+                        Oluşturan Yazar
+                    </th>
+                    <th style="width: 8%" class="text-center">
+                        Kategori
+                    </th>
+                    <th style="width: 20%">
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach(var item in Model)
+                {
+                    if (item.Category.CategoryName=="Tiyatro")
+                    {
+                        color = "badge badge-warning";
+                    }
+                    if (item.Category.CategoryName =="Spor")
+                    {
+                        color = "badge badge-success";
+                    }
+                    if (item.Category.CategoryName == "Yazılım")
+                    {
+                        color = "badge badge-info";
+                    }
+                    if (item.Category.CategoryName =="Gezi")
+                    {
+                        color = "badge badge-secondary";
+                    }
+                    if (item.Category.CategoryName =="Kitap")
+                    {
+                        color = "badge badge-warning";
+                    }
+                    if (item.Category.CategoryName =="Film")
+                    {
+                        color = "badge badge-dark";
+                    }
+                    if (item.Category.CategoryName =="Dizi")
+                    {
+                        color = "badge badge-primary";
+                    }
+                    if (item.Category.CategoryName =="Sosyal Medya")
+                    {
+                        color = "badge badge-success";
+                    }
+                    if (item.Category.CategoryName =="Donanım")
+                    {
+                        color = "badge badge-info";
+                    }
+                    if (item.Category.CategoryName =="Network ve Güvenlik")
+                    {
+                        color = "badge badge-dark";
+                    }
+                    if (item.Category.CategoryName =="Teknoloji")
+                    {
+                        color = "badge badge-warning";
+                    }
+                    if (item.Category.CategoryName =="Sinema")
+                    {
+                        color = "badge badge-secondary";
+                    }
+                    <tr>
+                        <td>
+                            @item.HeadingId
+                        </td>
+                        <td>
+                            <a>
+                                @item.HeadingName
+                            </a>
+                            <br/>
+                            <small>
+                                @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
+                            </small>
+                        </td>
+                        <td>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <img alt="Avatar" class="table-avatar" src=@item.Writer.WriterImage>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="project-state">
+                            <span class="@color">@item.Category.CategoryName</span>
+                        </td>
+                        <td class="project-actions text-right">
+                            <a class="btn btn-primary btn-sm" href="#">
+                                <i class="fas fa-folder">
+                                </i>
+                                Yazılar
+                            </a>
+                            <a class="btn btn-info btn-sm" href="#">
+                                <i class="fas fa-pencil-alt">
+                                </i>
+                                Düzenle
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="#">
+                                <i class="fas fa-trash">
+                                </i>
+                                Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</section>
+</body>
+</html>
+<a href="/Heading/AddHeading/" class="btn btn-primary">Yeni  Başlık Girişi</a>
+
+
+
+
+
+
+@*<br />
+    <h2>Başlıklar Sayfası</h2>
+    <br/>
+    <table class="table table-bordered">
         <tr>
-            <td>@item.HeadingId</td>
-            <td>@item.HeadingName</td>
-            <td>@item.Category.CategoryName</td>
+            <th>ID</th>
+            <th>Başlık</th>
+            <th>Kategori</th>
         </tr>
-    }
-</table>
-<br/>
-<a href="/Heading/AddHeading" class="btn btn-info">Yeni Başlık Girişi</a>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HeadingId</td>
+                <td>@item.HeadingName</td>
+                <td>@item.Category.CategoryName</td>
+            </tr>
+        }
+    </table>
+    <br/>
+    <a href="/Heading/AddHeading" class="btn btn-info">Yeni Başlık Girişi</a>*@

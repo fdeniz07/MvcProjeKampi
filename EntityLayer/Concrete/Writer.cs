@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-   public class Writer
+    public class Writer
     {
         [Key]
         public int WriterId { get; set; }
@@ -18,7 +14,7 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public string WriterSurName { get; set; }
 
-        [StringLength(100)]
+        [StringLength(250)]
         public string WriterImage { get; set; }
 
         [StringLength(100)]
@@ -32,6 +28,8 @@ namespace EntityLayer.Concrete
 
         [StringLength(50)]
         public string WriterTitle { get; set; }
+
+        public bool WriterStatus { get; set; }
 
         public ICollection<Heading> Headings { get; set; } // Bir yazarin birden fazla basligi olabilir
         public ICollection<Content> Contents { get; set; } // Bir yazarin birden fazla icerigi olabilir
