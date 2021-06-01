@@ -83,6 +83,18 @@
     <Compile Include="Migrations\202105250214573_mig_writer_addstatus.designer.cs">
       <DependentUpon>202105250214573_mig_writer_addstatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106011209408_mig_contentstatusadd.cs" />
+    <Compile Include="Migrations\202106011209408_mig_contentstatusadd.designer.cs">
+      <DependentUpon>202106011209408_mig_contentstatusadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011239321_mig_haeadingstatusadd.cs" />
+    <Compile Include="Migrations\202106011239321_mig_haeadingstatusadd.designer.cs">
+      <DependentUpon>202106011239321_mig_haeadingstatusadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106011247254_mig_writerstatusadd.cs" />
+    <Compile Include="Migrations\202106011247254_mig_writerstatusadd.designer.cs">
+      <DependentUpon>202106011247254_mig_writerstatusadd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105250214573_mig_writer_addstatus.resx">
       <DependentUpon>202105250214573_mig_writer_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011209408_mig_contentstatusadd.resx">
+      <DependentUpon>202106011209408_mig_contentstatusadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011239321_mig_haeadingstatusadd.resx">
+      <DependentUpon>202106011239321_mig_haeadingstatusadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106011247254_mig_writerstatusadd.resx">
+      <DependentUpon>202106011247254_mig_writerstatusadd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

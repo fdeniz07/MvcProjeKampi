@@ -2290,8 +2290,8 @@
     <Content Include="Views\Writer\EditWriter.cshtml" />
     <Content Include="Views\Heading\Index.cshtml" />
     <Content Include="Views\Heading\AddHeading.cshtml" />
-    <Content Include="Views\Heading\ContentByHeading.cshtml" />
     <Content Include="Views\Content\ContentByHeading.cshtml" />
+    <Content Include="Views\Heading\EditHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

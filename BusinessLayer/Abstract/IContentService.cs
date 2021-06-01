@@ -6,7 +6,7 @@ namespace BusinessLayer.Abstract
     public interface IContentService
     {
         List<Content> GetList();
-        List<Content> GetListById(int id); //Basliga göre icerik listeleme
+        List<Content> GetListByHeadingId(int id); //Basliga göre icerik listeleme
         void ContentAdd(Content content);
         Content GetByIdContent(int id); 
         void ContentDelete(Content content);

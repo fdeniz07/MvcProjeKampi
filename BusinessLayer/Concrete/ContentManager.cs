@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
             return _contentDal.List();
         }
 
-        public List<Content> GetListById(int id)
+        public List<Content> GetListByHeadingId(int id)
         {
             return _contentDal.List(x => x.HeadingId == id); // Dışarıdan gönderilen id,ye göre listeleme yapacak
         }
