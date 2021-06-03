@@ -29,4 +29,11 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
 
 ![Categories](https://user-images.githubusercontent.com/81612480/118018056-951a7d80-b357-11eb-90f2-f8f5e098ad33.JPG)
 
-
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Heading.png" />
+ 
+ 
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer.png" />
+<!--
+<img src="" />
+ --> 
+  
