@@ -137,12 +137,12 @@
                                     @{
                                         if (item.HeadingStatus)
                                         {
-                                          <b style="color: green "> Aktif</b>
+                                            <b style="color: green "> Aktif</b>
                                         }
                                         else
                                         {
 
-                                          <b style="color: red">Pasif</b>
+                                            <b style="color: red">Pasif</b>
                                         }
                                     }
                                 </td>
@@ -160,10 +160,26 @@
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingId">
+                                    <a class="btn" href="/Heading/DeleteHeading/@item.HeadingId">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Sil
+                                        @{
+                                            string status = "";
+                                            string statusColor = "";
+
+                                            switch (item.HeadingStatus)
+                                            {
+                                                case true:
+                                                    statusColor = "badge badge-success";
+                                                    status = "Aktif";
+                                                    break;
+                                                case false:
+                                                    statusColor = "badge badge-danger";
+                                                    status = "Pasif";
+                                                    break;
+                                            }
+                                            <span class="@statusColor">@status</span>
+                                        }
                                     </a>
                                 </td>
                             </tr>
