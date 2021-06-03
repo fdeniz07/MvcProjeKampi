@@ -1,13 +1,36 @@
-﻿using System.Web.Mvc;
+﻿using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using System.Web.Mvc;
+using BusinessLayer.ValidationRules;
 
 namespace MvcProjeKampi.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: Contact
+        ContactManager contactManager = new ContactManager(new EfContactDal());
+
+        ContactValidator contactValidator = new ContactValidator();
+
         public ActionResult Index()
         {
-            return View();
+            var contactValues = contactManager.GetList();
+            return View(contactValues);
+        }
+
+        public ActionResult GetContactDetails(int id)
+        {
+            var contactValues = contactManager.GetByIdContact(id);
+            return View(contactValues);
+        }
+
+        public PartialViewResult ContactPartial1()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult ContactPartial2()
+        {
+            return PartialView();
         }
     }
 }
