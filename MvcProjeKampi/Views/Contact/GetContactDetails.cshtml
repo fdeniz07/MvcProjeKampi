@@ -1,4 +1,5 @@
-﻿@model EntityLayer.Concrete.Contact
+﻿
+@model EntityLayer.Concrete.Contact
 
 @{
     ViewBag.Title = "GetContactDetails";
@@ -16,7 +17,7 @@
     <div class="container-fluid">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="compose.html" class="btn btn-primary btn-block mb-3">Back to Inbox</a>
+                    <a href="compose.html" class="btn btn-primary btn-block mb-3">Gelen Kutusuna Geri Dön</a>
                     @Html.Action("ContactPartial2", "Contact")
                 </div>
             <div class="col-md-9">
@@ -29,54 +30,51 @@
                         </div>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body p-0">
-                        <div class="mailbox-read-info">
-                            <h5>Message Subject Is Placed Here</h5>
-                            <h6>
-                                From: support@adminlte.io
-                                <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
-                            </h6>
-                        </div>
-                        <!-- /.mailbox-read-info -->
-                        <div class="mailbox-controls with-border text-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
-                                    <i class="fas fa-reply"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-                                    <i class="fas fa-share"></i>
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5>Konu: @Html.DisplayFor(x=>x.Subject)</h5>
+                                <br/>
+                                <h6>
+                                    Mail: @Html.DisplayFor(x => x.UserMail)
+                                    <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
+                                </h6>
+                            </div>
+                            <!-- /.mailbox-read-info -->
+                            <div class="mailbox-controls with-border text-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+                                    <i class="fas fa-print"></i>
                                 </button>
                             </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
-                                <i class="fas fa-print"></i>
-                            </button>
-                        </div>
-                        <!-- /.mailbox-controls -->
-                        <div class="mailbox-read-message">
-                            <p>Hello John,</p>
-                            <p>
-                                Keffiyeh blog
-                            </p>
-                            <p>Thanks,<br>Jane</p>
-                        </div>
-                        <!-- /.mailbox-read-message -->
-                        <!-- /.card-footer -->
-                        <div class="card-footer">
-                            <div class="float-right">
-                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Reply</button>
-                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Forward</button>
+                            <!-- /.mailbox-controls -->
+                            <div class="mailbox-read-message">
+                                <p>@Html.DisplayFor(x => x.Message)</p>
+
                             </div>
-                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</button>
-                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+                            <!-- /.mailbox-read-message -->
+                            <!-- /.card-footer -->
+                            <div class="card-footer">
+                                <div class="float-right">
+                                    <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Reply</button>
+                                    <button type="button" class="btn btn-default"><i class="fas fa-share"></i> Forward</button>
+                                </div>
+                                <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</button>
+                                <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Print</button>
+                            </div>
                         </div>
-                    </div>
                     <!-- /.card-footer -->
                 </div>
-
                 <!-- /.card -->
             </div>
             <!-- /.col -->

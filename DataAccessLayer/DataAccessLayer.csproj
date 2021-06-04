@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202106011247254_mig_writerstatusadd.designer.cs">
       <DependentUpon>202106011247254_mig_writerstatusadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106040030560_migration_add_message_class.cs" />
+    <Compile Include="Migrations\202106040030560_migration_add_message_class.designer.cs">
+      <DependentUpon>202106040030560_migration_add_message_class.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -129,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106011247254_mig_writerstatusadd.resx">
       <DependentUpon>202106011247254_mig_writerstatusadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106040030560_migration_add_message_class.resx">
+      <DependentUpon>202106040030560_migration_add_message_class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
