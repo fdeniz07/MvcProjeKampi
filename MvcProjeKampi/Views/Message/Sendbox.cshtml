@@ -1,9 +1,10 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{
-    ViewBag.Title = "Inbox";
+    ViewBag.Title = "Sendbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +31,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Kişisel Gelen Kutusu</h3>
+                        <h3 class="card-title">Gönderilen Mesajlar</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -79,10 +80,10 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Message/GetInboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetInboxMessageDetails/@item.MessageId">@item.SenderMail</a></td>
+                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.MessageId">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, 30)...
+                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, 10)...
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@item.MessageDate</td>
@@ -126,6 +127,5 @@
         </div>
         <!-- /.row -->
     </section>
-
 </body>
 </html>

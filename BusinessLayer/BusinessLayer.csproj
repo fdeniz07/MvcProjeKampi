@@ -74,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
     <Compile Include="ValidationRules\ContactValidator.cs" />
+    <Compile Include="ValidationRules\MessageValidator.cs" />
     <Compile Include="ValidationRules\WriterValidator.cs" />
   </ItemGroup>
   <ItemGroup />

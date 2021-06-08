@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Yeni Mesaj Sayfası</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                @Html.Action("MessageListMenu", "Contact")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">Yeni Mesaj Oluştur</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Alıcı:">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Konu:">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="compose-textarea" class="form-control" style="height: 300px"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="btn btn-default btn-file">
+                                    <i class="fas fa-paperclip"></i> Dosya Ekle<input type="file" name="attachment">
+                                </div>
+                                <p class="help-block">Max. 32MB</p>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <div class="float-right">
+                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
+                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+                            </div>
+                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+                        </div>
+                    </div>
+                    <!-- /.card-footer -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <!-- /.container-fluid -->
+    </section>
+</body>
+</html>
+

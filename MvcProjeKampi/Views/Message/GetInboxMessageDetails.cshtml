@@ -1,7 +1,6 @@
-﻿@model EntityLayer.Concrete.Contact
-
+﻿@model EntityLayer.Concrete.Message
 @{
-    ViewBag.Title = "GetContactDetails";
+    ViewBag.Title = "GetInboxMessageDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <!DOCTYPE html>
@@ -13,7 +12,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Mesaj Sayfası</h1>
+                    <h1>Gelen Mesaj Detayları</h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -27,7 +26,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Kişisel Gelen Kutusu</h3>
+                        <h3 class="card-title">Mesajı Oku</h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -38,7 +37,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.card-tools -->
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-0">
@@ -46,31 +44,14 @@
                             <h5>Konu: @Html.DisplayFor(x => x.Subject)</h5>
                             <br />
                             <h6>
-                                Mail: @Html.DisplayFor(x => x.UserMail)
-                                <span class="mailbox-read-time float-right">15 Feb. 2015 11:03 PM</span>
+                                Mail: @Html.DisplayFor(x => x.SenderMail)
+                                <span class="mailbox-read-time float-right">@Model.MessageDate.ToString("dd-MMM-yyyy")</span>
                             </h6>
                         </div>
                         <!-- /.mailbox-read-info -->
-                        <div class="mailbox-controls with-border text-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
-                                    <i class="fas fa-reply"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-                                    <i class="fas fa-share"></i>
-                                </button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
-                                <i class="fas fa-print"></i>
-                            </button>
-                        </div>
                         <!-- /.mailbox-controls -->
                         <div class="mailbox-read-message">
-                            <p>@Html.DisplayFor(x => x.Message)</p>
+                            <p>@Html.DisplayFor(x => x.MessageContent)</p>
                         </div>
                         <!-- /.mailbox-read-message -->
                         <!-- /.card-footer -->
@@ -93,4 +74,3 @@
     </section>
 </body>
 </html>
-
