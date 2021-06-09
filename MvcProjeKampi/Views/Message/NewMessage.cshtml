@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EntityLayer.Concrete.Message
+@{
     ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -10,7 +11,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Yeni Mesaj Sayfası</h1>
+                    <h1><b>Yeni Mesaj Sayfası</b></h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -22,38 +23,45 @@
                 @Html.Action("MessageListMenu", "Contact")
                 <!-- /.col -->
                 <div class="col-md-9">
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h3 class="card-title">Yeni Mesaj Oluştur</h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Alıcı:">
+                    @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+                    {
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title"><b>Yeni Mesaj Oluştur</b></h3>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Konu:">
-                            </div>
-                            <div class="form-group">
-                                <textarea id="compose-textarea" class="form-control" style="height: 300px"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <div class="btn btn-default btn-file">
-                                    <i class="fas fa-paperclip"></i> Dosya Ekle<input type="file" name="attachment">
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control", placeholder = "Alıcı Adı:" })
+                                    @Html.ValidationMessageFor(x => x.ReceiverMail, "", new { @class = "text-danger" })
                                 </div>
-                                <p class="help-block">Max. 32MB</p>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Konu:" })
+                                    @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Mesajınız :")
+                                    @Html.TextAreaFor(m => m.MessageContent, new { @class = "form-control", id = "compose-textarea", placeholder = "Alıcı Adı:" })
+                                    @Html.ValidationMessageFor(m => m.MessageContent, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <div class="btn btn-default btn-file">
+                                        <i class="fas fa-paperclip"></i> Dosya Ekle<input type="file" name="attachment">
+                                    </div>
+                                    <p class="help-block">Max. 32MB</p>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="float-right">
+                                    <button type="submit" formmethod="post" name="menuName" value="draft" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
+                                    <button type="submit" name="menuName" value="send" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                </div>
+                                <button type="submit" name="menuName" value="cancel" class="btn btn-danger"><i class="fas fa-times"></i> İptal</button>
+                                <button type="button" class="btn btn-warning"><i class="fas fa-print"></i> Yazdır</button>
                             </div>
                         </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <div class="float-right">
-                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
-                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
-                            </div>
-                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
-                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
-                        </div>
-                    </div>
+                    }
                     <!-- /.card-footer -->
                 </div>
                 <!-- /.card -->

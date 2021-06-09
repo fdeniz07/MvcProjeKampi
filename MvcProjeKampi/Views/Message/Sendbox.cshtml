@@ -4,11 +4,8 @@
     ViewBag.Title = "Sendbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-
 <!DOCTYPE html>
 <html>
-
 <body class="hold-transition sidebar-mini">
     <!-- Content Wrapper. Contains page content -->
     <!-- Content Header (Page header) -->
@@ -16,12 +13,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Mesaj Sayfası</h1>
+                    <h1><b>Mesaj Sayfası</b></h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
-
     <!-- Main content -->
     <section class="content">
         <div class="row">
@@ -31,7 +27,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Gönderilen Mesajlar</h3>
+                        <h3 class="card-title"><b>Gönderilen Mesajlar</b></h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -80,13 +76,13 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.MessageId">@item.ReceiverMail</a></td>
+                                            <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetails/@item.MessageId">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, 10)...
+                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, 11)...
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@item.MessageDate</td>
+                                            <td class="mailbox-date"><b>@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</b></td>
                                         </tr>
                                     }
                                 </tbody>

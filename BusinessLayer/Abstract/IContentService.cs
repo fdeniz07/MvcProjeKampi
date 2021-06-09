@@ -7,8 +7,8 @@ namespace BusinessLayer.Abstract
     {
         List<Content> GetList();
         List<Content> GetListByHeadingId(int id); //Basliga göre icerik listeleme
+        Content GetByIdContent(int id);
         void ContentAdd(Content content);
-        Content GetByIdContent(int id); 
         void ContentDelete(Content content);
         void ContentUpdate(Content content);
     }

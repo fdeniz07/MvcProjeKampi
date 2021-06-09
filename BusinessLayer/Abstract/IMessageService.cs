@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using EntityLayer.Concrete;
+﻿using EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace BusinessLayer.Abstract
 {
@@ -7,8 +7,9 @@ namespace BusinessLayer.Abstract
     {
         List<Message> GetListInbox();
         List<Message> GetListSendbox();
+        List<Message> IsDraft();
+        Message GetByIdMessage(int id);
         void MessageAdd(Message message);
-        Message GetByIdMessage(int id); 
         void MessageDelete(Message message);
         void MessageUpdate(Message message);
     }

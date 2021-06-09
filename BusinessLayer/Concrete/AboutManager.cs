@@ -5,28 +5,28 @@ using System.Collections.Generic;
 
 namespace BusinessLayer.Concrete
 {
-    public class AboutManager:IAboutService
-   {
-       private IAboutDal _aboutDal;
+    public class AboutManager : IAboutService
+    {
+        private IAboutDal _aboutDal;
 
-       public AboutManager(IAboutDal aboutDal)
-       {
-           _aboutDal = aboutDal;
-       }
+        public AboutManager(IAboutDal aboutDal)
+        {
+            _aboutDal = aboutDal;
+        }
 
-       public void AboutAdd(About about)
+        public void AboutAdd(About about)
         {
             _aboutDal.Insert(about);
         }
 
         public void AboutDelete(About about)
         {
-           _aboutDal.Delete(about);
+            _aboutDal.Delete(about);
         }
 
         public void AboutUpdate(About about)
         {
-          _aboutDal.Update(about);
+            _aboutDal.Update(about);
         }
 
         public About GetByIdAbout(int id)

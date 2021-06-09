@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Gelen Mesaj Detayları</h1>
+                    <h1><b>Gelen Mesaj Detayları</b></h1>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -26,7 +26,7 @@
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
-                        <h3 class="card-title">Mesajı Oku</h3>
+                        <h3 class="card-title"><b>Mesajı Oku</b></h3>
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
@@ -41,27 +41,29 @@
                     <!-- /.card-header -->
                     <div class="card-body p-0">
                         <div class="mailbox-read-info">
-                            <h5>Konu: @Html.DisplayFor(x => x.Subject)</h5>
+                            <h5><b>Konu:</b> @Html.DisplayFor(x => x.Subject)</h5>
                             <br />
                             <h6>
-                                Mail: @Html.DisplayFor(x => x.SenderMail)
-                                <span class="mailbox-read-time float-right">@Model.MessageDate.ToString("dd-MMM-yyyy")</span>
+                                <b>Gönderen:</b> @Html.DisplayFor(x => x.SenderMail)
+                                <span class="mailbox-read-time float-right"><b>@Model.MessageDate.ToString()</b></span>
                             </h6>
                         </div>
                         <!-- /.mailbox-read-info -->
                         <!-- /.mailbox-controls -->
                         <div class="mailbox-read-message">
-                            <p>@Html.DisplayFor(x => x.MessageContent)</p>
+                            <br />
+                            <p>@Html.Raw(Model.MessageContent)</p>
+                            @*<p>@Html.DisplayFor(x => x.MessageContent)</p>*@
                         </div>
                         <!-- /.mailbox-read-message -->
                         <!-- /.card-footer -->
                         <div class="card-footer">
                             <div class="float-right">
-                                <button type="button" class="btn btn-default"><i class="fas fa-reply"></i> Cevapla</button>
-                                <button type="button" class="btn btn-default"><i class="fas fa-share"></i> İlet</button>
+                                <button type="submit" formmethod="post" name="menuName" value="draft" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
+                                <button type="submit" name="menuName" value="send" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
                             </div>
-                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
-                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+                            <button type="submit" name="menuName" value="cancel" class="btn btn-danger"><i class="fas fa-times"></i> İptal</button>
+                            <button type="button" class="btn btn-warning"><i class="fas fa-print"></i> Yazdır</button>
                         </div>
                     </div>
                     <!-- /.card-footer -->

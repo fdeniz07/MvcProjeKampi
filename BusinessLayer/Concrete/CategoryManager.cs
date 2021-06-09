@@ -16,7 +16,7 @@ namespace BusinessLayer.Concrete
 
         public void CategoryAdd(Category category)
         {
-           _categoryDal.Insert(category);
+            _categoryDal.Insert(category);
         }
 
         public void CategoryDelete(Category category)

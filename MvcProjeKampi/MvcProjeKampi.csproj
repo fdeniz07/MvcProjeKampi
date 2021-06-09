@@ -140,6 +140,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -2007,6 +2008,14 @@
     <Content Include="Themes\AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="Themes\AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="Themes\AdminLTE-3.0.4\starter.html" />
+    <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\css\style.css" />
+    <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\index.html" />
+    <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\readme.txt" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\._index.html" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\._readme.txt" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\css\._style.css" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\img\._bg.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2305,6 +2314,14 @@
     <Content Include="Views\Message\Sendbox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
+    <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
+    <Content Include="Views\Message\MessageMenuDetails.cshtml" />
+    <Content Include="Views\Message\DraftMessages.cshtml" />
+    <Content Include="Views\Message\GetDraftDetails.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\._colorlib-error-404-10" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\._css" />
+    <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\._img" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
