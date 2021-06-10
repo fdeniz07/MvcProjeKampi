@@ -54,8 +54,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentValidation.8.6.3\lib\net45\FluentValidation.dll</HintPath>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.1.0\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -2309,19 +2309,21 @@
     <Content Include="Views\About\AboutPartial.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\GetContactDetails.cshtml" />
-    <Content Include="Views\Contact\MessageListMenu.cshtml" />
+    <Content Include="Views\Contact\PartialMessageMenu.cshtml" />
     <Content Include="Views\Message\Inbox.cshtml" />
     <Content Include="Views\Message\Sendbox.cshtml" />
     <Content Include="Views\Message\NewMessage.cshtml" />
     <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
     <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
-    <Content Include="Views\Message\MessageMenuDetails.cshtml" />
     <Content Include="Views\Message\DraftMessages.cshtml" />
     <Content Include="Views\Message\GetDraftDetails.cshtml" />
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Themes\colorlib-error-404-10\__MACOSX\._colorlib-error-404-10" />
     <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\._css" />
     <Content Include="Themes\colorlib-error-404-10\__MACOSX\colorlib-error-404-10\._img" />
+    <Content Include="Views\Contact\PartialMessageList.cshtml" />
+    <Content Include="Views\Contact\PartialMessageListFooter.cshtml" />
+    <Content Include="Views\Contact\PartialMessageListFooterButton.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,13 +1,12 @@
 ﻿@model EntityLayer.Concrete.Contact
 
-@{
-    ViewBag.Title = "GetContactDetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "GetContactDetails";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
-    <!-- Content Wrapper. Contains page content -->
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
@@ -18,14 +17,16 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
+
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("MessageListMenu", "Contact")
-            <!-- Before Partial -->
-            <!-- /.col -->
+            @Html.Action("PartialMessageMenu", "Contact")
+
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
+
+                    <!--Mesaj Bölümü - Baslik Alani-->
                     <div class="card-header">
                         <h3 class="card-title"><b>Gelen Mesaj Detayları</b></h3>
                         <div class="card-tools">
@@ -38,10 +39,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.card-tools -->
                     </div>
-                    <!-- /.card-header -->
+
+                    <!-- Mesaj Bölümü - Icerik Alani-->
                     <div class="card-body p-0">
+
+                        <!-- Icerik Alani - Üst Bölüm-->
                         <div class="mailbox-read-info">
                             <h5><b>Konu:</b> @Html.DisplayFor(x => x.Subject)</h5>
                             <br />
@@ -50,49 +53,21 @@
                                 <span class="mailbox-read-time float-right"><b>@Html.DisplayFor(x => x.ContactDate)</b></span>
                             </h6>
                         </div>
-                        <!-- /.mailbox-read-info -->
-                        <div class="mailbox-controls with-border text-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Reply">
-                                    <i class="fas fa-reply"></i>
-                                </button>
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Forward">
-                                    <i class="fas fa-share"></i>
-                                </button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
-                                <i class="fas fa-print"></i>
-                            </button>
-                        </div>
-                        <!-- /.mailbox-controls -->
+
+                        <!-- Icerik Alani - Icerik-->
                         <div class="mailbox-read-message">
                             <br />
-                            <p>@Html.Raw(Model.Message)</p>
-                            @*<p>@Html.DisplayFor(x => x.Message)</p>*@
+                            <p>@Html.DisplayFor(x => x.Message)</p>
+                            @*  <p>@Html.Raw(Model.Message)</p>*@
                         </div>
-                        <!-- /.mailbox-read-message -->
-                        <!-- /.card-footer -->
-                        <div class="card-footer">
-                            <div class="float-right">
-                                <div class="float-right">
-                                    <button type="submit" formmethod="post" name="menuName" value="draft" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
-                                    <button type="submit" name="menuName" value="send" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
-                                </div>
-                                <button type="submit" name="menuName" value="cancel" class="btn btn-danger"><i class="fas fa-times"></i> İptal</button>
-                                <button type="button" class="btn btn-warning"><i class="fas fa-print"></i> Yazdır</button>
-                            </div>
+
+
+                        @Html.Action("PartialMessageListFooterButton", "Contact")
+
                     </div>
-                    <!-- /.card-footer -->
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
     </section>
 </body>
 </html>

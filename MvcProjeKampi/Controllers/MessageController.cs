@@ -18,14 +18,14 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Inbox()
         {
-            var messageList = messageManager.GetListInbox();
-            return View(messageList);
+            var messageListInbox = messageManager.GetListInbox();
+            return View(messageListInbox);
         }
 
         public ActionResult Sendbox()
         {
-            var messageList = messageManager.GetListSendbox();
-            return View(messageList);
+            var messageListSendbox = messageManager.GetListSendbox();
+            return View(messageListSendbox);
         }
 
         public ActionResult GetInboxMessageDetails(int id)
@@ -46,7 +46,7 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult NewMessage(Message message, string menuName)
         {
             ValidationResult results = messagerValidator.Validate(message);
@@ -125,34 +125,5 @@ namespace MvcProjeKampi.Controllers
             var result = messageManager.GetByIdMessage(id);
             return View(result);
         }
-
-        //public PartialViewResult MessageMenuDetails(int id)
-        //{
-        //    messageCounter();
-        //    var messageValues = messageManager.GetByIdMessage(id);
-        //    return PartialView(messageValues.MessageContent);
-        //}
-
-        //public void messageCounter()
-        //{
-        //    ViewBag.counterOfSystemMessages = contactManager.GetList().Count;
-        //    ViewBag.counterOfInboxMessages = messageManager.GetListInbox().Count;
-        //    ViewBag.ocunterOfSendMessages = messageManager.GetListSendbox().Count;
-        //}
     }
-
-    //    if (results.IsValid)
-    //{
-    //    message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-    //    messageManager.MessageAdd(message);
-    //    return RedirectToAction("Sendbox");
-    //}
-    //else
-    //{
-    //    foreach (var item in results.Errors)
-    //    {
-    //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-    //    }
-    //}
-    //return View();
 }

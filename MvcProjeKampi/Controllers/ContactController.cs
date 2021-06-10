@@ -26,7 +26,7 @@ namespace MvcProjeKampi.Controllers
             return View(contactValues);
         }
 
-        public PartialViewResult MessageListMenu()
+        public PartialViewResult PartialMessageMenu()
         {
             var contact = contactManager.GetList().Count();
             ViewBag.contact = contact;
@@ -42,5 +42,21 @@ namespace MvcProjeKampi.Controllers
 
             return PartialView();
         }
+
+        public PartialViewResult PartialMessageList()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialMessageListFooter()
+        {
+            return PartialView();
+        }
+
+        public PartialViewResult PartialMessageListFooterButton()
+        {
+            return PartialView();
+        }
+
     }
 }

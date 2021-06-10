@@ -69,45 +69,9 @@
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
-    <Compile Include="Migrations\202105150127138_mig_writer_edit.cs" />
-    <Compile Include="Migrations\202105150127138_mig_writer_edit.designer.cs">
-      <DependentUpon>202105150127138_mig_writer_edit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105191237387_mig_writertitle_add.cs" />
-    <Compile Include="Migrations\202105191237387_mig_writertitle_add.designer.cs">
-      <DependentUpon>202105191237387_mig_writertitle_add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105250033460_mig_image_size_change.cs" />
-    <Compile Include="Migrations\202105250033460_mig_image_size_change.designer.cs">
-      <DependentUpon>202105250033460_mig_image_size_change.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105250214573_mig_writer_addstatus.cs" />
-    <Compile Include="Migrations\202105250214573_mig_writer_addstatus.designer.cs">
-      <DependentUpon>202105250214573_mig_writer_addstatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011209408_mig_contentstatusadd.cs" />
-    <Compile Include="Migrations\202106011209408_mig_contentstatusadd.designer.cs">
-      <DependentUpon>202106011209408_mig_contentstatusadd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011239321_mig_haeadingstatusadd.cs" />
-    <Compile Include="Migrations\202106011239321_mig_haeadingstatusadd.designer.cs">
-      <DependentUpon>202106011239321_mig_haeadingstatusadd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106011247254_mig_writerstatusadd.cs" />
-    <Compile Include="Migrations\202106011247254_mig_writerstatusadd.designer.cs">
-      <DependentUpon>202106011247254_mig_writerstatusadd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106040030560_migration_add_message_class.cs" />
-    <Compile Include="Migrations\202106040030560_migration_add_message_class.designer.cs">
-      <DependentUpon>202106040030560_migration_add_message_class.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106080951391_migration_contact_add_date.cs" />
-    <Compile Include="Migrations\202106080951391_migration_contact_add_date.designer.cs">
-      <DependentUpon>202106080951391_migration_contact_add_date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106081659083_migration_addDraftAndTrash_inMessage.cs" />
-    <Compile Include="Migrations\202106081659083_migration_addDraftAndTrash_inMessage.designer.cs">
-      <DependentUpon>202106081659083_migration_addDraftAndTrash_inMessage.cs</DependentUpon>
+    <Compile Include="Migrations\202106091418149_recreate_database.cs" />
+    <Compile Include="Migrations\202106091418149_recreate_database.designer.cs">
+      <DependentUpon>202106091418149_recreate_database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,38 +95,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105150127138_mig_writer_edit.resx">
-      <DependentUpon>202105150127138_mig_writer_edit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105191237387_mig_writertitle_add.resx">
-      <DependentUpon>202105191237387_mig_writertitle_add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105250033460_mig_image_size_change.resx">
-      <DependentUpon>202105250033460_mig_image_size_change.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105250214573_mig_writer_addstatus.resx">
-      <DependentUpon>202105250214573_mig_writer_addstatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011209408_mig_contentstatusadd.resx">
-      <DependentUpon>202106011209408_mig_contentstatusadd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011239321_mig_haeadingstatusadd.resx">
-      <DependentUpon>202106011239321_mig_haeadingstatusadd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106011247254_mig_writerstatusadd.resx">
-      <DependentUpon>202106011247254_mig_writerstatusadd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106040030560_migration_add_message_class.resx">
-      <DependentUpon>202106040030560_migration_add_message_class.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106080951391_migration_contact_add_date.resx">
-      <DependentUpon>202106080951391_migration_contact_add_date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106081659083_migration_addDraftAndTrash_inMessage.resx">
-      <DependentUpon>202106081659083_migration_addDraftAndTrash_inMessage.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106091418149_recreate_database.resx">
+      <DependentUpon>202106091418149_recreate_database.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
