@@ -23,7 +23,7 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
 
 ## ScreenShoots
  
- <p>Admin Category<p/> 
+ <p><b>Admin Category<b/><p/> 
  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/index%20-%20Admin.JPG" />
 
   <p>Categories<p/>
