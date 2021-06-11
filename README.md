@@ -1,5 +1,5 @@
 
-#  ASP.NET MVC CAMP (2021 APRIL - JUNE) 
+#  ASP.NET MVC CAMP (2021 APRIL - JULY) 
 
 C#, BOOTSTRAP, N-Tier Architecture, AdminPanel, CodeFirst
 
