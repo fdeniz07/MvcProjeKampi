@@ -1,7 +1,5 @@
 ﻿
-@{
-    Layout = null;
-}
+@{ Layout = null; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,15 +9,21 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>AdminLTE 3 | Dashboard 3</title>
+    
+    <!-- Ekko Lightbox -->
+    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">
+    
+    
+    
 
-    @*-----------------------------------------------------------------------------------------------------------*@
     <!-- summernote -->
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
     <!-- Theme style -->
+    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">
-    @*                                                                                                                *@
+
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
@@ -215,8 +219,36 @@ to get the desired effect
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap -->
+@*<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
+
+<!-- jQuery UI -->
+<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Ekko Lightbox -->
+<script src="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>
+<!-- Filterizr-->
+<script src="~/Themes/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true
+            });
+        });
+
+        $('.filter-container').filterizr({ gutterPixels: 3 });
+        $('.btn[data-filter]').on('click', function () {
+            $('.btn[data-filter]').removeClass('active');
+            $(this).addClass('active');
+        });
+    })</script>
+
+<!-- Bootstrap -->
     <script src="~/Themes/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
@@ -226,6 +258,7 @@ to get the desired effect
     <script src="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-mailbox.js"></script>
     <!-- OPTIONAL SCRIPTS -->
     <script src="~/Themes/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
     <script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>
     <script src="~/Themes/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
     <!-- Summernote -->
@@ -237,8 +270,6 @@ to get the desired effect
             $('#compose-textarea').summernote()
         })
     </script>
-
-
 </body>
 </html>
 

@@ -13,9 +13,7 @@
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1><b>Mesaj Sayfası</b></h1>
-            </div>
+            <div class="col-sm-6"><h1><b>Mesaj Sayfası</b></h1></div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -32,12 +30,8 @@
                 <div class="card-header">
                     <h3 class="card-title"><b>Taslaklar</b></h3>
                     <div class="card-tools">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
-                            <div class="input-group-append">
-                                <div class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
-                                </div>
+                        <div class="input-group input-group-sm"><input type="text" class="form-control" placeholder="Mail Kutusunda Ara"><div class="input-group-append">
+                                <div class="btn btn-primary"><i class="fas fa-search"></i></div>
                             </div>
                         </div>
                     </div>
@@ -54,16 +48,11 @@
                             {
                                 <tr href="/Contact/GetContactDetails/@item.MessageId">
                                     <td>
-                                        <div class="icheck-primary">
-                                            <input type="checkbox" value="" id="check1">
-                                            <label for="check1"></label>
-                                        </div>
+                                        <div class="icheck-primary"><input type="checkbox" value="" id="check1"><label for="check1"></label></div>
                                     </td>
                                     <td class="mailbox-star"><a href="/Message/GetDraftDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
                                     <td class="mailbox-name"><a href="/Message/GetDraftDetails/@item.MessageId">@item.ReceiverMail</a></td>
-                                    <td class="mailbox-subject">
-                                        <b>@item.Subject</b> - @item.MessageContent.Substring(0, 11)...
-                                    </td>
+                                    <td class="mailbox-subject"><b>@item.Subject</b> - @item.MessageContent.Substring(0, 11)...</td>
                                     <td class="mailbox-attachment"></td>
                                     <td class="mailbox-date"><b>@(((DateTime) item.MessageDate).ToString("dd-MMM-yyyy"))</b></td>
                                 </tr>
@@ -72,7 +61,6 @@
                         </table>
                     </div>
                 </div>
-
             </div>
             
             <!-- Mesaj Bölümü Alt Bölüm -->

@@ -1,87 +1,77 @@
 ﻿@model EntityLayer.Concrete.Message
-@{
-    ViewBag.Title = "NewMessage";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "NewMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1><b>Yeni Mesaj Sayfası</b></h1>
-                </div>
+                <div class="col-sm-6"><h1><b>Yeni Mesaj Sayfası</b></h1></div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                @Html.Action("PartialMessageMenu", "Contact")
-                <!-- /.col -->
-                <div class="col-md-9">
-                    @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
-                    {
-                        <div class="card card-primary card-outline">
-                            <div class="card-header">
-                                <h3 class="card-title"><b>Yeni Mesaj Oluştur</b></h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="form-group">
-                                    @Html.Label("Alıcı Adı")
-                                    @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.ReceiverMail)
-                                    @*@Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control", placeholder = "Alıcı Adı:" })
-                                    @Html.ValidationMessageFor(x => x.ReceiverMail, "", new { @class = "text-danger" })*@
-                                </div>
-                                <div class="form-group">
-                                    @Html.Label("Konu")
-                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Subject)
-                                    @*@Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Konu:" })
-                                    @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })*@
-                                </div>
-                                <div class="form-group">
-                                    @Html.Label("Mesajınız")
-                                    <textarea id="compose-textarea" name="MessageContent" class="form-control" style="height: 300px"></textarea>
-                                    @*@Html.Label("Mesajınız :")
-                                    @Html.TextAreaFor(m => m.MessageContent, new { @class = "form-control", id = "compose-textarea", placeholder = "Alıcı Adı:" })
-                                    @Html.ValidationMessageFor(m => m.MessageContent, "", new { @class = "text-danger" })*@
-                                </div>
-                                <div class="form-group">
-                                    <div class="btn btn-default btn-file">
-                                        <i class="fas fa-paperclip"></i> Dosya Ekle<input type="file" name="attachment">
-                                    </div>
-                                    <p class="help-block">Max. 32MB</p>
-                                </div>
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <div class="float-right">
-                                    <button type="submit" formmethod="post" name="menuName" value="draft" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
-                                    <button type="submit" formmethod="post" name="menuName" value="send" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
 
-                                    @*<button type="submit" formmethod="post" name="menuName" value="draft" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
-                                    <button type="submit" name="menuName" value="send" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>*@
+    <!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            @Html.Action("PartialMessageMenu", "Contact")
+
+            <div class="col-md-9">
+                @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+                {<!--Mesaj Bölümü-->
+                    <div class="card card-primary card-outline">
+                        <!--Mesaj Bölümü - Baslik Alani-->
+                        <div class="card-header">
+                            <h3 class="card-title"><b>Yeni Mesaj Oluştur</b></h3>
+                        </div>
+
+                        <!-- Mesaj Bölümü - Icerik Alani-->
+                        <div class="card-body">
+                            <div class="form-group">
+                                @Html.Label("Alıcı Adı")
+                                @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.ReceiverMail)
+                                @*@Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control", placeholder = "Alıcı Adı:" })
+                                                        @Html.ValidationMessageFor(x => x.ReceiverMail, "", new { @class = "text-danger" })*@
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Konu")
+                                @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Subject)
+                                @*@Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Konu:" })
+                                                        @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })*@
+                            </div>
+
+                            <!-- Icerik Alani - Icerik-->
+                            <div class="form-group">
+                                @Html.Label("Mesajınız")
+                                <textarea id="compose-textarea" name="MessageContent" class="form-control" style="height: 300px"></textarea>
+                                @*@Html.Label("Mesajınız :")
+                                                        @Html.TextAreaFor(m => m.MessageContent, new { @class = "form-control", id = "compose-textarea", placeholder = "Alıcı Adı:" })
+                                                        @Html.ValidationMessageFor(m => m.MessageContent, "", new { @class = "text-danger" })*@
+                            </div>
+
+                            <!-- Icerik Alani - Dosya Islemleri-->
+                            <div class="form-group">
+                                <div class="btn btn-default btn-file">
+                                    <i class="fas fa-paperclip"></i> Dosya Ekle<input type="file" name="attachment">
                                 </div>
-                                <button type="reset" name="menuName" value="cancel" class="btn btn-danger"><i class="fas fa-times"></i> İptal</button>
-                                <button type="print" class="btn btn-warning"><i class="fas fa-print"></i> Yazdır</button>
+                                <p class="help-block">Max. 32MB</p>
                             </div>
                         </div>
-                    }
-                    <!-- /.card-footer -->
-                </div>
-                <!-- /.card -->
+
+                        @Html.Action("PartialMessageListFooterButton", "Contact")
+
+                    </div>}
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
-        <!-- /.container-fluid -->
-    </section>
+    </div>
+</section>
+<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
 </body>
 </html>
 

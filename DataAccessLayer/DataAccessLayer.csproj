@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
@@ -67,11 +68,16 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202106091418149_recreate_database.cs" />
     <Compile Include="Migrations\202106091418149_recreate_database.designer.cs">
       <DependentUpon>202106091418149_recreate_database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106111430318_mig_addingimage_file.cs" />
+    <Compile Include="Migrations\202106111430318_mig_addingimage_file.designer.cs">
+      <DependentUpon>202106111430318_mig_addingimage_file.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106091418149_recreate_database.resx">
       <DependentUpon>202106091418149_recreate_database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106111430318_mig_addingimage_file.resx">
+      <DependentUpon>202106111430318_mig_addingimage_file.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

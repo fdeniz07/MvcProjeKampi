@@ -141,6 +141,7 @@
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
@@ -161,6 +162,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\Gezi\Antalya\Bungalov Olympos - Antalya.jpg" />
+    <Content Include="Images\Gezi\Antalya\Cumhuriyet Meydani - Antalya.jpg" />
+    <Content Include="Images\Gezi\Antalya\Kaleici ve Marina - 2 - Antalya.jpg" />
+    <Content Include="Images\Gezi\Antalya\Kaleici ve Marina - Antalya.jpg" />
+    <Content Include="Images\Gezi\Antalya\Kemer Jeep Safari - Antalya.jpeg" />
+    <Content Include="Images\Gezi\Antalya\Köprülü Kanyon - Antalya.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -2324,6 +2331,7 @@
     <Content Include="Views\Contact\PartialMessageList.cshtml" />
     <Content Include="Views\Contact\PartialMessageListFooter.cshtml" />
     <Content Include="Views\Contact\PartialMessageListFooterButton.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

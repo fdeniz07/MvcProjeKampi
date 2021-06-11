@@ -11,9 +11,7 @@
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1><b>Mesaj Sayfası</b></h1>
-            </div>
+            <div class="col-sm-6"><h1><b>Mesaj Sayfası</b></h1></div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -33,9 +31,7 @@
                         <div class="input-group input-group-sm">
                             <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
                             <div class="input-group-append">
-                                <div class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
-                                </div>
+                                <div class="btn btn-primary"><i class="fas fa-search"></i></div>
                             </div>
                         </div>
                     </div>
@@ -58,16 +54,13 @@
                                 </td>
                                 <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactId"><i class="fas fa-star text-warning"></i></a></td>
                                 <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactId">@item.UserName</a></td>
-                                <td class="mailbox-subject">
-                                    <b>@item.Subject</b> - @item.Message.Substring(0, 30)...
-                                </td>
+                                <td class="mailbox-subject"><b>@item.Subject</b> - @item.Message.Substring(0, 30)...</td>
                                 <td class="mailbox-attachment"></td>
                                 <td class="mailbox-date"><b>@(((DateTime) item.ContactDate.Date).ToString("dd-MMM-yyyy"))</b></td>
                             </tr>}
                         </tbody>
                     </table>
                 </div>
-
             </div>
 
             <!-- Mesaj Bölümü Alt Bölüm -->
