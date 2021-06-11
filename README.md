@@ -11,33 +11,75 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
 
 ### Request 1 : Creating a database using sql server (tables: abouts, categories, contacts, contents, headings, writers)
 
-![DB Schema](https://user-images.githubusercontent.com/81612480/118017571-1291be00-b357-11eb-96e3-657707993e4c.JPG)
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/DB%20Schema%20-%20Begin.jpg" />
 
-### Request 2 : A N-layered project will be developed in corporate architecture
+### Request 2 : A N-tiered project will be developed in corporate architecture
 
-![NLayered Architecture](https://user-images.githubusercontent.com/81612480/118017892-6b615680-b357-11eb-8cf0-c9f703f6581c.JPG)
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/NLayered%20Architecture.JPG" />
 
 ### Request 3 : coming soon
 
 
 
 ## ScreenShoots
-
-![index - Admin](https://user-images.githubusercontent.com/81612480/118019507-5c7ba380-b359-11eb-8be3-ad1f7769d1c4.JPG)
-
-![Statistics](https://user-images.githubusercontent.com/81612480/118018012-8b911580-b357-11eb-9118-ce0d809f93e4.png)
-
-![Categories](https://user-images.githubusercontent.com/81612480/118018056-951a7d80-b357-11eb-90f2-f8f5e098ad33.JPG)
-
- <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Heading.png" />
  
+ <p>Admin Category<p/> 
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/index%20-%20Admin.JPG" />
+
+  <p>Categories<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Categories.JPG" />
+  
+  <p>Heading<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Heading.png" />
+  
+  <p>Writers<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer.png" />
  
- <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer.png" />
+ <p>About<p/>
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/About.png" />
  
- <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/About.png />
+ <p>Statistics<p/>
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Statistics.png" />
  
- <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Contact.png" />
+ <p>Contact Panel<p/>
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Contact%20Panel.JPG" />
+ 
+ <p>Contact Details<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Contact%20Details.JPG" />
+  
+  <p>System Messages (Inbox)<p/>
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/System%20Message%20Panel%20(User%20to%20Admin).JPG" />
+
+  <p>System Message Details<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/System%20Message%20%20Details.JPG" />
+  
+  <p>Sendbox<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Sendbox%20Panel.JPG" />
+  
+  <p>Sendbox Details<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Sendbox%20Details.JPG" />
+  
+  <p>Draft Messages<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Daraft%20Message%20Panel.JPG" />
+  
+  <p>Draft Message Details<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Daraft%20Message%20Details.JPG" />
+  
+  <p>Page 404 Error<p/>
+  <img src="" />
+  
+  <p>Gallery<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20Panel.JPG" />
+  
+  <p>Login<p/>
+  <img src="" />
+  
+  <p>DB Schema - updated<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/DB%20Schema.JPG" />
+  
 <!--
-<img src="" />
+  <p><p/>
+  <img src="" />
+  
  --> 
   
