@@ -17,7 +17,7 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult Index(Admin admin)
         {
-            Context context = new Context();
+            Context context = new Context(); // Kurumsal mimari yapisina dönüstürülecek (ödev)
             var adminUser = context.Admins.FirstOrDefault(x =>
                 x.AdminUserName == admin.AdminUserName && x.AdminPassword == admin.AdminPassword);
 

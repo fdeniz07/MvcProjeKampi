@@ -9,7 +9,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>AdminLTE 3 | Dashboard 3</title>
-    
+
     <!-- Ekko Lightbox -->
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">
     <!-- summernote -->
@@ -67,15 +67,18 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview">
-                            <a href="/AdminCategory/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kategoriler
-                                </p>
-                            </a>
-                        </li>
+                        with font-awesome or any other icon font library -->
+
+                        @if (User.IsInRole("B"))
+                        {
+            <li class="nav-item has-treeview">
+                <a href="/AdminCategory/Index/" class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Kategoriler
+                    </p>
+                </a>
+            </li>}
                         <li class="nav-item">
                             <a href="/Heading/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -134,14 +137,6 @@ to get the desired effect
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     İletişim & Mesajlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Yazılar
                                 </p>
                             </a>
                         </li>
@@ -215,36 +210,36 @@ to get the desired effect
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
 
-<!-- jQuery UI -->
-<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Ekko Lightbox -->
-<script src="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
-<!-- AdminLTE App -->
-<script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>
-<!-- Filterizr-->
-<script src="~/Themes/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
-<!-- Page specific script -->
-<script>
-    $(function () {
-        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-            event.preventDefault();
-            $(this).ekkoLightbox({
-                alwaysShowClose: true
+    <!-- jQuery UI -->
+    <script src="~/Themes/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Ekko Lightbox -->
+    <script src="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <!-- Filterizr-->
+    <script src="~/Themes/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+                event.preventDefault();
+                $(this).ekkoLightbox({
+                    alwaysShowClose: true
+                });
             });
-        });
 
-        $('.filter-container').filterizr({ gutterPixels: 3 });
-        $('.btn[data-filter]').on('click', function () {
-            $('.btn[data-filter]').removeClass('active');
-            $(this).addClass('active');
-        });
-    })</script>
-    
-<!-- Bootstrap -->
+            $('.filter-container').filterizr({ gutterPixels: 3 });
+            $('.btn[data-filter]').on('click', function () {
+                $('.btn[data-filter]').removeClass('active');
+                $(this).addClass('active');
+            });
+        })</script>
+
+    <!-- Bootstrap -->
     <script src="~/Themes/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
     <script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.js"></script>

@@ -153,6 +153,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -2059,6 +2060,16 @@
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\js\._jquery.min.js" />
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\js\._main.js" />
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\js\._popper.js" />
+    <Content Include="Themes\Skills_Theme\web\css\style.css" />
+    <Content Include="Themes\Skills_Theme\web\images\5.jpg" />
+    <Content Include="Themes\Skills_Theme\web\images\img1.jpg" />
+    <Content Include="Themes\Skills_Theme\web\images\sprite.png" />
+    <Content Include="Themes\Skills_Theme\web\index.html" />
+    <Content Include="Themes\Skills_Theme\web\js\bars.js" />
+    <Content Include="Themes\Skills_Theme\web\js\easyResponsiveTabs.js" />
+    <Content Include="Themes\Skills_Theme\web\js\jquery-1.11.1.min.js" />
+    <Content Include="Themes\Skills_Theme\web\js\jquery.circlechart.js" />
+    <Content Include="Themes\Skills_Theme\web\w3layouts-License.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
