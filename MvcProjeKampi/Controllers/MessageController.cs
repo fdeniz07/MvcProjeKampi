@@ -16,6 +16,7 @@ namespace MvcProjeKampi.Controllers
 
         ContactManager contactManager = new ContactManager(new EfContactDal());
 
+        [Authorize]
         public ActionResult Inbox()
         {
             var messageListInbox = messageManager.GetListInbox();

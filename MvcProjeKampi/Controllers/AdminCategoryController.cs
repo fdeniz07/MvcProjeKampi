@@ -11,7 +11,7 @@ namespace MvcProjeKampi.Controllers
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal()); //Ileride Enttiy Framework den
                                                                                     //vazgecilirse burasi degistirilebilir
-        
+        [Authorize]
         public ActionResult Index()
         {
             var categoryValues = categoryManager.GetList();

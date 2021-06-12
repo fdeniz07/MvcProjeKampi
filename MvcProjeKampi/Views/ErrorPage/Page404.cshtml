@@ -1,8 +1,7 @@
 ﻿
-@{
-    ViewBag.Title = "Page404";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "Page404";
+    Layout = null;
+    @*Layout = "~/Views/Shared/_AdminLayout.cshtml";*@ }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +31,16 @@
 
 <body>
 
-<div id="notfound">
-    <div class="notfound">
-        <div class="notfound-404">
-            <h1>Oooops!</h1>
+    <div id="notfound">
+        <div class="notfound">
+            <div class="notfound-404">
+                <h1>Oooops!</h1>
+            </div>
+            <h2>404 - Sayfa Bulunamadı</h2>
+            <p>Üzgünüz, aradığınız sayfayı bulamadık :(</p>
+            <a href="~/AdminCategory/Index/">Ana Sayfaya Dön</a>
         </div>
-        <h2>404 - Sayfa Bulunamadı</h2>
-        <p>Üzgünüz, aradığınız sayfayı bulamadık :(</p>
-        <a href="~/AdminCategory/Index/">Ana Sayfaya Dön</a>
     </div>
-</div>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
