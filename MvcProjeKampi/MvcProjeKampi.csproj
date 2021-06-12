@@ -2016,6 +2016,13 @@
     <Content Include="Themes\AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="Themes\AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="Themes\AdminLTE-3.0.4\starter.html" />
+    <Content Include="Themes\another-403-forbidden-pen\dist\index.html" />
+    <Content Include="Themes\another-403-forbidden-pen\dist\script.js" />
+    <Content Include="Themes\another-403-forbidden-pen\dist\style.css" />
+    <Content Include="Themes\another-403-forbidden-pen\license.txt" />
+    <Content Include="Themes\another-403-forbidden-pen\src\index.html" />
+    <Content Include="Themes\another-403-forbidden-pen\src\script.js" />
+    <Content Include="Themes\another-403-forbidden-pen\src\style.css" />
     <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\css\style.css" />
     <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\img\bg.jpg" />
     <Content Include="Themes\colorlib-error-404-10\colorlib-error-404-10\index.html" />
@@ -2573,6 +2580,8 @@
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\scss\bootstrap\utilities\.__text.scss" />
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\scss\bootstrap\utilities\.__visibility.scss" />
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\scss\bootstrap\vendor\.__rfs.scss" />
+    <Content Include="Views\ErrorPage\Page403.cshtml" />
+    <Content Include="Themes\another-403-forbidden-pen\README.markdown" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

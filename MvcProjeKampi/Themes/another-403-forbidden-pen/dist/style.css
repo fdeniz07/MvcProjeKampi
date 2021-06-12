@@ -1,0 +1,42 @@
+html,body{
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:salmon;
+    font-family:"Quicksand", sans-serif;
+
+}
+
+#container_anim{
+    position:relative;
+    width:100%;
+    height:70%;
+}
+
+#key{
+    position:absolute;
+    top:77%;
+    left:-33%;
+}
+
+#text{
+  font-size:4rem;
+  position:absolute;
+  top:55%;
+  width:100%;
+  text-align:center;
+}
+
+#credit{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    bottom:
+}
+
+a{
+    color: rgb(115,102,102);
+}
