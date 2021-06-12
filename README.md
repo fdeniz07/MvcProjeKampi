@@ -3,7 +3,7 @@
 
 C#, BOOTSTRAP, N-Tier Architecture, AdminPanel, CodeFirst
 
-## Special information about the camp program - [Note Directory](https://github.com/fdeniz07/MvcProjeKampi/blob/master/Documents/Mvc%20Proje%20Kamp%C4%B1.pdf)
+## Special information about the camp program - Turkish - [Note Directory](https://github.com/fdeniz07/MvcProjeKampi/blob/master/Documents/Mvc%20Proje%20Kamp%C4%B1.pdf)
 ### DATABASE (MS SQL) -  [Database Directory](https://github.com/fdeniz07/MvcProjeKampi/tree/master/DB)
 ### Screens -  [Screens Directory](https://github.com/fdeniz07/MvcProjeKampi/tree/master/Screens)
 ### Documents -  [Documents Directory](https://github.com/fdeniz07/MvcProjeKampi/tree/master/Documents)
