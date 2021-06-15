@@ -83,6 +83,26 @@
     <Compile Include="Migrations\202106111947150_mig_admin_table.designer.cs">
       <DependentUpon>202106111947150_mig_admin_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106121846496_mig_addedAbout_status.cs" />
+    <Compile Include="Migrations\202106121846496_mig_addedAbout_status.designer.cs">
+      <DependentUpon>202106121846496_mig_addedAbout_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106122110544_mig_addedMessage_isRead.cs" />
+    <Compile Include="Migrations\202106122110544_mig_addedMessage_isRead.designer.cs">
+      <DependentUpon>202106122110544_mig_addedMessage_isRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106122112447_mig_addedMessage_isImportant.cs" />
+    <Compile Include="Migrations\202106122112447_mig_addedMessage_isImportant.designer.cs">
+      <DependentUpon>202106122112447_mig_addedMessage_isImportant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106122113428_mig_addedMessage_isSpam.cs" />
+    <Compile Include="Migrations\202106122113428_mig_addedMessage_isSpam.designer.cs">
+      <DependentUpon>202106122113428_mig_addedMessage_isSpam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.cs" />
+    <Compile Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.designer.cs">
+      <DependentUpon>202106122115565_mig_addedContact_isRead_isImportant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Result\Abstract\IResult.cs" />
@@ -113,6 +133,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106111947150_mig_admin_table.resx">
       <DependentUpon>202106111947150_mig_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106121846496_mig_addedAbout_status.resx">
+      <DependentUpon>202106121846496_mig_addedAbout_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106122110544_mig_addedMessage_isRead.resx">
+      <DependentUpon>202106122110544_mig_addedMessage_isRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106122112447_mig_addedMessage_isImportant.resx">
+      <DependentUpon>202106122112447_mig_addedMessage_isImportant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106122113428_mig_addedMessage_isSpam.resx">
+      <DependentUpon>202106122113428_mig_addedMessage_isSpam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.resx">
+      <DependentUpon>202106122115565_mig_addedContact_isRead_isImportant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

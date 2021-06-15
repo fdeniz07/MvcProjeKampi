@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Data.Entity.Core.Metadata.Edm;
+using System.Linq;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using System.Web.Mvc;
@@ -23,6 +24,8 @@ namespace MvcProjeKampi.Controllers
         public ActionResult GetContactDetails(int id)
         {
             var contactValues = contactManager.GetByIdContact(id);
+
+           // contactManager.GetByIdContactAndSetRead(id,true); //<-- Buraya, mail acildiginda IsRead alanina true (okundu) yazacak kod gelecek!!!
             return View(contactValues);
         }
 
@@ -37,8 +40,23 @@ namespace MvcProjeKampi.Controllers
             var receiverMail = messageManager.GetListInbox().Count();
             ViewBag.receiverMail = receiverMail;
 
-            var draftMail = messageManager.GetListSendbox().Where(m => m.IsDraft == true).Count();
+            var draftMail = messageManager.GetListDraft().Count(); //GetListSendbox().Where(m => m.IsDraft == true).Count();
             ViewBag.draftMail = draftMail;
+
+            var trashMail = messageManager.GetListTrash().Count();
+            ViewBag.trashMail = trashMail;
+
+            var readMail = messageManager.GetReadList().Count;
+            ViewBag.readMail = readMail;
+
+            var unReadMail = messageManager.GetUnReadList().Count;
+            ViewBag.unReadMail = unReadMail;
+
+            var importantMail = messageManager.GetListImportant().Count();
+            ViewBag.importantMail = importantMail;
+
+            var spamMail = messageManager.GetListSpam().Count();
+            ViewBag.spamMail = spamMail;
 
             return PartialView();
         }
@@ -56,6 +74,41 @@ namespace MvcProjeKampi.Controllers
         public PartialViewResult PartialMessageListFooterButton()
         {
             return PartialView();
+        }
+
+        public ActionResult IsRead(int id) //Bu alan sistem mesajlarindaki okundu butonundan gelen degeri DB yazar
+        {
+            var contactValue = contactManager.GetByIdContact(id);
+           
+            if (contactValue.IsRead)
+            {
+                contactValue.IsRead = false;
+            }
+            else
+            {
+                contactValue.IsRead = true;
+            }
+
+            contactManager.ContactUpdate(contactValue);
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult IsImportant(int id) //Bu alan sistem mesajlarindaki önemli butonundan gelen degeri DB yazar
+        {
+            var contactValue = contactManager.GetByIdContact(id);
+
+            if (contactValue.IsImportant)
+            { 
+                contactValue.IsImportant = false;
+            }
+            else
+            {
+                contactValue.IsImportant = true;
+            }
+
+            contactManager.ContactUpdate(contactValue);
+            return RedirectToAction("Index");
         }
 
     }

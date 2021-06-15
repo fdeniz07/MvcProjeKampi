@@ -2359,7 +2359,6 @@
     <Content Include="Views\Content\ContentByHeading.cshtml" />
     <Content Include="Views\Heading\EditHeading.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\About\AddAbout.cshtml" />
     <Content Include="Views\About\AboutPartial.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Contact\GetContactDetails.cshtml" />

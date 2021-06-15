@@ -24,5 +24,12 @@ namespace EntityLayer.Concrete
         public bool IsDraft { get; set; }
 
         public bool Trash { get; set; }
+
+        public bool IsRead { get; set; }
+
+        public bool IsImportant { get; set; }
+
+        public bool IsSpam { get; set; }
+
     }
 }

@@ -19,6 +19,7 @@ namespace MvcProjeKampi.Controllers
         [Authorize]
         public ActionResult Inbox()
         {
+
             var messageListInbox = messageManager.GetListInbox();
             return View(messageListInbox);
         }
@@ -60,7 +61,7 @@ namespace MvcProjeKampi.Controllers
                 if (results.IsValid)
                 {
                     message.SenderMail = "admin@gmail.com";
-                    message.IsDraft = false;
+                    //message.IsDraft = false;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);
                     return RedirectToAction("Sendbox");
@@ -100,7 +101,7 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        public ActionResult DeleteMessage(int id)
+        public ActionResult DeleteMessage(int id) //Bu alan gelen mesajlarindaki silindi butonundan gelen degeri DB yazar --> Henüz inbox da bu buton eklenmedi !!!
         {
             var result = messageManager.GetByIdMessage(id);
             if (result.Trash == true)
@@ -125,6 +126,41 @@ namespace MvcProjeKampi.Controllers
         {
             var result = messageManager.GetByIdMessage(id);
             return View(result);
+        }
+
+        public ActionResult IsRead(int id) //Bu alan gelen mesajlarindaki okundu butonundan gelen degeri DB yazar
+        {
+            var messageValue = messageManager.GetByIdMessage(id);
+
+            if (messageValue.IsRead)
+            {
+                messageValue.IsRead = false;
+            }
+            else
+            {
+                messageValue.IsRead = true;
+            }
+
+            messageManager.MessageUpdate(messageValue);
+            return RedirectToAction("Inbox");
+        }
+
+
+        public ActionResult IsImportant(int id) //Bu alan gelen mesajlarindaki önemli butonundan gelen degeri DB yazar
+        {
+            var messageValue = messageManager.GetByIdMessage(id);
+
+            if (messageValue.IsImportant)
+            {
+                messageValue.IsImportant = false;
+            }
+            else
+            {
+                messageValue.IsImportant = true;
+            }
+
+            messageManager.MessageUpdate(messageValue);
+            return RedirectToAction("Inbox");
         }
     }
 }

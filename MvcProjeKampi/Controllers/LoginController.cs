@@ -21,9 +21,9 @@ namespace MvcProjeKampi.Controllers
             var adminUser = context.Admins.FirstOrDefault(x =>
                 x.AdminUserName == admin.AdminUserName && x.AdminPassword == admin.AdminPassword);
 
-            if (adminUser!=null)
+            if (adminUser != null)
             {
-                FormsAuthentication.SetAuthCookie(adminUser.AdminUserName,false); //Sisteme giriş yapan kişinin form bilgileri buradan alınır. Buradaki false değeri ise, kalıcı bir cookie değerinin olmayacağını belirtir.
+                FormsAuthentication.SetAuthCookie(adminUser.AdminUserName, false); //Sisteme giriş yapan kişinin form bilgileri buradan alınır. Buradaki false değeri ise, kalıcı bir cookie değerinin olmayacağını belirtir.
 
                 Session["AdminUserName"] = adminUser.AdminUserName; //Oturum yönetimi kodu yazılır. Session içerisinde yazılacak değer; köşeli parantez içerisine(sisteme giriş yapan kullanıcının mail adresi gerekli) yazılır
                 return RedirectToAction("Index", "AdminCategory");

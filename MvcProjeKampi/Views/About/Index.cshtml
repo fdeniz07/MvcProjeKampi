@@ -1,27 +1,45 @@
 ﻿@using EntityLayer.Concrete
 @model List<About>
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
+@{ string status = "";}
+@{ string buttonTyp = "";}
+
+<br />
 <h2>Hakkımda Veri Listesi</h2>
 <table class="table table-bordered">
     <tr>
         <th>ID</th>
-        <th>Hakkımda Başlığı</th>
-        <th>Aktif Yap</th>
-        <th>Pasif Yap</th>
+        <th>Hakkımda Başlığı - 1</th>
+        <th>Hakkımda Başlığı - 2</th>
+        <th>Hakkımda Fotoğraf 1</th>
+        <th>Hakkımda Fotoğraf 2</th>
+        <th>Durum</th>
+        @*<th>Aktif Yap</th>
+            <th>Pasif Yap</th>*@
     </tr>
     @foreach (var item in Model)
     {
+        if (item.Status == true)
+        {
+            status = "Pasif Yap";
+            buttonTyp = "btn btn-danger";
+        }
+        if (item.Status == false)
+        {
+            status = "Aktif Yap";
+            buttonTyp = "btn btn-success";
+        }
 <tr>
     <td>@item.AboutId</td>
-    <td>Başlık</td>
-    <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
-    <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+    <td>@item.AboutDetails1</td>
+    <td>@item.AboutDetails2</td>
+    <td>@item.AboutImage1</td>
+    <td>@item.AboutImage2</td>
+    <td><a href="/About/IsActive/@item.AboutId" class="@buttonTyp">@status</a></td>
 </tr>
-    }
+}
 </table>
 
 <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
@@ -29,4 +47,4 @@
 </button>
 
 
-@Html.Action("AboutPartial","About")
+@Html.Action("AboutPartial", "About")

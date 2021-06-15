@@ -1,7 +1,10 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{ ViewBag.Title = "Inbox";
-                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+
+@{ string read = ""; }
+@{ string important = ""; }
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
@@ -29,7 +32,8 @@
                         <div class="card-tools">
                             <div class="input-group input-group-sm">
                                 <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
-                                <div class="input-group-append"><div class="btn btn-primary"><i class="fas fa-search"></i></div>
+                                <div class="input-group-append">
+                                    <div class="btn btn-primary"><i class="fas fa-search"></i></div>
                                 </div>
                             </div>
                         </div>
@@ -43,6 +47,8 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
+                                    read = (!item.IsRead) ? "warning" : "capitalize";
+                                    important = (!item.IsImportant) ? "body" : "warning";
                     <tr>
                         <td>
                             <div class="icheck-primary">
@@ -50,7 +56,11 @@
                                 <label for="check1"></label>
                             </div>
                         </td>
-                        <td class="mailbox-star"><a href="/Message/GetInboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                        <td>
+                            <a class="btn btn-default btn-sm" href="/Message/IsRead/@item.MessageId"><i class="fas fa-mail-bulk text-@read"></i></a>
+                        </td>
+                        <td class="mailbox-star"><a href="/Message/IsImportant/@item.MessageId"><i class="fas fa-star text-@important"></i></a></td>
+
                         <td class="mailbox-name"><a href="/Message/GetInboxMessageDetails/@item.MessageId">@item.SenderMail</a></td>
                         <td class="mailbox-subject">
                             <b>@item.Subject</b> - @item.MessageContent.Substring(0, 30)...
@@ -67,6 +77,6 @@
 
             </div>
         </div>
-</section>
+    </section>
 </body>
 </html>

@@ -20,5 +20,9 @@ namespace EntityLayer.Concrete
         public DateTime ContactDate { get; set; }
 
         public string Message { get; set; }
+
+        public bool IsRead { get; set; }
+
+        public bool IsImportant { get; set; }
     }
 }

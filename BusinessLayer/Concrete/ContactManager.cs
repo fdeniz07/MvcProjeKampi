@@ -34,6 +34,11 @@ namespace BusinessLayer.Concrete
             return _contactDal.Get(x => x.ContactId == id);
         }
 
+        public Contact GetByIdContactAndSetRead(int id, bool read)
+        {
+            return _contactDal.Get(x => x.ContactId == id && x.IsRead==true);
+        }
+
         public List<Contact> GetList()
         {
             return _contactDal.List();

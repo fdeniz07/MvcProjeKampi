@@ -1,7 +1,7 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{ ViewBag.Title = "Sendbox";
-                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
@@ -42,24 +42,24 @@
                     <div class="table-responsive mailbox-messages">
                         <table class="table table-hover table-striped">
                             <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>
-                                        <div class="icheck-primary">
-                                            <input type="checkbox" value="" id="check1">
-                                            <label for="check1"></label>
-                                        </div>
-                                    </td>
-                                    <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
-                                    <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetails/@item.MessageId">@item.ReceiverMail</a></td>
-                                    <td class="mailbox-subject">
-                                        <b>@item.Subject</b> - @item.MessageContent.Substring(0, 11)...
-                                    </td>
-                                    <td class="mailbox-attachment"></td>
-                                    <td class="mailbox-date"><b>@(((DateTime) item.MessageDate).ToString("dd-MMM-yyyy"))</b></td>
-                                </tr>
-                            }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="icheck-primary">
+                                                <input type="checkbox" value="" id="check1">
+                                                <label for="check1"></label>
+                                            </div>
+                                        </td>
+                                        <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
+                                        <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetails/@item.MessageId">@item.ReceiverMail</a></td>
+                                        <td class="mailbox-subject">
+                                            <b>@item.Subject</b> - @item.MessageContent.Substring(0, 30)...
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date"><b>@(((DateTime) item.MessageDate).ToString("dd-MMM-yyyy"))</b></td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -69,6 +69,6 @@
 
             </div>
         </div>
-</section>
+    </section>
 </body>
 </html>
