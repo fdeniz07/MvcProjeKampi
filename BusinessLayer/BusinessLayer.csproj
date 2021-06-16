@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutService.cs" />
+    <Compile Include="Abstract\IAdminService.cs" />
+    <Compile Include="Abstract\IAuthService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\IContactService.cs" />
     <Compile Include="Abstract\IContentService.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="Abstract\ITalentService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
+    <Compile Include="Concrete\AdminManager.cs" />
+    <Compile Include="Concrete\AuthManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ContactManager.cs" />
     <Compile Include="Concrete\ContentManager.cs" />
@@ -78,6 +82,15 @@
     <Compile Include="Concrete\TalentManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Cryptos\Hashing\HashingHelper.cs" />
+    <Compile Include="Utilities\Results\Abstract\IDataResult.cs" />
+    <Compile Include="Utilities\Results\Abstract\IResult.cs" />
+    <Compile Include="Utilities\Results\Concrete\DataResult.cs" />
+    <Compile Include="Utilities\Results\Concrete\ErrorDataResult.cs" />
+    <Compile Include="Utilities\Results\Concrete\ErrorResult.cs" />
+    <Compile Include="Utilities\Results\Concrete\Result.cs" />
+    <Compile Include="Utilities\Results\Concrete\SuccessDataResult.cs" />
+    <Compile Include="Utilities\Results\Concrete\SuccessResult.cs" />
     <Compile Include="ValidationRules\FluentValidation\AboutValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CategoryValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\ContactValidator.cs" />
@@ -85,7 +98,9 @@
     <Compile Include="ValidationRules\FluentValidation\TalentValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\WriterValidator.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utilities\Exceptions\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{d5df71b2-e5c1-4713-8c23-ce6362c7eaef}</Project>

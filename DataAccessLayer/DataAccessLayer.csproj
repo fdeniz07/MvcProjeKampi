@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="EntityFramework\EfAboutDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
@@ -82,10 +84,6 @@
     <Compile Include="Migrations\202106111430318_mig_addingimage_file.cs" />
     <Compile Include="Migrations\202106111430318_mig_addingimage_file.designer.cs">
       <DependentUpon>202106111430318_mig_addingimage_file.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106111947150_mig_admin_table.cs" />
-    <Compile Include="Migrations\202106111947150_mig_admin_table.designer.cs">
-      <DependentUpon>202106111947150_mig_admin_table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202106121846496_mig_addedAbout_status.cs" />
     <Compile Include="Migrations\202106121846496_mig_addedAbout_status.designer.cs">
@@ -107,24 +105,24 @@
     <Compile Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.designer.cs">
       <DependentUpon>202106122115565_mig_addedContact_isRead_isImportant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106150855095_added_adminUserName.cs" />
-    <Compile Include="Migrations\202106150855095_added_adminUserName.designer.cs">
-      <DependentUpon>202106150855095_added_adminUserName.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202106151212004_added_skillarea.cs" />
     <Compile Include="Migrations\202106151212004_added_skillarea.designer.cs">
       <DependentUpon>202106151212004_added_skillarea.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106161124276_add_admin.cs" />
+    <Compile Include="Migrations\202106161124276_add_admin.designer.cs">
+      <DependentUpon>202106161124276_add_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161125098_add_admin1.cs" />
+    <Compile Include="Migrations\202106161125098_add_admin1.designer.cs">
+      <DependentUpon>202106161125098_add_admin1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106161132487_add_admin2.cs" />
+    <Compile Include="Migrations\202106161132487_add_admin2.designer.cs">
+      <DependentUpon>202106161132487_add_admin2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\Result\Abstract\IResult.cs" />
-    <Compile Include="Utilities\Result\Abstract\IDataResult.cs" />
-    <Compile Include="Utilities\Result\Concrete\DataResult.cs" />
-    <Compile Include="Utilities\Result\Concrete\ErrorDataResult.cs" />
-    <Compile Include="Utilities\Result\Concrete\ErrorResult.cs" />
-    <Compile Include="Utilities\Result\Concrete\Result.cs" />
-    <Compile Include="Utilities\Result\Concrete\SuccessDataResult.cs" />
-    <Compile Include="Utilities\Result\Concrete\SuccessResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -143,9 +141,6 @@
     <EmbeddedResource Include="Migrations\202106111430318_mig_addingimage_file.resx">
       <DependentUpon>202106111430318_mig_addingimage_file.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106111947150_mig_admin_table.resx">
-      <DependentUpon>202106111947150_mig_admin_table.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106121846496_mig_addedAbout_status.resx">
       <DependentUpon>202106121846496_mig_addedAbout_status.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,11 +156,17 @@
     <EmbeddedResource Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.resx">
       <DependentUpon>202106122115565_mig_addedContact_isRead_isImportant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106150855095_added_adminUserName.resx">
-      <DependentUpon>202106150855095_added_adminUserName.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106151212004_added_skillarea.resx">
       <DependentUpon>202106151212004_added_skillarea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161124276_add_admin.resx">
+      <DependentUpon>202106161124276_add_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161125098_add_admin1.resx">
+      <DependentUpon>202106161125098_add_admin1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106161132487_add_admin2.resx">
+      <DependentUpon>202106161132487_add_admin2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

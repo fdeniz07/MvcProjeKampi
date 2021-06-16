@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace EntityLayer.Concrete
 {
@@ -16,7 +17,8 @@ namespace EntityLayer.Concrete
 
         [StringLength(100)]
         public string Subject { get; set; }
-        
+
+        [AllowHtml]
         public string MessageContent { get; set; }
 
         public DateTime MessageDate { get; set; }

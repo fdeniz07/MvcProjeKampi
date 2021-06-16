@@ -146,6 +146,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SkillAreaController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
     <Compile Include="Controllers\TalentController.cs" />
@@ -2600,6 +2601,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\SkillArea\AddSkillArea.cshtml" />
     <Content Include="Views\SkillArea\Index.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
