@@ -64,6 +64,8 @@
     <Compile Include="Abstract\IHeadingService.cs" />
     <Compile Include="Abstract\IImageFileService.cs" />
     <Compile Include="Abstract\IMessageService.cs" />
+    <Compile Include="Abstract\ISkillAreaService.cs" />
+    <Compile Include="Abstract\ITalentService.cs" />
     <Compile Include="Abstract\IWriterService.cs" />
     <Compile Include="Concrete\AboutManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
@@ -72,11 +74,15 @@
     <Compile Include="Concrete\HeadingManager.cs" />
     <Compile Include="Concrete\ImageFIleManager.cs" />
     <Compile Include="Concrete\MessageManager.cs" />
+    <Compile Include="Concrete\SkillAreaManager.cs" />
+    <Compile Include="Concrete\TalentManager.cs" />
     <Compile Include="Concrete\WriterManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationRules\FluentValidation\AboutValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\CategoryValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\ContactValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\MessageValidator.cs" />
+    <Compile Include="ValidationRules\FluentValidation\TalentValidator.cs" />
     <Compile Include="ValidationRules\FluentValidation\WriterValidator.cs" />
   </ItemGroup>
   <ItemGroup />

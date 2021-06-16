@@ -1,10 +1,10 @@
-﻿using System;
-using BusinessLayer.Concrete;
-using System.Web.Mvc;
+﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
+using System;
+using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {

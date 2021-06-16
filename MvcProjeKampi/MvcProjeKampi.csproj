@@ -146,7 +146,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\SkillAreaController.cs" />
     <Compile Include="Controllers\StatisticController.cs" />
+    <Compile Include="Controllers\TalentController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -164,6 +166,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\FatihDeniz.jpg" />
     <Content Include="Images\Gezi\Antalya\Bungalov Olympos - Antalya.jpg" />
     <Content Include="Images\Gezi\Antalya\Cumhuriyet Meydani - Antalya.jpg" />
     <Content Include="Images\Gezi\Antalya\Kaleici ve Marina - 2 - Antalya.jpg" />
@@ -2080,7 +2083,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TalentLayout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -2592,10 +2595,16 @@
     <Content Include="Themes\login-form-19\__MACOSX\login-form-19\scss\bootstrap\vendor\.__rfs.scss" />
     <Content Include="Views\ErrorPage\Page403Error.cshtml" />
     <Content Include="Themes\another-403-forbidden-pen\README.markdown" />
+    <Content Include="Views\Talent\Index.cshtml" />
+    <Content Include="Views\Talent\AddTalent.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\SkillArea\AddSkillArea.cshtml" />
+    <Content Include="Views\SkillArea\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="SS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
