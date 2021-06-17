@@ -93,6 +93,11 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   
   <p>Talent - Skill Area Index<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Skill%20Index.JPG" />
+   
+  <p>Talent - Add New Skill Area<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Add%20New%20Skill%20Area.JPG" />
+  
+ 
   
   <p>Hashing<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Hashing.JPG" />
