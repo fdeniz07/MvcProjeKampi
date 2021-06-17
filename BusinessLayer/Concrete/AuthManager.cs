@@ -36,12 +36,13 @@ namespace BusinessLayer.Concrete
             }
         }
 
-        public void Register(string adminMail, string password)
+        public void Register(string adminUserName, string adminMail, string password)
         {
             byte[] mailHash, passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(adminMail, password, out mailHash, out passwordHash, out passwordSalt);
             var admin = new Admin
             {
+                AdminUserName = adminUserName,
                 AdminMail = mailHash,
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,

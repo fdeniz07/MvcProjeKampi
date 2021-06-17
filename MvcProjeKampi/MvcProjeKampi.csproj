@@ -187,6 +187,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="SS\About.JPG" />
+    <Content Include="SS\Add About.JPG" />
+    <Content Include="SS\Admin Register Site.JPG" />
+    <Content Include="SS\System Messages %28Inbox%29.JPG" />
+    <Content Include="SS\Talent - Add New Skill Area.JPG" />
+    <Content Include="SS\Talent - Add New Skills.JPG" />
+    <Content Include="SS\Talent - Index.JPG" />
+    <Content Include="SS\Talent - Skill Index.JPG" />
     <Content Include="Themes\AdminLTE-3.0.4\.gitignore" />
     <Content Include="Themes\AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="Themes\AdminLTE-3.0.4\build\config\rollup.config.js" />
@@ -2606,7 +2614,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="SS\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

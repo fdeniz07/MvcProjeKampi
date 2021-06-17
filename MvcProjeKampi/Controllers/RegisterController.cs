@@ -20,7 +20,7 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult Index(LoginDto loginDto)
         {
-            authService.Register(loginDto.AdminMail, loginDto.AdminPassword);
+            authService.Register(loginDto.AdminUserName,loginDto.AdminMail, loginDto.AdminPassword);
             return RedirectToAction("Index", "AdminCategory");
         }
     }
