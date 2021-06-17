@@ -189,6 +189,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="SS\About.JPG" />
     <Content Include="SS\Add About.JPG" />
+    <Content Include="SS\Admin Login Panel.JPG" />
     <Content Include="SS\Admin Register Site.JPG" />
     <Content Include="SS\System Messages %28Inbox%29.JPG" />
     <Content Include="SS\Talent - Add New Skill Area.JPG" />
