@@ -41,8 +41,11 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer.png" />
  
  <p>About<p/>
- <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/About.png" />
+ <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/About.JPG" />
  
+   <p>Add About<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Add%20About.JPG" />
+  
  <p>Statistics<p/>
  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Statistics.png" />
  
@@ -94,8 +97,11 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
     <p>Talent - Add new Skills<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Add%20New%20Skills.JPG" />
   
+    <p>Hashing<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Hashing.JPG" />
  
-  
+    <p>Admin Register Panel<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Admin%20Register%20Site.JPG" />
   
 <!--
   <p><p/>
