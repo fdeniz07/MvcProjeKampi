@@ -26,12 +26,12 @@
                 <h3 class="title">Yetenekler</h3>
                 <td>
                     <div>
-                        <a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>
-                        <a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary"><i class="fas fa-pencil-alt"></i> Yetenekleri Güncelle</button></a>
+                        <a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary"  style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>
+                        <a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary"  style="color: white"><i class="fas fa-pencil-alt"></i> Yetenekleri Güncelle</button></a>
                     </div>
                 </td>
                 <br />
-                <div class="col-md-6 skills-right bar_group">
+                <div class="col-md-12 skills-right bar_group">
                     @foreach (var item in Model)
                     {
                         <div class='bar_group__bar thin' label=' @item.SkillArea.Area :&nbsp; @item.SkillName &nbsp;&nbsp; %@item.SkillLevel' value='@item.SkillLevel'></div>
