@@ -135,23 +135,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\AdminCategoryController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="Controllers\ContentController.cs" />
-    <Compile Include="Controllers\ErrorPageController.cs" />
-    <Compile Include="Controllers\GalleryController.cs" />
-    <Compile Include="Controllers\HeadingController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MessageController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\SkillAreaController.cs" />
-    <Compile Include="Controllers\StatisticController.cs" />
-    <Compile Include="Controllers\TalentController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\CategoryController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\ContactController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\ContentController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\GalleryController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\HeadingController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\HomeController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\LoginController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\MessageController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\RegisterController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\SkillAreaController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\StatisticController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\TalentController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\WriterController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelContollers\WriterPanelController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2611,6 +2612,10 @@
     <Content Include="Views\SkillArea\AddSkillArea.cshtml" />
     <Content Include="Views\SkillArea\Index.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
+    <Content Include="Views\WriterPanel\MyHeading.cshtml" />
+    <Content Include="Views\WriterPanel\NewHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

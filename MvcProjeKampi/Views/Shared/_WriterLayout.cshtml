@@ -19,8 +19,6 @@
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">
-
-
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
     <!-- IonIcons -->
@@ -50,7 +48,6 @@ to get the desired effect
                      style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminLTE 3</span>
             </a>
-
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
@@ -62,73 +59,24 @@ to get the desired effect
                         <a href="#" class="d-block">Alexander Pierce</a>
                     </div>
                 </div>
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-
-                        @if (User.IsInRole("B"))
-                        {
-            <li class="nav-item has-treeview">
-                <a href="/AdminCategory/Index/" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>
-                        Kategoriler
-                    </p>
-                </a>
-            </li>}
+                        <li class="nav-item has-treeview">
+                            <a href="/AdminCategory/Index" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Profilim
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <a href="/Heading/Index/" class="nav-link">
+                            <a href="/WriterPanel/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Başlıklar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Writer/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
-                                <p>
-                                    Yazarlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Grafikler
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Grafik 1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Grafik 2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Grafik 3</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/About/Index" class="nav-link">
-                                <i class="nav-icon fas fa-tree"></i>
-                                <p>
-                                    Hakkımızda
+                                    Başlıklarım
                                 </p>
                             </a>
                         </li>
@@ -136,7 +84,7 @@ to get the desired effect
                             <a href="/Contact/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
-                                    İletişim & Mesajlar
+                                    Mesajlar
                                 </p>
                             </a>
                         </li>
@@ -144,39 +92,7 @@ to get the desired effect
                             <a href="pages/calendar.html" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
-                                    Yetkilendirmeler
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Gallery/Index/" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
-                                <p>
-                                    Galeri
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Talent/Index/" class="nav-link">
-                                <i class="nav-icon far fa-skiing"></i>
-                                <p>
-                                    Yeteneklerim
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/ErrorPage/Page404/" class="nav-link">
-                                <i class="nav-icon far fa-envelope"></i>
-                                <p>
-                                    Hata Sayfaları
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Statistic/Index/" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Istatistikler
+                                    Yazılarım
                                 </p>
                             </a>
                         </li>
@@ -279,7 +195,9 @@ to get the desired effect
         $(function () {
             //Add text editor
             $('#compose-textarea').summernote()
-        })</script>
+        })
+    </script>
     @*@RenderSection("Editor", false)*@
 </body>
 </html>
+

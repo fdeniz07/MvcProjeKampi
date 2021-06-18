@@ -10,7 +10,7 @@ namespace MvcProjeKampi.Controllers
 {
     public class HeadingController : Controller
     {
-        // GET: Heading
+
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         WriterManager writerManager = new WriterManager(new EfWriterDal());
