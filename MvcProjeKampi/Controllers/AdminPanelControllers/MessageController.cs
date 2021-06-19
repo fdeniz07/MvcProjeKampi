@@ -60,7 +60,7 @@ namespace MvcProjeKampi.Controllers
             {
                 if (results.IsValid)
                 {
-                    message.SenderMail = "admin@gmail.com";
+                    message.SenderMail = "atilla@yahoo.com"; // Session'a baglanacak
                     //message.IsDraft = false;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);
@@ -79,7 +79,7 @@ namespace MvcProjeKampi.Controllers
             {
                 if (results.IsValid)
                 {
-                    message.SenderMail = "admin@gmail.com";
+                    message.SenderMail = "atilla@yahoo.com"; // Session'a baglanacak
                     message.IsDraft = true;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);

@@ -153,6 +153,7 @@
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelContollers\WriterPanelController.cs" />
+    <Compile Include="Controllers\WriterPanelContollers\WriterPanelMessageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2616,6 +2617,8 @@
     <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
     <Content Include="Views\WriterPanel\MyHeading.cshtml" />
     <Content Include="Views\WriterPanel\NewHeading.cshtml" />
+    <Content Include="Views\WriterPanel\EditHeading.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Inbox.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

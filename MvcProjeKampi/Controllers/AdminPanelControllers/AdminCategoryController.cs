@@ -28,10 +28,10 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AddCategory(Category category)
         {
             CategoryValidator categoryValidator = new CategoryValidator();
-            ValidationResult results = categoryValidator.Validate((category));
+            ValidationResult results = categoryValidator.Validate(category);
             if (results.IsValid)
             {
-                categoryManager.CategoryAdd((category));
+                categoryManager.CategoryAdd(category);
                 return RedirectToAction("Index");
             }
             else

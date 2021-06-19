@@ -41,7 +41,7 @@ namespace MvcProjeKampi.Controllers
             if (results.IsValid) // Dogrulama islemi gecerli ise;
             {
                 categoryManager.CategoryAdd(category);
-                return RedirectToAction("GetCategoryList"); //Ekleme islemini tamamladiktan sonra beni GetCategoryList metoda yönlendir
+                return RedirectToAction("GetCategoryList"); //Ekleme islemini tamamladiktan sonra beni GetCategoryList sayfasina yönlendir
             }
             else //Dogrulama islemi gecerli degilse;
             {

@@ -26,17 +26,17 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetListImportant()
         {
-            return _messageDal.List(x => x.IsImportant == true && x.ReceiverMail == "admin@gmail.com");
+            return _messageDal.List(x => x.IsImportant == true && x.ReceiverMail == "atilla@yahoo.com");
         }
 
         public List<Message> GetListInbox()
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com"); //ileride degistirilecek
+            return _messageDal.List(x => x.ReceiverMail == "atilla@yahoo.com"); //ileride Session'a baglanarak degistirilecek
         }
 
         public List<Message> GetListSendbox()
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == "atilla@yahoo.com");
         }
 
         public List<Message> GetListSpam()
@@ -51,17 +51,17 @@ namespace BusinessLayer.Concrete
 
         public List<Message> GetReadList()
         {
-            return _messageDal.List(x => x.IsRead == true && x.ReceiverMail == "admin@gmail.com");
+            return _messageDal.List(x => x.IsRead == true && x.ReceiverMail == "atilla@yahoo.com");
         }
 
         public List<Message> GetUnReadList()
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com" && x.IsRead == false);
+            return _messageDal.List(x => x.ReceiverMail == "atilla@yahoo.com" && x.IsRead == false);
         }
 
         public List<Message> IsDraft()
         {
-            return _messageDal.List(x => x.IsDraft == true);
+            return _messageDal.List(x => x.IsDraft == true && x.SenderMail == "atilla@yahoo.com");
         }
 
         public void MessageAdd(Message message)
