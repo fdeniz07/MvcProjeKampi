@@ -2619,6 +2619,16 @@
     <Content Include="Views\WriterPanel\NewHeading.cshtml" />
     <Content Include="Views\WriterPanel\EditHeading.cshtml" />
     <Content Include="Views\WriterPanelMessage\Inbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageMenu.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Sendbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\NewMessage.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetSendboxMessageDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetInboxMessageDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetDraftDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\DraftMessages.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageListFooterButton.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageList.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageListFooter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

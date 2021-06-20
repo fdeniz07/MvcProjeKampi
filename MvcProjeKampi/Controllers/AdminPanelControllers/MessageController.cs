@@ -162,5 +162,6 @@ namespace MvcProjeKampi.Controllers
             messageManager.MessageUpdate(messageValue);
             return RedirectToAction("Inbox");
         }
+
     }
 }
