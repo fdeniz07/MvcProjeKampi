@@ -84,10 +84,10 @@ namespace CoreLayer.Utilities.Cryptos.Hashing
                     }
                 }
 
-                var computedAdminMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
-                for (int i = 0; i < computedAdminMailHash.Length; i++)
+                var computedWriterMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
+                for (int i = 0; i < computedWriterMailHash.Length; i++)
                 {
-                    if (computedAdminMailHash[i] != writerMailHash[i])
+                    if (computedWriterMailHash[i] != writerMailHash[i])
                     {
                         return false;
                     }
@@ -96,21 +96,21 @@ namespace CoreLayer.Utilities.Cryptos.Hashing
             }
         }
 
-        public static bool WriterVerifyPasswordHash(string writerMail, byte[] writerMailHash)
-        {
-            using (var hmac = new System.Security.Cryptography.HMACSHA512())
-            {
-                var computedAdminMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
-                for (int i = 0; i < computedAdminMailHash.Length; i++)
-                {
-                    if (computedAdminMailHash[i] != writerMailHash[i])
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
+        //public static bool WriterVerifyPasswordHash(string writerMail, byte[] writerMailHash)
+        //{
+        //    using (var hmac = new System.Security.Cryptography.HMACSHA512())
+        //    {
+        //        var computedWriterMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
+        //        for (int i = 0; i < computedWriterMailHash.Length; i++)
+        //        {
+        //            if (computedWriterMailHash[i] != writerMailHash[i])
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //        return true;
+        //    }
+        //}
     }
 }
 

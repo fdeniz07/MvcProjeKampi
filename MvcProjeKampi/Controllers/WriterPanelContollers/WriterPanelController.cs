@@ -15,32 +15,30 @@ namespace MvcProjeKampi.Controllers
     {
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-        WriterManager writerManager = new WriterManager(new EfWriterDal());
+
         Context context = new Context();
 
-
+        int writerId;
 
         public ActionResult WriterProfile()
         {
             return View();
         }
 
-        public ActionResult MyHeading()
-        {
-            int id = 6; // --> Ileride buraya session gelecek
-            List<Heading> values = headingManager.GetListByWriterId(id).ToList();
-            return View(values);
-        }
-
-        //public ActionResult MyHeading(string session)
+        //public ActionResult MyHeading()
         //{
-        //    session = (string)Session["WriterEmail"];
-        //    var writerId = context.Writers.Where(x => x.WriterMail == session).Select(x => x.WriterId).FirstOrDefault();
-        //    var values = headingManager.GetListByWriterId(writerId);
+        //    int id = 6; // --> Ileride buraya session gelecek
+        //    List<Heading> values = headingManager.GetListByWriterId(id).ToList();
         //    return View(values);
         //}
 
-
+        public ActionResult MyHeading(string session)
+        {
+            session = (string)Session["WriterEmail"];
+            writerId = context.Writers.Where(x => x.WriterMail.ToString() == session).Select(x => x.WriterId).FirstOrDefault();
+            var values = headingManager.GetListByWriterId(writerId);
+            return View(values);
+        }
 
         [HttpGet]
         public ActionResult NewHeading()
@@ -62,10 +60,10 @@ namespace MvcProjeKampi.Controllers
             ValidationResult results = headingValidator.Validate(heading);
 
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterId = 6; // --> Ileride buraya session gelecek
+            heading.WriterId =writerId; 
             heading.HeadingStatus = true; // Yazar yeni baslik eklediginde baslangic degeri aktif olarak gelecek
 
-            if (results.IsValid) 
+            if (results.IsValid)
             {
                 headingManager.HeadingAdd(heading);
                 return RedirectToAction("MyHeading");
@@ -104,9 +102,18 @@ namespace MvcProjeKampi.Controllers
         public ActionResult DeleteHeading(int id)
         {
             var headingValue = headingManager.GetByIdHeading(id);
-            headingValue.HeadingStatus = false;
+
+            if (headingValue.HeadingStatus)
+            {
+                headingValue.HeadingStatus = false;
+            }
+            else
+            {
+                headingValue.HeadingStatus = true;
+            }
             headingManager.HeadingDelete(headingValue);
             return RedirectToAction("MyHeading");
+
         }
     }
 }

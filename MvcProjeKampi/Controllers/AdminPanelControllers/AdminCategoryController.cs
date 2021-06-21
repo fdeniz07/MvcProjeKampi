@@ -7,11 +7,12 @@ using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
+    [Authorize(Roles = "B")] // Sadece "B" rolüne sahip kisiler görüntüleyebilsin
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal()); //Ileride Enttiy Framework'den vazgecilirse burasi degistirilebilir
        
-        [Authorize(Roles = "B")] // Sadece "B" rolüne sahip kisiler görüntüleyebilsin
+        
         public ActionResult Index()
         {
             var categoryValues = categoryManager.GetList();

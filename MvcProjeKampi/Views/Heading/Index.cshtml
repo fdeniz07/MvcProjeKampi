@@ -6,7 +6,8 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @{ string color = "";}
-
+@*@{ string status = "";}*@
+@{ string buttonTyp = "";}
 
 <!DOCTYPE html>
 <html>
@@ -141,7 +142,6 @@
                                         }
                                         else
                                         {
-
                                             <b style="color: red">Pasif</b>
                                         }
                                     }
@@ -161,23 +161,34 @@
                                         Düzenle
                                     </a>
                                     <a class="btn" href="/Heading/DeleteHeading/@item.HeadingId">
-                                        <i class="fas fa-trash">
-                                        </i>
+                                        <i class="fas fa-trash"></i>
                                         @{
                                             string status = "";
                                             string statusColor = "";
 
-                                            switch (item.HeadingStatus)
+                                            if (item.HeadingStatus == true)
                                             {
-                                                case true:
-                                                    statusColor = "badge badge-success";
-                                                    status = "Aktif";
-                                                    break;
-                                                case false:
-                                                    statusColor = "badge badge-danger";
-                                                    status = "Pasif";
-                                                    break;
+                                                status = "Pasif Yap";
+                                                buttonTyp = "btn btn-danger";
+                                                statusColor = "badge badge-success";
                                             }
+                                            if (item.HeadingStatus == false)
+                                            {
+                                                status = "Aktif Yap";
+                                                buttonTyp = "btn btn-success";
+                                                statusColor = "badge badge-danger";
+                                            }
+                                            //switch (item.HeadingStatus)
+                                            //{
+                                            //    case true:
+                                            //        statusColor = "badge badge-success";
+                                            //        status = "Aktif";
+                                            //        break;
+                                            //    case false:
+                                            //        statusColor = "badge badge-danger";
+                                            //        status = "Pasif";
+                                            //        break;
+                                            //}
                                             <span class="@statusColor">@status</span>
                                         }
                                     </a>
@@ -194,29 +205,3 @@
 </body>
 </html>
 <a href="/Heading/AddHeading/" class="btn btn-primary">Yeni  Başlık Girişi</a>
-
-
-
-
-
-
-@*<br />
-    <h2>Başlıklar Sayfası</h2>
-    <br/>
-    <table class="table table-bordered">
-        <tr>
-            <th>ID</th>
-            <th>Başlık</th>
-            <th>Kategori</th>
-        </tr>
-        @foreach (var item in Model)
-                                        {
-            <tr>
-                <td>@item.HeadingId</td>
-                <td>@item.HeadingName</td>
-                <td>@item.Category.CategoryName</td>
-            </tr>
-        }
-    </table>
-    <br/>
-    <a href="/Heading/AddHeading" class="btn btn-info">Yeni Başlık Girişi</a>*@

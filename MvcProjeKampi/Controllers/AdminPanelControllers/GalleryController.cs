@@ -4,6 +4,7 @@ using DataAccessLayer.EntityFramework;
 
 namespace MvcProjeKampi.Controllers
 {
+ 
     public class GalleryController : Controller
     {
         ImageFileManager imageFileManager = new ImageFileManager(new EfImageFileDal());

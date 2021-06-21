@@ -11,7 +11,7 @@ using System.Web.Security;
 
 namespace MvcProjeKampi.Controllers
 {
-    [AllowAnonymous]
+    [AllowAnonymous] //Proje bazinda olusturulan kurallardan muaf tutuyor. Sadece bulundugu sayfa.
     public class LoginController : Controller
     {
 
@@ -71,6 +71,26 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+        //[HttpPost]
+        //public ActionResult WriterLogIn(Writer writer)
+        //{
+        //    Context context = new Context(); // Kurumsal mimari yapisina dönüstürülecek (ödev)
+        //    var writerUser = context.Writers.FirstOrDefault(x =>
+        //        x.WriterMail == writer.WriterMail && x.WriterPasswordSalt == writer.WriterPasswordSalt);
+
+        //    if (writerUser != null)
+        //    {
+        //        FormsAuthentication.SetAuthCookie(writerUser.WriterMail.ToString(), false); //Sisteme giriş yapan yazarin form bilgileri buradan alınır.                                                                                                         Buradaki false değeri ise, kalıcı bir cookie değerinin                                                                                                             olmayacağını belirtir.
+
+        //        Session["WriterMail"] = writerUser.WriterMail; //Oturum yönetimi kodu yazılır. Session içerisinde yazılacak değer; köşeli parantez içerisine(sisteme giriş                                                          yapan kullanıcının mail adresi gerekli) yazılır
+        //        return RedirectToAction("MyContent", "WriterPanelContent");
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("WriterLogin");
+        //    }
+        //}
+
         [HttpPost]
         public ActionResult WriterLogIn(WriterLogInDto writerLogInDto)
         {
@@ -93,22 +113,6 @@ namespace MvcProjeKampi.Controllers
                 ViewData["ErrorMessage"] = "Kullanıcı adı veya Parola yanlış";
                 return RedirectToAction("WriterLogin");
             }
-
-            //Context context = new Context(); // Kurumsal mimari yapisina dönüstürülecek (ödev)
-            //var writerUser = context.Writers.FirstOrDefault(x =>
-            //    x.WriterMail == writer.WriterMail && x.WirterPassword == writer.writerPassword);
-
-            //if (writerUser != null)
-            //{
-            //    FormsAuthentication.SetAuthCookie(writerUser.WriterMail, false); //Sisteme giriş yapan yazarin form bilgileri buradan alınır. Buradaki false değeri ise, kalıcı bir cookie değerinin olmayacağını belirtir.
-
-            //    Session["WriterMail"] = writerUser.WriterMail; //Oturum yönetimi kodu yazılır. Session içerisinde yazılacak değer; köşeli parantez içerisine(sisteme giriş yapan kullanıcının mail adresi gerekli) yazılır
-            //    return RedirectToAction("MyContent", "WriterPanelContent");
-            //}
-            //else
-            //{
-            //    return RedirectToAction("WriterLogin");
-            //}
         }
 
         public ActionResult WriterLogOut()

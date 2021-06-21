@@ -12,7 +12,7 @@ namespace BusinessLayer.Concrete
         IAdminService _adminService;
         IWriterService _writerService;
 
-        public AuthManager(IAdminService adminService,IWriterService writerService)
+        public AuthManager(IAdminService adminService, IWriterService writerService)
         {
             _adminService = adminService;
             _writerService = writerService;
@@ -51,6 +51,8 @@ namespace BusinessLayer.Concrete
             _adminService.AdminAdd(admin);
         }
 
+        //------------------------- WRITER -----------------------------\\
+
         public bool WriterLogIn(WriterLogInDto writerLogInDto)
         {
             using (var crypto = new System.Security.Cryptography.HMACSHA512())
@@ -59,7 +61,7 @@ namespace BusinessLayer.Concrete
                 var writer = _writerService.GetList();
                 foreach (var item in writer)
                 {
-                    if (HashingHelper.AdminVerifyPasswordHash(writerLogInDto.WriterMail, writerLogInDto.WriterPassword, item.WriterMail,
+                    if (HashingHelper.WriterVerifyPasswordHash(writerLogInDto.WriterMail, writerLogInDto.WriterPassword, item.WriterMail,
                         item.WriterPasswordHash, item.WriterPasswordSalt))
                     {
                         return true;
@@ -69,18 +71,26 @@ namespace BusinessLayer.Concrete
             }
         }
 
-        public void WriterRegister(string writerUserName, string writerMail, string password)
+        public void WriterRegister(string writerName, string writerSurName, string writerTitle, string writerAbout, string writerImage, string writerUserName, string writerMail, string password, bool WriterStatus)
         {
             byte[] mailHash, passwordHash, passwordSalt;
-            HashingHelper.AdminCreatePasswordHash(writerMail, password, out mailHash, out passwordHash, out passwordSalt);
+            HashingHelper.WriterCreatePasswordHash(writerMail, password, out mailHash, out passwordHash, out passwordSalt);
             var writer = new Writer
             {
+                WriterName = writerName,
+                WriterSurName = writerSurName,
+                WriterTitle = writerTitle,
+                WriterAbout = writerAbout,
+                WriterImage = writerImage,
                 WriterUserName = writerUserName,
                 WriterMail = mailHash,
                 WriterPasswordHash = passwordHash,
                 WriterPasswordSalt = passwordSalt,
+                WriterStatus = WriterStatus
             };
             _writerService.WriterAdd(writer);
         }
     }
 }
+//string writerName, string writerSurName, string writerTitle, string writerAbout, string writerImage, 
+//, bool WriterStatus

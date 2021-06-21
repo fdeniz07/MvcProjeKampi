@@ -45,9 +45,9 @@ namespace BusinessLayer.Concrete
             return _contentDal.List(x => x.HeadingId == id); // Dışarıdan gönderilen id,ye göre listeleme yapacak
         }
 
-        public List<Content> GetListByWriter()
+        public List<Content> GetListByWriter(int id)
         {
-            return _contentDal.List(x => x.WriterId == 6); //Ileride bu kisim session islemine baglanacaktir
+            return _contentDal.List(x => x.WriterId == id); 
         }
     }
 }
