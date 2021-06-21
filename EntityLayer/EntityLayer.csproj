@@ -83,7 +83,8 @@
     <Compile Include="Concrete\SkillArea.cs" />
     <Compile Include="Concrete\Talent.cs" />
     <Compile Include="Concrete\Writer.cs" />
-    <Compile Include="Dto\LoginDto.cs" />
+    <Compile Include="Dto\AdminLogInDto.cs" />
+    <Compile Include="Dto\WriterLogInDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
