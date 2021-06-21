@@ -149,6 +149,7 @@
     <Compile Include="Controllers\AdminPanelControllers\TalentController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\WriterController.cs" />
+    <Compile Include="Controllers\WriterPanelContollers\DefaultController.cs" />
     <Compile Include="Controllers\WriterPanelContollers\WriterPanelContentController.cs" />
     <Compile Include="Controllers\WriterPanelContollers\WriterPanelController.cs" />
     <Compile Include="Controllers\WriterPanelContollers\WriterPanelMessageController.cs" />
@@ -2656,6 +2657,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EntityLayer.Dto.AdminLogInDto
+@{
     Layout = null;
 }
 
@@ -26,6 +27,7 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(/Themes/login-form-19/images/bg.jpg);"></div>
                         <h3 class="text-center mb-0">Hoşgeldiniz</h3>
                         <p class="text-center">Lütfen bilgilerinizi kutucuklara giriniz</p>
+                        <p class="text-center" style="color: red">@ViewData["ErrorMessage"]</p>
                         @using (Html.BeginForm("AdminLogIn", "LogIn", FormMethod.Post))
                         {
                             <div class="form-group">
@@ -37,7 +39,7 @@
                                 <input type="password" class="form-control" name="AdminPassword" placeholder="******" required>
                             </div>
                             <div class="form-group d-md-flex">
-                                <div class="w-100 text-md-left"><a href="#">Şifremi Unuttum</a></div> 
+                                <div class="w-100 text-md-left"><a href="#">Şifremi Unuttum</a></div>
                                 <div class="w-100 text-md-right"><a href="/Register/Index/">Kayıt Ol</a></div>
                             </div>
                             <div class="form-group">
