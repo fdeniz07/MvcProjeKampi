@@ -9,6 +9,7 @@ namespace MvcProjeKampi.Roles
     public class AdminRoleProvider : RoleProvider
     {
         AdminManager adminManager = new AdminManager(new EfAdminDal());
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
 
         public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -37,23 +38,72 @@ namespace MvcProjeKampi.Roles
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string adminMail)
+        public override string[] GetRolesForUser(string mail)
         {
+            #region Eski Kodlar
+            //Context context = new Context();
+            //var result = context.Admins.FirstOrDefault(x => x.AdminMail.ToString() == mail);
+            //var resultWriter = context.Writers.FirstOrDefault(x => x.WriterMail.ToString() == mail);
+
+            //if (result != null)
+            //{
+            //    return new string[] { result.AdminRole };
+            //}
+            //else if (resultWriter != null)
+            //{
+            //    return new string[] { resultWriter.WriterRole };
+            //}
+            //return new string[] { };
+            #endregion
+
             using (var crypto = new System.Security.Cryptography.HMACSHA512())
             {
-                var adminMailCrypto = crypto.ComputeHash(Encoding.UTF8.GetBytes(adminMail));
+                var mailCrypto = crypto.ComputeHash(Encoding.UTF8.GetBytes(mail));
                 var admin = adminManager.GetList();
-                foreach (var item in admin)
+                var writer = writerManager.GetList();
+
+                if (admin != null)
                 {
-                    for (int i = 0; i < adminMailCrypto.Length; i++)
+                    foreach (var item in admin)
                     {
-                        if (adminMailCrypto[i] == item.AdminMail[i])
+                        for (int i = 0; i < mailCrypto.Length; i++)
                         {
-                            return new string[] { item.AdminRole };
+                            if (mailCrypto[i] == item.AdminMail[i])
+                            {
+                                return new string[] { item.AdminRole };
+                            }
                         }
                     }
                 }
-                return new string[] { };
+                else if (writer != null)
+                {
+                    foreach (var item in writer)
+                    {
+                        for (int i = 0; i < mailCrypto.Length; i++)
+                        {
+                            if (mailCrypto[i] == item.WriterMail[i])
+                            {
+                                return new string[] { item.WriterRole };
+                            }
+                        }
+                    }
+                }
+                
+                
+                    return new string[] { };
+                
+
+                //foreach (var item in admin)
+                //{
+                //    for (int i = 0; i < mailCrypto.Length; i++)
+                //    {
+                //        if (mailCrypto[i] == item.AdminMail[i])
+                //        {
+                //            return new string[] { item.AdminRole };
+                //        }
+                //    }
+                //}
+                //return new string[] { };
             }
 
             //Bu metot, kullanıcılar için rol alma işine yarar  // Bu alan kurumsal mimariye uygun hale getirilecek (Ödev)

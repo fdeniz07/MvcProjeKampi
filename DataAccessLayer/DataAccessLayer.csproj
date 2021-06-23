@@ -77,49 +77,13 @@
     <Compile Include="EntityFramework\EfSkillAreaDal.cs" />
     <Compile Include="EntityFramework\EfTalentDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
-    <Compile Include="Migrations\202106091418149_recreate_database.cs" />
-    <Compile Include="Migrations\202106091418149_recreate_database.designer.cs">
-      <DependentUpon>202106091418149_recreate_database.cs</DependentUpon>
+    <Compile Include="Migrations\202106222102081_add_createAllTables.cs" />
+    <Compile Include="Migrations\202106222102081_add_createAllTables.designer.cs">
+      <DependentUpon>202106222102081_add_createAllTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106111430318_mig_addingimage_file.cs" />
-    <Compile Include="Migrations\202106111430318_mig_addingimage_file.designer.cs">
-      <DependentUpon>202106111430318_mig_addingimage_file.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106121846496_mig_addedAbout_status.cs" />
-    <Compile Include="Migrations\202106121846496_mig_addedAbout_status.designer.cs">
-      <DependentUpon>202106121846496_mig_addedAbout_status.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106122110544_mig_addedMessage_isRead.cs" />
-    <Compile Include="Migrations\202106122110544_mig_addedMessage_isRead.designer.cs">
-      <DependentUpon>202106122110544_mig_addedMessage_isRead.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106122112447_mig_addedMessage_isImportant.cs" />
-    <Compile Include="Migrations\202106122112447_mig_addedMessage_isImportant.designer.cs">
-      <DependentUpon>202106122112447_mig_addedMessage_isImportant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106122113428_mig_addedMessage_isSpam.cs" />
-    <Compile Include="Migrations\202106122113428_mig_addedMessage_isSpam.designer.cs">
-      <DependentUpon>202106122113428_mig_addedMessage_isSpam.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.cs" />
-    <Compile Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.designer.cs">
-      <DependentUpon>202106122115565_mig_addedContact_isRead_isImportant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106151212004_added_skillarea.cs" />
-    <Compile Include="Migrations\202106151212004_added_skillarea.designer.cs">
-      <DependentUpon>202106151212004_added_skillarea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106161124276_add_admin.cs" />
-    <Compile Include="Migrations\202106161124276_add_admin.designer.cs">
-      <DependentUpon>202106161124276_add_admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106161125098_add_admin1.cs" />
-    <Compile Include="Migrations\202106161125098_add_admin1.designer.cs">
-      <DependentUpon>202106161125098_add_admin1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106210751038_mig_writerPasswordHashing.cs" />
-    <Compile Include="Migrations\202106210751038_mig_writerPasswordHashing.designer.cs">
-      <DependentUpon>202106210751038_mig_writerPasswordHashing.cs</DependentUpon>
+    <Compile Include="Migrations\202106230708368_mig_changeWriterMail.cs" />
+    <Compile Include="Migrations\202106230708368_mig_changeWriterMail.designer.cs">
+      <DependentUpon>202106230708368_mig_changeWriterMail.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,38 +99,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106091418149_recreate_database.resx">
-      <DependentUpon>202106091418149_recreate_database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106222102081_add_createAllTables.resx">
+      <DependentUpon>202106222102081_add_createAllTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106111430318_mig_addingimage_file.resx">
-      <DependentUpon>202106111430318_mig_addingimage_file.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106121846496_mig_addedAbout_status.resx">
-      <DependentUpon>202106121846496_mig_addedAbout_status.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106122110544_mig_addedMessage_isRead.resx">
-      <DependentUpon>202106122110544_mig_addedMessage_isRead.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106122112447_mig_addedMessage_isImportant.resx">
-      <DependentUpon>202106122112447_mig_addedMessage_isImportant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106122113428_mig_addedMessage_isSpam.resx">
-      <DependentUpon>202106122113428_mig_addedMessage_isSpam.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106122115565_mig_addedContact_isRead_isImportant.resx">
-      <DependentUpon>202106122115565_mig_addedContact_isRead_isImportant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106151212004_added_skillarea.resx">
-      <DependentUpon>202106151212004_added_skillarea.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106161124276_add_admin.resx">
-      <DependentUpon>202106161124276_add_admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106161125098_add_admin1.resx">
-      <DependentUpon>202106161125098_add_admin1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106210751038_mig_writerPasswordHashing.resx">
-      <DependentUpon>202106210751038_mig_writerPasswordHashing.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202106230708368_mig_changeWriterMail.resx">
+      <DependentUpon>202106230708368_mig_changeWriterMail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

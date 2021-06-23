@@ -10,8 +10,8 @@ namespace EntityLayer.Concrete
         [StringLength(50)]
         public string AdminUserName { get; set; }
 
-
-        public byte[] AdminMail { get; set; }
+        //public string  AdminMail { get; set; }
+        public byte[] AdminMail { get; set; } //-->Session da hashleme problemi oluyor
 
         public byte[] AdminPasswordHash { get; set; }
 

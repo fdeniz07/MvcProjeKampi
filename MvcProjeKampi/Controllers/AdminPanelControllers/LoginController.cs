@@ -14,7 +14,6 @@ namespace MvcProjeKampi.Controllers
     [AllowAnonymous] //Proje bazinda olusturulan kurallardan muaf tutuyor. Sadece bulundugu sayfa.
     public class LoginController : Controller
     {
-
         IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()), new WriterManager(new EfWriterDal()));
 
         Context context = new Context();
@@ -28,7 +27,15 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult AdminLogIn(AdminLogInDto adminLogInDto)
         {
-            if (authService.AdminLogIn(adminLogInDto))
+            var response = Request["g-recaptcha-response"];
+            const string secret = "6Lc9zzgbAAAAAFBGD3Gb201yvNAX4Tb5LAzlqy0d";
+            var client = new WebClient();
+            var reply =
+                client.DownloadString(
+                    string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
+            var captchaResponse = JsonConvert.DeserializeObject<CaptchaResult>(reply);
+
+            if (authService.AdminLogIn(adminLogInDto) && captchaResponse.Success)
             {
                 FormsAuthentication.SetAuthCookie(adminLogInDto.AdminMail, false);
                 Session["AdminMail"] = adminLogInDto.AdminMail;
@@ -39,6 +46,7 @@ namespace MvcProjeKampi.Controllers
                 ViewData["ErrorMessage"] = "Kullanıcı adı veya Parola yanlış";
                 return View();
             }
+            #region Eski Kodlar
             //Context context = new Context(); // Kurumsal mimari yapisina dönüstürülecek (ödev)
             //var adminUser = context.Admins.FirstOrDefault(x =>
             //    x.AdminMail == admin.AdminMail && x.AdminPassword == admin.AdminPassword);
@@ -55,6 +63,7 @@ namespace MvcProjeKampi.Controllers
             //    return RedirectToAction("Index");
             //}
             //return View();
+            #endregion
         }
 
         public ActionResult AdminLogOut()
@@ -71,6 +80,7 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
+        #region Eski Kodlar
         //[HttpPost]
         //public ActionResult WriterLogIn(Writer writer)
         //{
@@ -90,6 +100,7 @@ namespace MvcProjeKampi.Controllers
         //        return RedirectToAction("WriterLogin");
         //    }
         //}
+        #endregion
 
         [HttpPost]
         public ActionResult WriterLogIn(WriterLogInDto writerLogInDto)
@@ -105,7 +116,7 @@ namespace MvcProjeKampi.Controllers
             if (authService.WriterLogIn(writerLogInDto) && captchaResponse.Success)
             {
                 FormsAuthentication.SetAuthCookie(writerLogInDto.WriterMail, false);
-                Session["WriterEmail"] = writerLogInDto.WriterMail;
+                Session["WriterMail"] = writerLogInDto.WriterMail;
                 return RedirectToAction("MyContent", "WriterPanelContent");
             }
             else

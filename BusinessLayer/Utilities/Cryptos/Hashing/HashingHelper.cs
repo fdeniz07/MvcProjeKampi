@@ -61,17 +61,17 @@ namespace CoreLayer.Utilities.Cryptos.Hashing
 
         //----------------------------------- WRITER --------------------------------------------\\
 
-        public static void WriterCreatePasswordHash(string writerMail, string password, out byte[] writerMailHash, out byte[] passwordHash, out byte[] passwordSalt)
+        public static void WriterCreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
                 passwordSalt = hmac.Key;
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
-                writerMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
+               // writerMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
             }
         }
 
-        public static bool WriterVerifyPasswordHash(string writerMail, string password, byte[] writerMailHash, byte[] passwordHash, byte[] passwordSalt)
+        public static bool WriterVerifyPasswordHash( string password,  byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
             {
@@ -84,14 +84,14 @@ namespace CoreLayer.Utilities.Cryptos.Hashing
                     }
                 }
 
-                var computedWriterMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
-                for (int i = 0; i < computedWriterMailHash.Length; i++)
-                {
-                    if (computedWriterMailHash[i] != writerMailHash[i])
-                    {
-                        return false;
-                    }
-                }
+                //var computedWriterMailHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(writerMail));
+                //for (int i = 0; i < computedWriterMailHash.Length; i++)
+                //{
+                //    if (computedWriterMailHash[i] != writerMailHash[i])
+                //    {
+                //        return false;
+                //    }
+                //}
                 return true;
             }
         }

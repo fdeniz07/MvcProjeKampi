@@ -1,13 +1,14 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules;
+using BusinessLayer.ValidationRules.FluentValidation;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using BusinessLayer.ValidationRules.FluentValidation;
-using DataAccessLayer.Concrete;
-using FluentValidation.Results;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,15 +16,20 @@ namespace MvcProjeKampi.Controllers
     {
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        WriterManager writerManager = new WriterManager(new EfWriterDal());
+
+        HeadingValidator headingValidator = new HeadingValidator();
+        WriterValidator writerValidator = new WriterValidator();
 
         Context context = new Context();
 
-        int writerId;
-
-        public ActionResult WriterProfile()
+        [HttpGet]
+        public ActionResult WriterProfile() //Düzenlenecek
         {
             return View();
         }
+
+        #region Eski Kodlar (Session Öncesi)
 
         //public ActionResult MyHeading()
         //{
@@ -32,11 +38,14 @@ namespace MvcProjeKampi.Controllers
         //    return View(values);
         //}
 
+        #endregion
+
         public ActionResult MyHeading(string session)
         {
-            session = (string)Session["WriterEmail"];
-            writerId = context.Writers.Where(x => x.WriterMail.ToString() == session).Select(x => x.WriterId).FirstOrDefault();
-            var values = headingManager.GetListByWriterId(writerId);
+            session = (string)Session["WriterMail"];
+            var writerIdInfo = context.Writers.Where(x => x.WriterMail == session).Select(y => y.WriterId).FirstOrDefault();
+            //ViewBag.d = writerIdInfo;
+            var values = headingManager.GetListByWriterId(writerIdInfo);
             return View(values);
         }
 
@@ -56,12 +65,19 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult NewHeading(Heading heading)
         {
-            HeadingValidator headingValidator = new HeadingValidator();
             ValidationResult results = headingValidator.Validate(heading);
 
+            string writerMailInfo = (string)Session["WriterMail"];
+            var writerIdInfo = context.Writers.Where(x => x.WriterMail == writerMailInfo)
+                .Select(y => y.WriterId).FirstOrDefault();
+
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterId =writerId; 
+            heading.WriterId = writerIdInfo;
             heading.HeadingStatus = true; // Yazar yeni baslik eklediginde baslangic degeri aktif olarak gelecek
+
+            heading.WriterId = writerIdInfo;
+            //headingManager.HeadingAdd(heading);
+            //return RedirectToAction("MyHeading");
 
             if (results.IsValid)
             {
@@ -111,9 +127,29 @@ namespace MvcProjeKampi.Controllers
             {
                 headingValue.HeadingStatus = true;
             }
+
             headingManager.HeadingDelete(headingValue);
             return RedirectToAction("MyHeading");
 
         }
+
+        public ActionResult AllHeadings()
+        {
+            var headings = headingManager.GetList();
+            return View(headings);
+        }
+
+        #region BinaryToString(string mail)
+        //public static string BinaryToString(string mail)
+        //{
+        //    List<Byte> byteList = new List<Byte>();
+        //    for (int i = 0; i < mail.Length; i += 8)
+        //    {
+        //        byteList.Add(Convert.ToByte(mail.Substring(i, 8), 2));
+        //    }
+        //    return Encoding.ASCII.GetString(byteList.ToArray());
+        //}
+        #endregion
+
     }
 }

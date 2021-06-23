@@ -1,13 +1,25 @@
 ﻿using System.Web.Mvc;
+using BusinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
 
 namespace MvcProjeKampi.Controllers.WriterPanelContollers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
-        // GET: Default
-        public ActionResult Index()
+        HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
+        ContentManager contentManager = new ContentManager(new EfContentDal());
+
+        public ActionResult Headings()
         {
-            return View();
+            var headingList = headingManager.GetList();
+            return View(headingList);
+        }
+
+        public PartialViewResult Index(int id=0)
+        {
+            var contentList = contentManager.GetListByHeadingId(id);
+            return PartialView(contentList);
         }
     }
 }

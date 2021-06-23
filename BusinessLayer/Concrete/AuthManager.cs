@@ -57,11 +57,11 @@ namespace BusinessLayer.Concrete
         {
             using (var crypto = new System.Security.Cryptography.HMACSHA512())
             {
-                var mailHash = crypto.ComputeHash(Encoding.UTF8.GetBytes(writerLogInDto.WriterMail));
+                //var mailHash = crypto.ComputeHash(Encoding.UTF8.GetBytes(writerLogInDto.WriterMail));
                 var writer = _writerService.GetList();
                 foreach (var item in writer)
                 {
-                    if (HashingHelper.WriterVerifyPasswordHash(writerLogInDto.WriterMail, writerLogInDto.WriterPassword, item.WriterMail,
+                    if (HashingHelper.WriterVerifyPasswordHash( writerLogInDto.WriterPassword, 
                         item.WriterPasswordHash, item.WriterPasswordSalt))
                     {
                         return true;
@@ -74,7 +74,7 @@ namespace BusinessLayer.Concrete
         public void WriterRegister(string writerName, string writerSurName, string writerTitle, string writerAbout, string writerImage, string writerUserName, string writerMail, string password, bool WriterStatus)
         {
             byte[] mailHash, passwordHash, passwordSalt;
-            HashingHelper.WriterCreatePasswordHash(writerMail, password, out mailHash, out passwordHash, out passwordSalt);
+            HashingHelper.WriterCreatePasswordHash(password, out passwordHash, out passwordSalt);
             var writer = new Writer
             {
                 WriterName = writerName,
@@ -83,7 +83,7 @@ namespace BusinessLayer.Concrete
                 WriterAbout = writerAbout,
                 WriterImage = writerImage,
                 WriterUserName = writerUserName,
-                WriterMail = mailHash,
+                WriterMail = writerMail,
                 WriterPasswordHash = passwordHash,
                 WriterPasswordSalt = passwordSalt,
                 WriterStatus = WriterStatus

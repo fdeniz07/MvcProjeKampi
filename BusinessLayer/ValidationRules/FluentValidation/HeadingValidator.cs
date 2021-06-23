@@ -9,8 +9,8 @@ namespace BusinessLayer.ValidationRules.FluentValidation
         {
             RuleFor(x => x.HeadingName).NotEmpty().WithMessage("Başlık adını boş geçemezsiniz!");
             RuleFor(x => x.HeadingName).NotNull().WithMessage("Başlık adını boş geçemezsiniz!");
-            RuleFor(x => x.HeadingName).MinimumLength(3).WithMessage("Lütfen en az 3 karakter girişi yapınız!");
-            RuleFor(x => x.HeadingName).MaximumLength(100).WithMessage("Lütfen 50 karakterden fazla değer girişi yapmayınız!");
+            RuleFor(x => x.HeadingName).MinimumLength(3).WithMessage("Başlık adına en az 3 karakter girişi yapınız!");
+            RuleFor(x => x.HeadingName).MaximumLength(32).WithMessage("Başlık adına 32 karakterden fazla değer girişi yapmayınız!");
         }
     }
 }

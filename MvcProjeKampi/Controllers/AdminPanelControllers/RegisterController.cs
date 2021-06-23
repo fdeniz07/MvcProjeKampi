@@ -6,6 +6,7 @@ using EntityLayer.Dto;
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class RegisterController : Controller
     {
 

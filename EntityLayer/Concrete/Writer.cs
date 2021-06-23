@@ -23,7 +23,8 @@ namespace EntityLayer.Concrete
         [StringLength(250)]
         public string WriterAbout { get; set; }
 
-        public byte[] WriterMail { get; set; }
+        public string WriterMail { get; set; }
+        //public byte[] WriterMail { get; set; } //--> mail icin hash leme session de sorun yaratiyor
 
         public byte[] WriterPasswordHash { get; set; }
 
@@ -33,6 +34,8 @@ namespace EntityLayer.Concrete
         public string WriterTitle { get; set; }
 
         public bool WriterStatus { get; set; }
+
+        public string WriterRole { get; set; }
 
         public ICollection<Heading> Headings { get; set; } // Bir yazarin birden fazla basligi olabilir
         public ICollection<Content> Contents { get; set; } // Bir yazarin birden fazla icerigi olabilir
