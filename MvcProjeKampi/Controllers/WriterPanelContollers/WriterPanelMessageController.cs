@@ -6,6 +6,8 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers.WriterPanelContollers
 {
@@ -14,9 +16,9 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messagerValidator = new MessageValidator();
 
-        public ActionResult Inbox()
+        public ActionResult Inbox(int? page)
         {
-            var messageListInbox = messageManager.GetListInbox();
+            var messageListInbox = messageManager.GetListInbox().ToPagedList(page ?? 1, 10); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(messageListInbox);
         }
 

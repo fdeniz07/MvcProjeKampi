@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,9 +16,9 @@ namespace MvcProjeKampi.Controllers
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         WriterManager writerManager = new WriterManager(new EfWriterDal());
 
-        public ActionResult Index()
+        public ActionResult Index(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {
-            var headingValues = headingManager.GetList();
+            var headingValues = headingManager.GetList().ToPagedList(page ?? 1, 10); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(headingValues);
         }
 

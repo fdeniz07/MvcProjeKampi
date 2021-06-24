@@ -1,5 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<Message>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Message>
+@*@model List<Message>*@
 @{ ViewBag.Title = "Inbox";
     Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
@@ -67,7 +70,8 @@
                         </td>
                         <td class="mailbox-attachment"></td>
                         <td class="mailbox-date"><b>@(((DateTime) item.MessageDate).ToString("dd-MMM-yyyy"))</b></td>
-                    </tr>}
+                    </tr>
+}
                             </tbody>
                         </table>
                     </div>
@@ -80,3 +84,18 @@
     </section>
 </body>
 </html>
+
+@* !!! ÖNEMLI NOT !!!!
+    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.
+    Bu islemi yaparsak asagida yazilacak komuta ihtiyac kalmaz.
+*@
+
+@* Asagidaki alan sayfalama isleminde sayfalarinda altinda sayfa numarasi gecislerini cözmektedir. *@
+
+@*@Html.PagedListPager((IPagedList)Model, page => Url.Action("AllHeadings", new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        {"page-link"}
+    })*@
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Inbox", new { page }))

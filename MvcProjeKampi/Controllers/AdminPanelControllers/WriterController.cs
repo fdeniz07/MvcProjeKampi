@@ -4,6 +4,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -12,9 +13,9 @@ namespace MvcProjeKampi.Controllers
         WriterManager writerManager = new WriterManager(new EfWriterDal());
         WriterValidator writerValidator = new WriterValidator();  // ortak nesne global alana tasindi
 
-        public ActionResult Index()
+        public ActionResult Index(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {
-            var writerValues = writerManager.GetList();
+            var writerValues = writerManager.GetList().ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(writerValues);
         }
 

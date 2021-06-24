@@ -1,4 +1,5 @@
-﻿using BusinessLayer.Abstract;
+﻿using System.Linq;
+using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
@@ -39,6 +40,9 @@ namespace MvcProjeKampi.Controllers
             {
                 FormsAuthentication.SetAuthCookie(adminLogInDto.AdminMail, false);
                 Session["AdminMail"] = adminLogInDto.AdminMail;
+                var session = Session["AdminMail"];
+                //var adminIdInfo = context.Admins.Where(x => x.AdminMail == session).Select(y => y.AdminId).FirstOrDefault();
+                //ViewBag.logIn = adminIdInfo;
                 return RedirectToAction("Index", "AdminCategory");
             }
             else

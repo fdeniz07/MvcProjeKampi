@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -132,12 +134,13 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("MyHeading");
 
         }
-
-        public ActionResult AllHeadings()
+   
+        public ActionResult AllHeadings(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {
-            ViewBag.counter = categoryManager.GetList().Count;
-            ViewBag.a = categoryManager.GetList();
-            var headings = headingManager.GetList();
+            //ViewBag.counter = categoryManager.GetList().Count;
+            //ViewBag.a = categoryManager.GetList();
+
+            var headings = headingManager.GetList().ToPagedList(page ?? 1,10); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(headings);
         }
 
