@@ -135,6 +135,8 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult AllHeadings()
         {
+            ViewBag.counter = categoryManager.GetList().Count;
+            ViewBag.a = categoryManager.GetList();
             var headings = headingManager.GetList();
             return View(headings);
         }

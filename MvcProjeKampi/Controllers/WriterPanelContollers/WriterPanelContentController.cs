@@ -17,21 +17,18 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
 
         public ActionResult MyContent(string parameter)
         {
-            parameter = (string)Session["WriterMail"]; //WriterUserName bizim Session degerimiz (Mail adresi sifreli oldugu icin Session degerini UserName den aldim)
-            var writerIdInfo = context.Writers.Where(x => x.WriterMail == parameter).Select(y => y.WriterId)
-                .FirstOrDefault();
+            parameter = (string)Session["WriterMail"];
+            var writerIdInfo = context.Writers.Where(x => x.WriterMail == parameter).Select(y => y.WriterId).FirstOrDefault();
             var contentValues = contentManager.GetListByWriter(writerIdInfo);
-            ViewBag.p = parameter;
             return View(contentValues);
         }
 
         [HttpGet]
         public ActionResult AddContent(int id)
         {
-            ViewBag.d = id;
+            ViewBag.id = id;
             return View();
         }
-
 
         [HttpPost]
         public ActionResult AddContent(Content content)
@@ -43,6 +40,11 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
             content.ContentStatus = true;
             contentManager.ContentAdd(content);
             return RedirectToAction("MyContent");
+        }
+
+        public ActionResult ToDoList()
+        {
+            return View();
         }
     }
 }
