@@ -52,7 +52,16 @@
                                     </td>
                                     <td class="mailbox-star"><a href="/Message/GetDraftDetails/@item.MessageId"><i class="fas fa-star text-warning"></i></a></td>
                                     <td class="mailbox-name"><a href="/Message/GetDraftDetails/@item.MessageId">@item.ReceiverMail</a></td>
-                                    <td class="mailbox-subject"><b>@item.Subject</b> - @item.MessageContent.Substring(0, 11)...</td>
+                                    <td class="mailbox-subject">                                    @if (item.MessageContent.Length >= 50 )
+                                                                                                    {
+                                                                                                        @Html.Raw(item.MessageContent.Substring(0,50))
+                                        @*<b>@item.Subject</b><a> - </a> @item.MessageContent*@
+                                                                                                    }
+                                                                                                    else if (item.MessageContent.Length < 50)
+                                                                                                    {
+                                                                                                        <b>@item.Subject</b><a> - </a>@Html.Raw(item.MessageContent)<txt>...</txt>
+                                        @*<b>@item.Subject</b><a> - </a>@item.MessageContent.Substring(0, 30) <a>...</a>*@
+                                                                                                    }</td>
                                     <td class="mailbox-attachment"></td>
                                     <td class="mailbox-date"><b>@(((DateTime) item.MessageDate).ToString("dd-MMM-yyyy"))</b></td>
                                 </tr>
@@ -69,5 +78,18 @@
         </div>
     </div>
 </section>
+@section Editor
+{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+    <!-- Summernote -->
+    <script src="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $(function () {
+            // Summernote
+            $('#compose-textarea').summernote()
+        })
+    </script>
+}
 </body>
 </html>

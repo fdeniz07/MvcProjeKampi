@@ -12,7 +12,6 @@ namespace MvcProjeKampi.Controllers
 {
     public class MessageController : Controller
     {
-
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messagerValidator = new MessageValidator();
 
@@ -150,7 +149,6 @@ namespace MvcProjeKampi.Controllers
             messageManager.MessageUpdate(messageValue);
             return RedirectToAction("Inbox");
         }
-
 
         public ActionResult IsImportant(int id) //Bu alan gelen mesajlarindaki önemli butonundan gelen degeri DB yazar
         {
