@@ -1,5 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<Heading>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Heading>
+@*@model List<Heading>*@
 
 @{
     ViewBag.Title = "MyHeading";
@@ -21,7 +24,7 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-<!-- Main content -->
+    <!-- Main content -->
     <section class="content">
 
         <!-- Default box -->
@@ -109,44 +112,44 @@
                             {
                                 color = "badge badge-secondary";
                             }
-            <tr>
-                <td>
-                    @item.HeadingId
-                </td>
-                <td>
-                    <a>
-                        @item.HeadingName
-                    </a>
-                    <br />
-                    <small>
-                        @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
-                    </small>
-                </td>
-                <td>
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <img alt="Avatar" class="table-avatar" src=@item.Writer.WriterImage>
-                        </li>
-                    </ul>
-                </td>
-                <td class="project-state">
-                    <span class="@color">@item.Category.CategoryName</span>
-                </td>
-                <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingId">
-                        <i class="fas fa-folder">
-                        </i>
-                        Yazılar
-                    </a>
-                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingId">
-                        <i class="fas fa-pencil-alt">
-                        </i>
-                        Düzenle
-                    </a>
-                    <a class="btn" href="/WriterPanel/DeleteHeading/@item.HeadingId">
-                        <i class="fas fa-trash">
-                        </i>
-                        @{ string status = "";
+                            <tr>
+                                <td>
+                                    @item.HeadingId
+                                </td>
+                                <td>
+                                    <a>
+                                        @item.HeadingName
+                                    </a>
+                                    <br />
+                                    <small>
+                                        @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
+                                    </small>
+                                </td>
+                                <td>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <img alt="Avatar" class="table-avatar" src=@item.Writer.WriterImage>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td class="project-state">
+                                    <span class="@color">@item.Category.CategoryName</span>
+                                </td>
+                                <td class="project-actions text-right">
+                                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingId">
+                                        <i class="fas fa-folder">
+                                        </i>
+                                        Yazılar
+                                    </a>
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/EditHeading/@item.HeadingId">
+                                        <i class="fas fa-pencil-alt">
+                                        </i>
+                                        Düzenle
+                                    </a>
+                                    <a class="btn" href="/WriterPanel/DeleteHeading/@item.HeadingId">
+                                        <i class="fas fa-trash">
+                                        </i>
+                                        @{ string status = "";
                                             string statusColor = "";
 
                                             switch (item.HeadingStatus)
@@ -160,10 +163,11 @@
                                                     status = "Pasif";
                                                     break;
                                             }
-                            <span class="@statusColor">@status</span> }
-                    </a>
-                </td>
-            </tr>}
+                                            <span class="@statusColor">@status</span> }
+                                    </a>
+                                </td>
+                            </tr>
+}
                     </tbody>
                 </table>
             </div>
@@ -176,6 +180,20 @@
 <a href="/WriterPanel/NewHeading/" class="btn btn-primary">Yeni  Başlık Girişi</a>
 
 
+
+@* !!! ÖNEMLI NOT !!!!
+    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.
+    Bu islemi yaparsak asagida yazilacak komuta ihtiyac kalmaz.
+*@
+
+@* Asagidaki alan sayfalama isleminde sayfalarinda altinda sayfa numarasi gecislerini cözmektedir. *@
+
+@*@Html.PagedListPager((IPagedList)Model, page => Url.Action("AllHeadings", new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        {"page-link"}
+    })*@
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("MyHeading", new { page }))
 
 
 

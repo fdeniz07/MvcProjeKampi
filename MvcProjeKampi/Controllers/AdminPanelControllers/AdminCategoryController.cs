@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using BusinessLayer.ValidationRules;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -13,9 +14,9 @@ namespace MvcProjeKampi.Controllers
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal()); //Ileride Enttiy Framework'den vazgecilirse burasi degistirilebilir
        
         
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var categoryValues = categoryManager.GetList();
+            var categoryValues = categoryManager.GetList().ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem                                                                                  amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(categoryValues);
         }
 

@@ -42,12 +42,12 @@ namespace MvcProjeKampi.Controllers
 
         #endregion
 
-        public ActionResult MyHeading(string session)
+        public ActionResult MyHeading(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {
-            session = (string)Session["WriterMail"];
+            string session = (string)Session["WriterMail"];
             var writerIdInfo = context.Writers.Where(x => x.WriterMail == session).Select(y => y.WriterId).FirstOrDefault();
             //ViewBag.d = writerIdInfo;
-            var values = headingManager.GetListByWriterId(writerIdInfo);
+            var values = headingManager.GetListByWriterId(writerIdInfo).ToPagedList(page ?? 1, 8); 
             return View(values);
         }
 
@@ -140,7 +140,7 @@ namespace MvcProjeKampi.Controllers
             //ViewBag.counter = categoryManager.GetList().Count;
             //ViewBag.a = categoryManager.GetList();
 
-            var headings = headingManager.GetList().ToPagedList(page ?? 1,10); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
+            var headings = headingManager.GetList().ToPagedList(page ?? 1,8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(headings);
         }
 

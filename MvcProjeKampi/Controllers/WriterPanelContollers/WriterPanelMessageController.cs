@@ -7,7 +7,6 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using PagedList;
-using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers.WriterPanelContollers
 {
@@ -18,31 +17,33 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
 
         public ActionResult Inbox(int? page)
         {
-            var messageListInbox = messageManager.GetListInbox().ToPagedList(page ?? 1, 10); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
+            string session = (string)Session["WriterMail"];
+            var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem                                                                                  amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir..
             return View(messageListInbox);
         }
 
         public PartialViewResult PartialMessageMenu()
         {
-            var sendMail = messageManager.GetListSendbox().Count();
+            string session = (string)Session["WriterMail"];
+            var sendMail = messageManager.GetListSendbox(session).Count();
             ViewBag.sendMail = sendMail;
 
-            var receiverMail = messageManager.GetListInbox().Count();
+            var receiverMail = messageManager.GetListInbox(session).Count();
             ViewBag.receiverMail = receiverMail;
 
-            var draftMail = messageManager.GetListDraft().Count(); //GetListSendbox().Where(m => m.IsDraft == true).Count();
+            var draftMail = messageManager.GetListDraft(session).Count(); //GetListSendbox().Where(m => m.IsDraft == true).Count();
             ViewBag.draftMail = draftMail;
 
             var trashMail = messageManager.GetListTrash().Count();
             ViewBag.trashMail = trashMail;
 
-            var readMail = messageManager.GetReadList().Count;
+            var readMail = messageManager.GetReadList(session).Count;
             ViewBag.readMail = readMail;
 
-            var unReadMail = messageManager.GetUnReadList().Count;
+            var unReadMail = messageManager.GetUnReadList(session).Count;
             ViewBag.unReadMail = unReadMail;
 
-            var importantMail = messageManager.GetListImportant().Count();
+            var importantMail = messageManager.GetListImportant(session).Count();
             ViewBag.importantMail = importantMail;
 
             return PartialView();
@@ -65,7 +66,8 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
 
         public ActionResult Sendbox()
         {
-            var messageListSendbox = messageManager.GetListSendbox();
+            string session = (string)Session["WriterMail"];
+            var messageListSendbox = messageManager.GetListSendbox(session);
             return View(messageListSendbox);
         }
 
@@ -91,6 +93,7 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
         public ActionResult NewMessage(Message message, string menuName)
         {
             ValidationResult results = messagerValidator.Validate(message);
+            string session = (string)Session["WriterMail"];
 
             //Yeni Mesaj sayfasındaki buton isimlerine göre kontroller aşagıdaki gibi yapılır
 
@@ -99,7 +102,7 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
             {
                 if (results.IsValid)
                 {
-                    message.SenderMail = "atilla@yahoo.com"; // Session'a baglanacak
+                    message.SenderMail = session; 
                     //message.IsDraft = false;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);
@@ -118,7 +121,7 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
             {
                 if (results.IsValid)
                 {
-                    message.SenderMail = "atilla@yahoo.com"; // Session'a baglanacak
+                    message.SenderMail = session; 
                     message.IsDraft = true;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);
@@ -157,7 +160,8 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
 
         public ActionResult DraftMessages()
         {
-            var result = messageManager.IsDraft();
+            string session = (string)Session["WriterMail"];
+            var result = messageManager.IsDraft(session);
             return View(result);
         }
 

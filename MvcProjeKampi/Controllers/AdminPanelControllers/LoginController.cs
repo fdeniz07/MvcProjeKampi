@@ -74,7 +74,7 @@ namespace MvcProjeKampi.Controllers
         {
             FormsAuthentication.SignOut();
             Session.Abandon();
-            return RedirectToAction("AdminLogin", "Login");
+            return RedirectToAction("AdminLogin", "LogIn");
         }
 
         [HttpGet]

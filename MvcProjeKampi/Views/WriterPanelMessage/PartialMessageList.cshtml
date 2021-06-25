@@ -1,7 +1,7 @@
 ﻿@using EntityLayer.Concrete
 @using PagedList
 @using PagedList.Mvc
-@model PagedList.IPagedList<Message>
+@*@model PagedList.IPagedList<Message>*@
 
 <!-- /.card-header -->
 <div class="card-body p-0">
@@ -17,22 +17,12 @@
         </div>
         <!-- /.btn-group -->
         <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-        @*<div class="float-right">
+        <div class="float-right">
             1-50/200
-            <div class="btn-group">*@
-                <div class="float-right">
-                    @Model.FirstItemOnPage-@Model.LastItemOnPage/@Model.TotalItemCount
-                    <div class="btn-group">
-                        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Inbox", "WriterPanelMessage", new { page }), PagedListRenderOptions.Minimal)
-                    </div>
-                    <!-- /.btn-group -->
-                </div>
-
-                <!--<button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
                 <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-            </div>-->
-            <!-- /.btn-group -->
-        <!--</div>-->
-        <!-- /.float-right -->
+            </div>
+        </div>
     </div>
 </div>

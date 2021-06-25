@@ -6,7 +6,7 @@ using FluentValidation.Results;
 using System;
 using System.Web.Mvc;
 using PagedList;
-using PagedList.Mvc;
+
 
 namespace MvcProjeKampi.Controllers
 {
@@ -21,14 +21,15 @@ namespace MvcProjeKampi.Controllers
         [Authorize]
         public ActionResult Inbox(int? page)
         {
-
-            var messageListInbox = messageManager.GetListInbox().ToPagedList(page ?? 1, 10); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
+            string session = (string)Session["WriterMail"];
+            var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem                                                                                  amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir..
             return View(messageListInbox);
         }
 
         public ActionResult Sendbox()
         {
-            var messageListSendbox = messageManager.GetListSendbox();
+            string session = (string)Session["WriterMail"];
+            var messageListSendbox = messageManager.GetListSendbox(session);
             return View(messageListSendbox);
         }
 
@@ -53,6 +54,8 @@ namespace MvcProjeKampi.Controllers
         [HttpPost, ValidateInput(false)]
         public ActionResult NewMessage(Message message, string menuName)
         {
+            string session = (string)Session["WriterMail"];
+
             ValidationResult results = messagerValidator.Validate(message);
 
             //Yeni Mesaj sayfasındaki buton isimlerine göre kontroller aşagıdaki gibi yapılır
@@ -62,7 +65,7 @@ namespace MvcProjeKampi.Controllers
             {
                 if (results.IsValid)
                 {
-                    message.SenderMail = "atilla@yahoo.com"; // Session'a baglanacak
+                    message.SenderMail = session;
                     //message.IsDraft = false;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);
@@ -81,7 +84,7 @@ namespace MvcProjeKampi.Controllers
             {
                 if (results.IsValid)
                 {
-                    message.SenderMail = "atilla@yahoo.com"; // Session'a baglanacak
+                    message.SenderMail = session;
                     message.IsDraft = true;
                     message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                     messageManager.MessageAdd(message);
@@ -120,7 +123,8 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult DraftMessages()
         {
-            var result = messageManager.IsDraft();
+            string session = (string)Session["WriterMail"];
+            var result = messageManager.IsDraft(session);
             return View(result);
         }
 

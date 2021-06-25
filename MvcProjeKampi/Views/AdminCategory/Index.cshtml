@@ -1,5 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<Category>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Category>
+@*@model List<Category>*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -26,3 +29,18 @@
 </table>
 <a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a>
 
+
+
+@* !!! ÖNEMLI NOT !!!!
+    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.
+    Bu islemi yaparsak asagida yazilacak komuta ihtiyac kalmaz.
+*@
+
+@* Asagidaki alan sayfalama isleminde sayfalarinda altinda sayfa numarasi gecislerini cözmektedir. *@
+
+@*@Html.PagedListPager((IPagedList)Model, page => Url.Action("AllHeadings", new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        {"page-link"}
+    })*@
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

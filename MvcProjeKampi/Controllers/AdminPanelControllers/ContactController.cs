@@ -28,31 +28,33 @@ namespace MvcProjeKampi.Controllers
 
         public PartialViewResult PartialMessageMenu()
         {
+            string session = (string)Session["WriterMail"];
+
             var contact = contactManager.GetList().Count();
             ViewBag.contact = contact;
 
-            var sendMail = messageManager.GetListSendbox().Count();
+            var sendMail = messageManager.GetListSendbox(session).Count();
             ViewBag.sendMail = sendMail;
 
-            var receiverMail = messageManager.GetListInbox().Count();
+            var receiverMail = messageManager.GetListInbox(session).Count();
             ViewBag.receiverMail = receiverMail;
 
-            var draftMail = messageManager.GetListDraft().Count(); //GetListSendbox().Where(m => m.IsDraft == true).Count();
+            var draftMail = messageManager.GetListDraft(session).Count(); //GetListSendbox().Where(m => m.IsDraft == true).Count();
             ViewBag.draftMail = draftMail;
 
             var trashMail = messageManager.GetListTrash().Count();
             ViewBag.trashMail = trashMail;
 
-            var readMail = messageManager.GetReadList().Count;
+            var readMail = messageManager.GetReadList(session).Count;
             ViewBag.readMail = readMail;
 
-            var unReadMail = messageManager.GetUnReadList().Count;
+            var unReadMail = messageManager.GetUnReadList(session).Count;
             ViewBag.unReadMail = unReadMail;
 
-            var importantMail = messageManager.GetListImportant().Count();
+            var importantMail = messageManager.GetListImportant(session).Count();
             ViewBag.importantMail = importantMail;
 
-            var spamMail = messageManager.GetListSpam().Count();
+            var spamMail = messageManager.GetListSpam(session).Count();
             ViewBag.spamMail = spamMail;
 
             return PartialView();
