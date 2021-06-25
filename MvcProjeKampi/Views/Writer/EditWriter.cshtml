@@ -12,7 +12,7 @@
     @Html.Label("Yazar ID")
     @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
     <br/>
-    @Html.Label("Yazar adı")
+    @Html.Label("Yazar Adı")
     @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.WriterName, null, new { @class = "text-danger" })
     <br />
@@ -25,8 +25,8 @@
     @Html.ValidationMessageFor(x => x.WriterMail)
     <br />
     @Html.Label("Yazar Şifre")
-    @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.WriterPassword)
+    @Html.TextBoxFor(x => x.WriterPasswordHash, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterPasswordHash)
     <br />
     @Html.Label("Yazar Görsel Linki")
     @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })

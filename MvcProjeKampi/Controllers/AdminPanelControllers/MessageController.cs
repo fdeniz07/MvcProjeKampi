@@ -15,13 +15,11 @@ namespace MvcProjeKampi.Controllers
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messagerValidator = new MessageValidator();
 
-        ContactManager contactManager = new ContactManager(new EfContactDal());
-
         [Authorize]
         public ActionResult Inbox(int? page)
         {
             string session = (string)Session["WriterMail"];
-            var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem                                                                                  amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir..
+            var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir..
             return View(messageListInbox);
         }
 

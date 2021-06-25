@@ -15,10 +15,10 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
 
         Context context = new Context();
 
-        public ActionResult MyContent(string parameter)
+        public ActionResult MyContent(string session)
         {
-            parameter = (string)Session["WriterMail"];
-            var writerIdInfo = context.Writers.Where(x => x.WriterMail == parameter).Select(y => y.WriterId).FirstOrDefault();
+            session = (string)Session["WriterMail"];
+            var writerIdInfo = context.Writers.Where(x => x.WriterMail == session).Select(y => y.WriterId).FirstOrDefault();
             var contentValues = contentManager.GetListByWriter(writerIdInfo);
             return View(contentValues);
         }
@@ -33,8 +33,8 @@ namespace MvcProjeKampi.Controllers.WriterPanelContollers
         [HttpPost]
         public ActionResult AddContent(Content content)
         {
-            string mail = (string)Session["WriterMail"];
-            var writeridinfo = context.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterId).FirstOrDefault();
+            string session = (string)Session["WriterMail"];
+            var writeridinfo = context.Writers.Where(x => x.WriterMail == session).Select(y => y.WriterId).FirstOrDefault();
             content.ContentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             content.WriterId = writeridinfo;
             content.ContentStatus = true;

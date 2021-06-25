@@ -26,8 +26,30 @@ namespace MvcProjeKampi.Controllers
         Context context = new Context();
 
         [HttpGet]
-        public ActionResult WriterProfile() //Düzenlenecek
+        public ActionResult WriterProfile(int id=0)
         {
+            string session = (string)Session["WriterMail"];
+            id = context.Writers.Where(x => x.WriterMail == session).Select(y => y.WriterId).FirstOrDefault();
+            var writerValue = writerManager.GetById(id);
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            ValidationResult results = writerValidator.Validate(writer);
+            if (results.IsValid)
+            {
+                writerManager.WriterUpdate(writer);
+                return RedirectToAction("AllHeadings","WriterPanel");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
 
@@ -47,7 +69,7 @@ namespace MvcProjeKampi.Controllers
             string session = (string)Session["WriterMail"];
             var writerIdInfo = context.Writers.Where(x => x.WriterMail == session).Select(y => y.WriterId).FirstOrDefault();
             //ViewBag.d = writerIdInfo;
-            var values = headingManager.GetListByWriterId(writerIdInfo).ToPagedList(page ?? 1, 8); 
+            var values = headingManager.GetListByWriterId(writerIdInfo).ToPagedList(page ?? 1, 8);
             return View(values);
         }
 
@@ -134,13 +156,13 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("MyHeading");
 
         }
-   
+
         public ActionResult AllHeadings(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {
             //ViewBag.counter = categoryManager.GetList().Count;
             //ViewBag.a = categoryManager.GetList();
 
-            var headings = headingManager.GetList().ToPagedList(page ?? 1,8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
+            var headings = headingManager.GetList().ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(headings);
         }
 
