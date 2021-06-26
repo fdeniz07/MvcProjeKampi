@@ -97,39 +97,37 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <p>Talent - Add New Skill Area<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Add%20New%20Skill%20Area.JPG" />
   
- 
-  
   <p>Hashing<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Hashing.JPG" />
  
   <p>Admin Register Panel<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Admin%20Register%20Site.JPG" />
   
-    <p>Writer - Register<p/>
-  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20Register.JPG" />
+  <p>Writer - Register<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20Register.JPG"/>
   
-    <p>Writer - Login<p/>
+  <p>Writer - Login<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20Login%20Panel.JPG" />
   
-    <p>Writer - Profile<p/>
+  <p>Writer - Profile<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20Profile.JPG" />
   
-    <p>Writer - My Heading<p/>
+  <p>Writer - My Heading<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20MyHeading.JPG" />
   
-    <p>Writer - Edit Heading<p/>
+  <p>Writer - Edit Heading<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20EditHeading.JPG" />
   
-    <p>Witer - Message Inbox<p/>
+  <p>Witer - Message Inbox<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20Message%20Inbox.JPG" />
   
-    <p>Writer - All Headings<p/>
+  <p>Writer - All Headings<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20All%20Headings.JPG" />
   
-    <p>Writer - ContentByHeading<p/>
+  <p>Writer - ContentByHeading<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20ContentByHeading.JPG" />
   
-    <p>Writer - My Contents<p/>
+  <p>Writer - My Contents<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20Contents.JPG" />
 
 <!--
