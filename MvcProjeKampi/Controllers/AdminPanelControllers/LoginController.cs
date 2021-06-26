@@ -35,7 +35,7 @@ namespace MvcProjeKampi.Controllers
                 client.DownloadString(
                     string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
             var captchaResponse = JsonConvert.DeserializeObject<CaptchaResult>(reply);
-
+            
             if (authService.AdminLogIn(adminLogInDto) && captchaResponse.Success)
             {
                 FormsAuthentication.SetAuthCookie(adminLogInDto.AdminMail, false);
@@ -43,6 +43,7 @@ namespace MvcProjeKampi.Controllers
                 var session = Session["AdminMail"];
                 //var adminIdInfo = context.Admins.Where(x => x.AdminMail == session).Select(y => y.AdminId).FirstOrDefault();
                 //ViewBag.logIn = adminIdInfo;
+                ViewBag.a = session;
                 return RedirectToAction("Index", "AdminCategory");
             }
             else

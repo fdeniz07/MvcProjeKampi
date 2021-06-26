@@ -25,7 +25,7 @@
         @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterMail, null, new { @class = "text-danger" })
         <br />
-        @Html.Label("Yazar Şifre") @*Bu kisim sifre hash'li oldugu icin hata veriyor.'*@
+        @Html.Label("Yazar Şifre") @*Bu kısım şifre hash'li olduğu için hata veriyor.'*@
         @Html.PasswordFor(x => x.WriterPasswordHash, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterPasswordHash)
         <br />
