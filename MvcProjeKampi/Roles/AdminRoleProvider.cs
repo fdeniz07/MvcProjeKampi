@@ -38,7 +38,7 @@ namespace MvcProjeKampi.Roles
             throw new NotImplementedException();
         }
 
-        public override string[] GetRolesForUser(string mail)
+        public override string[] GetRolesForUser(string username)
         {
             #region Eski Kodlar
             //Context context = new Context();
@@ -58,7 +58,7 @@ namespace MvcProjeKampi.Roles
 
             using (var crypto = new System.Security.Cryptography.HMACSHA512())
             {
-                var mailCrypto = crypto.ComputeHash(Encoding.UTF8.GetBytes(mail));
+                var mailCrypto = crypto.ComputeHash(Encoding.UTF8.GetBytes(username));
                 var admin = adminManager.GetList();
                 var writer = writerManager.GetList();
 
@@ -75,24 +75,21 @@ namespace MvcProjeKampi.Roles
                         }
                     }
                 }
-                else if (writer != null)
-                {
-                    foreach (var item in writer)
-                    {
-                        for (int i = 0; i < mailCrypto.Length; i++)
-                        {
-                            if (mailCrypto[i] == item.WriterMail[i])
-                            {
-                                return new string[] { item.WriterRole };
-                            }
-                        }
-                    }
-                }
+                //else if (writer != null)
+                //{
+                //    foreach (var item in writer)
+                //    {
+                //        for (int i = 0; i < mailCrypto.Length; i++)
+                //        {
+                //            if (mailCrypto[i] == item.WriterMail[i])
+                //            {
+                //                return new string[] { item.WriterRole };
+                //            }
+                //        }
+                //    }
+                //
+                return new string[] { };
                 
-                
-                    return new string[] { };
-                
-
                 //foreach (var item in admin)
                 //{
                 //    for (int i = 0; i < mailCrypto.Length; i++)

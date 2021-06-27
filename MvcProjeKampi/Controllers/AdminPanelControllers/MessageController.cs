@@ -18,14 +18,14 @@ namespace MvcProjeKampi.Controllers
         [Authorize]
         public ActionResult Inbox(int? page)
         {
-            string session = (string)Session["WriterMail"];
-            var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir..
+            string session = (string)Session["AdminMail"];
+            var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna                                                       karşı önlem amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir..
             return View(messageListInbox);
         }
 
         public ActionResult Sendbox()
         {
-            string session = (string)Session["WriterMail"];
+            string session = (string)Session["AdminMail"];
             var messageListSendbox = messageManager.GetListSendbox(session);
             return View(messageListSendbox);
         }
@@ -51,7 +51,7 @@ namespace MvcProjeKampi.Controllers
         [HttpPost, ValidateInput(false)]
         public ActionResult NewMessage(Message message, string menuName)
         {
-            string session = (string)Session["WriterMail"];
+            string session = (string)Session["AdminMail"];
 
             ValidationResult results = messagerValidator.Validate(message);
 
@@ -120,7 +120,7 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult DraftMessages()
         {
-            string session = (string)Session["WriterMail"];
+            string session = (string)Session["AdminMail"];
             var result = messageManager.IsDraft(session);
             return View(result);
         }

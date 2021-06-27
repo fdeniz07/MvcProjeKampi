@@ -28,7 +28,7 @@ namespace MvcProjeKampi.Controllers
 
         public PartialViewResult PartialMessageMenu()
         {
-            string session = (string)Session["WriterMail"];
+            string session = (string)Session["AdminMail"];
 
             var contact = contactManager.GetList().Count();
             ViewBag.contact = contact;
