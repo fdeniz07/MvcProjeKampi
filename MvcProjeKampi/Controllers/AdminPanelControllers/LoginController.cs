@@ -43,7 +43,7 @@ namespace MvcProjeKampi.Controllers
                 var session = Session["AdminMail"];
                 //var adminIdInfo = context.Admins.Where(x => x.AdminMail == session).Select(y => y.AdminId).FirstOrDefault();
                 //ViewBag.logIn = adminIdInfo;
-                ViewBag.a = session;
+               ViewBag.a = session;
                 return RedirectToAction("Index", "Statistic");
             }
             else

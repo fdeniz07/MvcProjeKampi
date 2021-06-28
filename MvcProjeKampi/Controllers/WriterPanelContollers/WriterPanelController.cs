@@ -8,6 +8,8 @@ using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
@@ -37,11 +39,20 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterProfile(Writer writer)
         {
+            //if (writer.WriterPasswordHash!=null)
+            //{
+            //    SHA1 sha1 = new SHA1CryptoServiceProvider();
+            //    string password = writer.WriterPasswordHash;
+            //    string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            //    writer.WriterPasswordHash = result;
+            //}
+
+
             ValidationResult results = writerValidator.Validate(writer);
             if (results.IsValid)
             {
                 writerManager.WriterUpdate(writer);
-                return RedirectToAction("AllHeadings","WriterPanel");
+                return RedirectToAction("AllHeadings", "WriterPanel");
             }
             else
             {
@@ -177,6 +188,8 @@ namespace MvcProjeKampi.Controllers
         //    return Encoding.ASCII.GetString(byteList.ToArray());
         //}
         #endregion
+
+
 
     }
 }

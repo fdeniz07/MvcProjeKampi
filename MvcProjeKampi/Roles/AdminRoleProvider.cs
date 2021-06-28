@@ -1,8 +1,10 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using System;
+using System.Linq;
 using System.Text;
 using System.Web.Security;
+using DataAccessLayer.Concrete;
 
 namespace MvcProjeKampi.Roles
 {
@@ -42,8 +44,8 @@ namespace MvcProjeKampi.Roles
         {
             #region Eski Kodlar
             //Context context = new Context();
-            //var result = context.Admins.FirstOrDefault(x => x.AdminMail.ToString() == mail);
-            //var resultWriter = context.Writers.FirstOrDefault(x => x.WriterMail.ToString() == mail);
+            //var result = context.Admins.FirstOrDefault(x => x.AdminMail.ToString() == username);
+            //var resultWriter = context.Writers.FirstOrDefault(x => x.WriterMail.ToString() == username);
 
             //if (result != null)
             //{
@@ -87,27 +89,27 @@ namespace MvcProjeKampi.Roles
                 //            }
                 //        }
                 //    }
-                //
-                return new string[] { };
-                
-                //foreach (var item in admin)
-                //{
-                //    for (int i = 0; i < mailCrypto.Length; i++)
-                //    {
-                //        if (mailCrypto[i] == item.AdminMail[i])
-                //        {
-                //            return new string[] { item.AdminRole };
-                //        }
-                //    }
                 //}
-                //return new string[] { };
-            }
+                return new string[] { };
 
-            //Bu metot, kullanıcılar için rol alma işine yarar  // Bu alan kurumsal mimariye uygun hale getirilecek (Ödev)
-            //Context context = new Context(); 
-            //var role = context.Admins.FirstOrDefault(x => x.AdminUserName == username);
-            //return new string[] {role.AdminRole};
-        }
+                    //foreach (var item in admin)
+                    //{
+                    //    for (int i = 0; i < mailCrypto.Length; i++)
+                    //    {
+                    //        if (mailCrypto[i] == item.AdminMail[i])
+                    //        {
+                    //            return new string[] { item.AdminRole };
+                    //        }
+                    //    }
+                    //}
+                    //return new string[] { };
+                }
+
+                //Bu metot, kullanıcılar için rol alma işine yarar  // Bu alan kurumsal mimariye uygun hale getirilecek (Ödev)
+                //Context context = new Context(); 
+                //var role = context.Admins.FirstOrDefault(x => x.AdminUserName == username);
+                //return new string[] {role.AdminRole};
+            }
 
         public override string[] GetUsersInRole(string roleName)
         {

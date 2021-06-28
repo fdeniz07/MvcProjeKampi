@@ -18,7 +18,7 @@ namespace MvcProjeKampi.Controllers
         [Authorize]
         public ActionResult Inbox(int? page)
         {
-            string session = (string)Session["AdminMail"];
+            string session = (string) Session["AdminMail"];
             var messageListInbox = messageManager.GetListInbox(session).ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna                                                       karşı önlem amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir..
             return View(messageListInbox);
         }

@@ -71,17 +71,17 @@ to get the desired effect
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-
-                        @if (User.IsInRole("B"))
-                        {
-            <li class="nav-item has-treeview">
-                <a href="/AdminCategory/Index/" class="nav-link">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>
-                        Kategoriler
-                    </p>
-                </a>
-            </li>}
+                    @if (User.IsInRole("B"))
+                    {
+                        <li class="nav-item has-treeview">
+                            <a href="/AdminCategory/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Kategoriler
+                                </p>
+                            </a>
+                        </li>
+                    }
                         <li class="nav-item">
                             <a href="/Heading/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
