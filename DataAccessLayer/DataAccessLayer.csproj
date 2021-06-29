@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202106230708368_mig_changeWriterMail.designer.cs">
       <DependentUpon>202106230708368_mig_changeWriterMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106291249367_mig_add_screenshot.cs" />
+    <Compile Include="Migrations\202106291249367_mig_add_screenshot.designer.cs">
+      <DependentUpon>202106291249367_mig_add_screenshot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106230708368_mig_changeWriterMail.resx">
       <DependentUpon>202106230708368_mig_changeWriterMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291249367_mig_add_screenshot.resx">
+      <DependentUpon>202106291249367_mig_add_screenshot.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

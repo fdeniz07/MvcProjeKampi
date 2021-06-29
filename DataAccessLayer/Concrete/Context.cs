@@ -17,5 +17,6 @@ namespace DataAccessLayer.Concrete
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Talent> Talents { get; set; }
         public DbSet<SkillArea> SkillAreas { get; set; }
+        public DbSet<ScreenShot> ScreenShots { get; set; }
     }
 }
