@@ -2,6 +2,7 @@
 
 namespace MvcProjeKampi.Controllers
 {
+    [AllowAnonymous]
     public class TestController : Controller
     {
         // GET: Test
