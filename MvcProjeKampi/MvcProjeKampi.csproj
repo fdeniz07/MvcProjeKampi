@@ -202,8 +202,8 @@
     <Content Include="ScreenShots\Categories.JPG" />
     <Content Include="ScreenShots\Contact Message Details.JPG" />
     <Content Include="ScreenShots\Contact Panel.JPG" />
-    <Content Include="ScreenShots\Daraft Message Details.JPG" />
-    <Content Include="ScreenShots\Daraft Message Panel.JPG" />
+    <Content Include="ScreenShots\Draft Message Details.JPG" />
+    <Content Include="ScreenShots\Draft Message Panel.JPG" />
     <Content Include="ScreenShots\DB Schema - Begin.jpg" />
     <Content Include="ScreenShots\DB Schema.JPG" />
     <Content Include="ScreenShots\Gallery Panel.JPG" />
@@ -2867,7 +2867,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ScreenShot\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
