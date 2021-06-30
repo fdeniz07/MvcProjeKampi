@@ -202,6 +202,8 @@
     <Content Include="ScreenShots\Categories.JPG" />
     <Content Include="ScreenShots\Contact Message Details.JPG" />
     <Content Include="ScreenShots\Contact Panel.JPG" />
+    <Content Include="ScreenShots\Content - Searched KeyWord.JPG" />
+    <Content Include="ScreenShots\Content - Searching.JPG" />
     <Content Include="ScreenShots\Draft Message Details.JPG" />
     <Content Include="ScreenShots\Draft Message Panel.JPG" />
     <Content Include="ScreenShots\DB Schema - Begin.jpg" />
@@ -209,6 +211,12 @@
     <Content Include="ScreenShots\Gallery Panel.JPG" />
     <Content Include="ScreenShots\Hashing.JPG" />
     <Content Include="ScreenShots\Heading.png" />
+    <Content Include="ScreenShots\HomePage - P1.JPG" />
+    <Content Include="ScreenShots\HomePage - P2.JPG" />
+    <Content Include="ScreenShots\HomePage - P3.JPG" />
+    <Content Include="ScreenShots\HomePage - P4.JPG" />
+    <Content Include="ScreenShots\HomePage - P5.JPG" />
+    <Content Include="ScreenShots\HomePage - P6.JPG" />
     <Content Include="ScreenShots\index - Admin.JPG" />
     <Content Include="ScreenShots\NLayered Architecture.JPG" />
     <Content Include="ScreenShots\Sendbox Details.JPG" />
@@ -2864,6 +2872,7 @@
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.woff" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\Content\GetAllContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
