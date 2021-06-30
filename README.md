@@ -68,10 +68,10 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Sendbox%20Details.JPG" />
   
   <p>Draft Messages<p/>
-  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Daraft%20Message%20Panel.JPG" />
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Draft%20Message%20Panel.JPG" />
   
   <p>Draft Message Details<p/>
-  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Daraft%20Message%20Details.JPG" />
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Draft%20Message%20Details.JPG" />
   
   <p>Page 404 Error<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/404%20Error%20Page.JPG" />
