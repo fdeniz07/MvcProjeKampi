@@ -130,32 +130,36 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <p>Writer - My Contents<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Writer%20-%20Contents.JPG" />
 
-  <p><p/>
-  <img src="" />
+  <p>Content - Searching<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Content%20-%20Searching.JPG" />
   
   
-  <p><p/>
-  <img src="" />
+  <p>Content - Searched KeyWord<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Content%20-%20Searched%20KeyWord.JPG" />
   
   
-  <p><p/>
-  <img src="" />
+  <p>HomePage - P1<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P1.JPG" />
   
   
-  <p><p/>
-  <img src="" />
+  <p>HomePage - P2<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P2.JPG" />
   
   
-  <p><p/>
-  <img src="" />
+  <p>HomePage - P3<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P3.JPG" />
   
   
-  <p><p/>
-  <img src="" />
+  <p>HomePage - P4<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P4.JPG" />
   
   
-  <p><p/>
-  <img src="" />
+  <p>HomePage - P5<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P5.JPG" />
+    
+  <p>HomePage - P6<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P6.JPG" />
+  
 <!--
   <p><p/>
   <img src="" />
