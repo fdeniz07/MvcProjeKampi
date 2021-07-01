@@ -5,14 +5,11 @@ using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web.Mvc;
-using PagedList;
-using PagedList.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -39,15 +36,6 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult WriterProfile(Writer writer)
         {
-            //if (writer.WriterPasswordHash!=null)
-            //{
-            //    SHA1 sha1 = new SHA1CryptoServiceProvider();
-            //    string password = writer.WriterPasswordHash;
-            //    string result = Convert.ToBase64String(sha1.ComputeHash(Encoding.UTF8.GetBytes(password)));
-            //    writer.WriterPasswordHash = result;
-            //}
-
-
             ValidationResult results = writerValidator.Validate(writer);
             if (results.IsValid)
             {
@@ -74,6 +62,33 @@ namespace MvcProjeKampi.Controllers
         //}
 
         #endregion
+
+
+        //[HttpGet]
+        //public ActionResult WriterProfilePassword(int id = 0)
+        //{
+        //    string session = (string)Session["WriterMail"];
+        //    id = context.Writers.Where(x => x.WriterMail == session).Select(z => z.WriterId).FirstOrDefault();
+        //    var writerValue = writerManager.GetById(id);
+        //    return View(writerValue);
+        //}
+
+        public PartialViewResult WriterPasswordChange(Writer writer, string currentPassword, string newPassword)
+        {
+            //writerManager.UpdatePassword(currentPassword, newPassword, writer);
+            return PartialView();
+        }
+
+
+        //[HttpPost]
+        //public ActionResult WriterProfilePassword(Writer writer, string currentPassword, string newPassword)
+        //{
+        //    writerManager.UpdatePassword(currentPassword,newPassword,writer);
+        //    return RedirectToAction("WriterProfile");
+        //}
+
+
+
 
         public ActionResult MyHeading(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {

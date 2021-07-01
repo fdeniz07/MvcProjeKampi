@@ -69,7 +69,7 @@ namespace BusinessLayer.Concrete
                 }
                 return false;
             }
-        }
+        } 
 
         public void WriterRegister(string writerName, string writerSurName, string writerTitle, string writerAbout, string writerImage, string writerUserName, string writerMail, string password, bool WriterStatus)
         {

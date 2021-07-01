@@ -75,6 +75,7 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -141,6 +142,7 @@
     <Compile Include="Controllers\AdminPanelControllers\AboutController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\AdminCategoryController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\CategoryController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\ChartController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\ContactController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\ContentController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\ErrorPageController.cs" />
@@ -163,6 +165,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CaptchaResult.cs" />
+    <Compile Include="Models\Charts\CategoryClass.cs" />
+    <Compile Include="Models\Charts\HeadingClass.cs" />
+    <Compile Include="Models\Charts\WriterClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
@@ -187,6 +192,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bg_FatihDeniz.JPG" />
     <Content Include="Images\FatihDeniz.jpg" />
     <Content Include="Images\Gezi\Antalya\Bungalov Olympos - Antalya.jpg" />
     <Content Include="Images\Gezi\Antalya\Cumhuriyet Meydani - Antalya.jpg" />
@@ -239,7 +245,6 @@
     <Content Include="ScreenShots\Writer - Register.JPG" />
     <Content Include="ScreenShots\Writer Login Panel.JPG" />
     <Content Include="ScreenShots\Writer.JPG" />
-    <Content Include="ScreenShots\Writer.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2214,6 +2219,7 @@
     <Content Include="Themes\Vitrin\web\css\simpleLightbox.css" />
     <Content Include="Themes\Vitrin\web\css\snow.css" />
     <Content Include="Themes\Vitrin\web\css\style.css" />
+    <Content Include="Themes\Vitrin\web\images\bolu_yedigoller.jpg" />
     <Content Include="Themes\Vitrin\web\images\banner.jpg" />
     <Content Include="Themes\Vitrin\web\images\close.png" />
     <Content Include="Themes\Vitrin\web\images\contact.jpg" />
@@ -2234,6 +2240,7 @@
     <Content Include="Themes\Vitrin\web\images\serve.jpg" />
     <Content Include="Themes\Vitrin\web\images\stats.jpg" />
     <Content Include="Themes\Vitrin\web\images\testimonials.jpg" />
+    <Content Include="Themes\Vitrin\web\images\uludag.jpg" />
     <Content Include="Themes\Vitrin\web\index.html" />
     <Content Include="Themes\Vitrin\web\js\aos.js" />
     <Content Include="Themes\Vitrin\web\js\bootstrap.js" />
@@ -2876,6 +2883,11 @@
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Content\GetAllContent.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\WriterPanel\WriterPasswordChange.cshtml" />
+    <Content Include="Views\Chart\CategoryListChart.cshtml" />
+    <Content Include="Views\Chart\WriterListChart.cshtml" />
+    <Content Include="Views\Chart\HeadingListChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

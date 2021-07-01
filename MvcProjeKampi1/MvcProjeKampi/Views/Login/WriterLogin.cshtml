@@ -1,0 +1,100 @@
+﻿@model EntityLayer.Dto.WriterLogInDto
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>MVC Proje Kampı</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Themes/login-form-20/css/style.css">
+</head>
+<body class="img js-fullheight" style="background-image: url(/Themes/login-form-20/images/bg.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">MVC Proje Kampı Yazar Girişi</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Bir hesabın var mı?</h3>
+                        <p class="text-center" style="color: red">@ViewData["ErrorMessage"]</p>
+                        @using (Html.BeginForm("WriterLogIn", "LogIn", FormMethod.Post, new { @class = "signin-form" }))
+                        {
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Mail adresiniz" name="WriterMail" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" type="password" class="form-control" placeholder="*******" name="WriterPassword" required>
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <div class="g-recaptcha" style="margin:20px" data-sitekey="6Lc9zzgbAAAAAJDfN-bu5MAhg48ONV-nSDAqxYjj"></div>
+                            </div>
+                            <br/>
+                            @*if (ViewBag.ErrorMessage != null)
+                            {
+                                <div class="text-center" style="margin-bottom:15px">
+                                    <a class="text-gray-dark">
+                                        @ViewBag.ErrorMessage
+                                    </a>
+                                </div>
+                            }*@
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3" ><a href="/Register/WriterRegister/" style="color: black">Kayıt Ol</a></button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        Beni Hatırla
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#" style="color: #fff">Şifremi Unuttum</a>
+                                </div>
+                            </div>
+                        }
+                        <p class="w-100 text-center">&mdash; Veya Sosyal Medya ile Giriş Yapın &mdash;</p>
+                        <div class="social d-flex text-center">
+                            <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+                            <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/Themes/captcha/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="~/Themes/captcha/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Themes/captcha/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Themes/captcha/vendor/select2/select2.min.js"></script>
+    <script src="~/Themes/captcha/vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <script src="~/Themes/captcha/js/main.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script>
+
+    <!--                                                                 -->
+    <script src="~/Themes/login-form-20/js/jquery.min.js"></script>
+    <script src="~/Themes/login-form-20/js/popper.js"></script>
+    <script src="~/Themes/login-form-20/js/bootstrap.min.js"></script>
+    <script src="~/Themes/login-form-20/js/main.js"></script>
+</body>
+</html>
+

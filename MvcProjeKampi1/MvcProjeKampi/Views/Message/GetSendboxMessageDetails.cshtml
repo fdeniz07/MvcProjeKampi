@@ -1,0 +1,63 @@
+﻿@model EntityLayer.Concrete.Message
+@{ ViewBag.Title = "GetSendboxMessageDetails";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6"><h1><b>Gönderilen Mesaj Detayları</b></h1></div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            @Html.Action("PartialMessageMenu", "Contact")
+
+            <div class="col-md-9">
+                <div class="card card-primary card-outline">
+
+                    <!--Mesaj Bölümü - Baslik Alani-->
+                    <div class="card-header">
+                        <h3 class="card-title"><b>Mesajı Oku</b></h3>
+                        <div class="card-tools">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
+                                <div class="input-group-append"><div class="btn btn-primary"><i class="fas fa-search"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mesaj Bölümü - Icerik Alani-->
+                    <div class="card-body p-0">
+                        <div class="mailbox-read-info">
+                            <h5><b>Konu:</b> @Html.DisplayFor(x => x.Subject)</h5>
+                            <br />
+                            <h6>
+                                <b>Alıcı:</b> @Html.DisplayFor(x => x.ReceiverMail)
+                                <span class="mailbox-read-time float-right"><b>@Model.MessageDate.ToString()</b></span>
+                            </h6>
+                        </div>
+
+                        <!-- Icerik Alani - Icerik-->
+                        <div class="mailbox-read-message">
+                            <br />
+                            <p>@Html.Raw(Model.MessageContent)</p>
+                            @*<p>@Html.DisplayFor(x => x.MessageContent)</p>*@
+                        </div>
+
+                        @Html.Action("PartialMessageListFooterButton", "Contact")
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

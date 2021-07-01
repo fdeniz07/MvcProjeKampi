@@ -1,0 +1,97 @@
+﻿<div class="col-md-3">
+    <a href="/WriterPanelMessage/NewMessage" class="btn btn-primary btn-block mb-3">Yeni Mesaj Oluştur</a>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Seçenekler</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <div>
+
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                    <li class="nav-item has-treeview">
+                        <a href="/WriterPanelMessage/Inbox/" class="nav-link">
+                            <i class="fas fa-inbox" onclick="location.href='/WriterPanelMessage/Inbox/'"></i>&nbsp Gelen Mesajlar<i class="right fas fa-angle-down"></i>
+                            <span class="badge bg-primary float-right">@ViewBag.receiverMail</span>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-inbox" style="color: darkgoldenrod"> Okunmamış Mesajlar &nbsp<span class="badge bg-warning float-right">@ViewBag.unReadMail</span></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-inbox" style="color: gray"> Okunmuş Mesajlar &nbsp<span class="badge bg-gradient-gray float-right">@ViewBag.readMail</span></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-inbox" style="color: red"> Önemli Mesajlar &nbsp<span class="badge bg-danger float-right">@ViewBag.importantMail</span></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/WriterPanelMessage/Sendbox/" class="nav-link">
+                            <i class="far fa-envelope"></i>&nbsp Gönderilen Mesajlar <span class="badge bg-success float-right">@ViewBag.sendMail</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/WriterPanelMessage/DraftMessages/" class="nav-link">
+                            <i class="far fa-file-alt"></i>&nbsp Taslaklar <span class="badge bg-yellow float-right">@ViewBag.draftMail</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-filter"></i>&nbsp Çöp Kutusu <span class="badge bg-cyan float-right">@ViewBag.trashMail</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"> Diğer</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle text-danger"></i> Önemliler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle text-warning"></i> Tanıtımlar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-circle text-primary"></i> Sosyal Medya
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- jQuery -->
+<!--<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>-->
+<!-- Bootstrap -->
+<!--<script src="~/Themes/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>-->

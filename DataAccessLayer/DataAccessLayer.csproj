@@ -79,17 +79,9 @@
     <Compile Include="EntityFramework\EfSkillAreaDal.cs" />
     <Compile Include="EntityFramework\EfTalentDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
-    <Compile Include="Migrations\202106222102081_add_createAllTables.cs" />
-    <Compile Include="Migrations\202106222102081_add_createAllTables.designer.cs">
-      <DependentUpon>202106222102081_add_createAllTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106230708368_mig_changeWriterMail.cs" />
-    <Compile Include="Migrations\202106230708368_mig_changeWriterMail.designer.cs">
-      <DependentUpon>202106230708368_mig_changeWriterMail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106291249367_mig_add_screenshot.cs" />
-    <Compile Include="Migrations\202106291249367_mig_add_screenshot.designer.cs">
-      <DependentUpon>202106291249367_mig_add_screenshot.cs</DependentUpon>
+    <Compile Include="Migrations\202107011807439_mig_add_screenshot2.cs" />
+    <Compile Include="Migrations\202107011807439_mig_add_screenshot2.designer.cs">
+      <DependentUpon>202107011807439_mig_add_screenshot2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -105,14 +97,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106222102081_add_createAllTables.resx">
-      <DependentUpon>202106222102081_add_createAllTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106230708368_mig_changeWriterMail.resx">
-      <DependentUpon>202106230708368_mig_changeWriterMail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106291249367_mig_add_screenshot.resx">
-      <DependentUpon>202106291249367_mig_add_screenshot.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107011807439_mig_add_screenshot2.resx">
+      <DependentUpon>202107011807439_mig_add_screenshot2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

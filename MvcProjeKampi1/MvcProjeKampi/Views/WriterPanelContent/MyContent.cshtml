@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concrete
+@model List<Content>
+
+@{
+    ViewBag.Title = "MyContent";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+<!-- Site wrapper -->
+<div class="wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Timelime example  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- The time line -->
+                    <div class="timeline">
+                        @foreach (var item in Model)
+                        {
+                            <!-- timeline time label -->
+                            <div class="time-label">
+                                <span class="bg-success">@(((DateTime) item.ContentDate).ToString("dd-MMM-yyyy"))</span>
+                            </div>
+                            <!-- /.timeline-label -->
+                            <!-- timeline item -->
+                            <div>
+                                <i class="fas fa-comment bg-yellow"></i>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-header"><a href="#">@item.Heading.HeadingName</a></h3>
+                                    <div class="timeline-body">
+                                        @item.ContentValue
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END timeline item -->
+                        }
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.timeline -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- ./wrapper -->
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+﻿@model EntityLayer.Concrete.SkillArea
+@{
+    ViewBag.Title = "AddSkillArea";
+    Layout = "~/Views/Shared/_TalentLayout.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yetenek Bölümü Ekleme</title>
+</head>
+<body>
+    <!-- main -->
+    <div class="main">
+
+        <h1>Yetenek Bölümü Ekleme Sayfası</h1>
+        <div class="main-info">
+            <div class="main-row">
+                <p><a href="/AdminCategory/Index" class="btn btn-primary"><b>Ana Sayfaya Git &nbsp&nbsp&nbsp</b></a> <a href="#" class="btn btn-primary"><b>&nbsp&nbsp&nbsp&nbsp Yetenek Bölümlerini Güncelle</b></a></p>
+                
+                <p><a href="/Talent/Index" class="btn btn-primary"><b>Geri Git </b></a></p>
+                <br />
+                <!-- main-row-one -->
+
+                <div class="profile-grid logo wthree">
+                </div>
+                <h3 class="title">Yetenek Bölümleri</h3>
+                <br />
+                <div class="col-md-6 skills-right bar_group">
+                    @using (Html.BeginForm("AddSkillArea", "SkillArea", FormMethod.Post))
+                    {
+                        <form method="post" action="#">
+                            <div class="modal-body">
+                                @Html.Label("Yetenek Bölüm Adı")
+                                <br />
+                                @Html.TextBoxFor(x => x.Area, new { @class = "form-control" })
+                                @*@Html.ValidationMessageFor(x => x.Area)*@
+                                <br /> <br />
+                                @Html.Label("Yetenek Bölüm Alanı Detayı")
+                                <br />
+                                @Html.TextBoxFor(x => x.AreaDetails, new { @class = "form-control" })
+                                @*@Html.ValidationMessageFor(x => x.AreaDetails)*@
+                                <br /> <br />
+                                <br /> <br />
+                                <button class="btn btn-primary">Kaydet</button>
+                                <br />
+                            </div>
+                        </form>
+                    }
+                </div>
+                <!--bar-js-->
+                <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <p>
+        </p>
+    </div>
+</body>
+</html>

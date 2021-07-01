@@ -1,0 +1,69 @@
+﻿
+@model EntityLayer.Dto.AdminLogInDto
+@{
+    Layout = "~/Views/Shared/_TalentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mvc Kamp Admin Kayıt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/Themes/login-form-19/css/style.css">
+
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <br/>
+                    <h2 class="heading-section" style="color: black"><b>Mvc Proje Kampı Admin Kayıt</b></h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap py-5">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(/Themes/login-form-19/images/bg.jpg);"></div>
+                        <h3 class="text-center mb-0">Hoşgeldiniz</h3>
+                        <p class="text-center">Lütfen bilgilerinizi kutucuklara giriniz</p>
+                        @using (Html.BeginForm("AdminRegister", "Register", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                                <input type="text" class="form-control" name="AdminUserName" placeholder="Kullanıcı adınızı giriniz" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-bookmark"></span></div>
+                                <input type="text" class="form-control" name="AdminMail" placeholder="Mail adresinizi giriniz" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                <input type="password" class="form-control" name="AdminPassword" placeholder="Şifrenizi giriniz" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Kayıt Ol</button>
+                            </div>
+                        }
+                        <div class="w-100 text-center mt-4 text">
+                            <a href="/AdminCategory/Index" style="color: white"><b>Ana sayfaya Dön</b></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/Themes/login-form-19/js/jquery.min.js"></script>
+    <script src="~/Themes/login-form-19/js/popper.js"></script>
+    <script src="~/Themes/login-form-19/js/bootstrap.min.js"></script>
+    <script src="~/Themes/login-form-19/js/main.js"></script>
+
+</body>
+</html>

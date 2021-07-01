@@ -5,6 +5,7 @@ namespace BusinessLayer.Abstract
 {
     public interface IWriterService
     {
+        //void UpdatePassword(string currentPassword, string newPassword, Writer writer);
         List<Writer> GetList();
         Writer GetById(int id);
         void WriterAdd(Writer writer);

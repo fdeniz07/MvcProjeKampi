@@ -1,0 +1,203 @@
+﻿@using EntityLayer.Concrete
+@using Microsoft.Ajax.Utilities
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Heading>
+@*@model List<Heading>*@
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
+@{ string color = "";}
+@*@{ string status = "";}*@
+@{ string buttonTyp = "";}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Başlık İşlemleri</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%">
+                                #
+                            </th>
+                            <th style="width: 20%">
+                                Başlık Adı
+                            </th>
+                            <th style="width: 15%">
+                                Oluşturan Yazar
+                            </th>
+                            <th style="width: 10%">
+                                Durum
+                            </th>
+                            <th style="width: 8%" class="text-center">
+                                Kategori
+                            </th>
+                            <th style="width: 20%">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.Category.CategoryName == "Tiyatro")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.Category.CategoryName == "Spor")
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.Category.CategoryName == "Yazılım")
+                            {
+                                color = "badge badge-info";
+                            }
+                            if (item.Category.CategoryName == "Gezi")
+                            {
+                                color = "badge badge-secondary";
+                            }
+                            if (item.Category.CategoryName == "Kitap")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.Category.CategoryName == "Film")
+                            {
+                                color = "badge badge-dark";
+                            }
+                            if (item.Category.CategoryName == "Dizi")
+                            {
+                                color = "badge badge-primary";
+                            }
+                            if (item.Category.CategoryName == "Sosyal Medya")
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.Category.CategoryName == "Donanım")
+                            {
+                                color = "badge badge-info";
+                            }
+                            if (item.Category.CategoryName == "Network ve Güvenlik")
+                            {
+                                color = "badge badge-dark";
+                            }
+                            if (item.Category.CategoryName == "Teknoloji")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.Category.CategoryName == "Sinema")
+                            {
+                                color = "badge badge-secondary";
+                            }
+            <tr>
+                <td>
+                    @item.HeadingId
+                </td>
+                <td>
+                    <a>
+                        @item.HeadingName
+                    </a>
+                    <br />
+                    <small>
+                        @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
+                    </small>
+                </td>
+                <td>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <img alt="Avatar" class="table-avatar" src=@item.Writer.WriterImage>
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    @{ if (item.HeadingStatus)
+                        {
+        <b style="color: green "> Aktif</b> }
+    else
+    {
+<b style="color: red">Pasif</b> } }
+                </td>
+                <td class="project-state">
+                    <span class="@color">@item.Category.CategoryName</span>
+                </td>
+                <td class="project-actions text-right">
+                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingId">
+                        <i class="fas fa-folder">
+                        </i>
+                        Yazılar
+                    </a>
+                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingId">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Düzenle
+                    </a>
+                    <a class="btn" href="/Heading/DeleteHeading/@item.HeadingId">
+                        <i class="fas fa-trash"></i>
+                        @{ string status = "";
+                            string statusColor = "";
+
+                            if (item.HeadingStatus == true)
+                            {
+                                status = "Pasif Yap";
+                                buttonTyp = "btn btn-danger";
+                                statusColor = "badge badge-danger";
+                            }
+                            if (item.HeadingStatus == false)
+                            {
+                                status = "Aktif Yap";
+                                buttonTyp = "btn btn-success";
+                                statusColor = "badge badge-success";
+                            }
+                            //switch (item.HeadingStatus)
+                            //{
+                            //    case true:
+                            //        statusColor = "badge badge-success";
+                            //        status = "Aktif";
+                            //        break;
+                            //    case false:
+                            //        statusColor = "badge badge-danger";
+                            //        status = "Pasif";
+                            //        break;
+                            //}
+            <span class="@statusColor">@status</span> }
+                    </a>
+                </td>
+            </tr>
+}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+</body>
+</html>
+<a href="/Heading/AddHeading/" class="btn btn-primary">Yeni  Başlık Girişi</a>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
