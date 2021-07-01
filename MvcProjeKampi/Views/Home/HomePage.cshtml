@@ -39,6 +39,9 @@
     <link rel="stylesheet" href="~/Themes/Vitrin/web/css/style.css" type="text/css" media="all" />
     <!-- Style-CSS -->
     <link rel="stylesheet" href="~/Themes/Vitrin/web/css/fontawesome-all.css">
+    <!-- Responsive IFrame-->
+    <!-- IFrame -->
+    <link rel="stylesheet" href="~/Themes/Vitrin/web/css/iframe.css">
     <!-- Font-Awesome-Icons-CSS -->
     <!-- /Fonts -->
     <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,400,400i,500,500i,700,700i,900" rel="stylesheet">
@@ -89,9 +92,10 @@
                         <a href="/Default/Headings/1">Sözlük</a>
                     </li>
                     <li class="login">
-                        <button type="button" class="btn login-btn text-uppercase " data-toggle="modal" data-target="#exampleModalCenter">
-                            Giriş Yap
-                        </button>
+                        <button type="submit" class="btn login-btn text-uppercase" data-toggle="modal"><a href="/Login/WriterLogin/">Giriş Yap</a></button>
+                    </li>
+                    <li class="login">
+                        <button type="submit" class="btn login-btn text-uppercase " data-toggle="modal"><a href="/Register/WriterRegister/">Kayıt Ol</a></button>
                     </li>
                 </ul>
             </div>
@@ -305,13 +309,14 @@
                     </div>*@
                 -->
                 <div class="col-md-4 proj_gallery_grid" data-aos="zoom-in">
+
                     @for (int j = 0; j < 3; j++)
                     {
                         int id = randomScreen.Next(0, Model.Count - 1);
                         <div class="section_1_gallery_grid">
                             <a title="@Model[id].ImageName" href="@Model[id].ImagePath">
                                 <div class="section_1_gallery_grid1">
-                                    <img src="@Model[id].ImagePath" alt=" " class="img-fluid"/>
+                                    <img src="@Model[id].ImagePath" alt=" " class="img-fluid" />
                                     <div class="proj_gallery_grid1_pos">
                                         <h3>@Model[id].ImageName</h3>
                                     </div>
@@ -327,7 +332,7 @@
                         <div class="section_1_gallery_grid">
                             <a title="@Model[id].ImageName" href="@Model[id].ImagePath">
                                 <div class="section_1_gallery_grid1">
-                                    <img src="@Model[id].ImagePath" alt=" " class="img-fluid"/>
+                                    <img src="@Model[id].ImagePath" alt=" " class="img-fluid" />
                                     <div class="proj_gallery_grid1_pos">
                                         <h3>@Model[id].ImageName</h3>
                                     </div>
@@ -343,7 +348,7 @@
                         <div class="section_1_gallery_grid">
                             <a title="@Model[id].ImageName" href="@Model[id].ImagePath">
                                 <div class="section_1_gallery_grid1">
-                                    <img src="@Model[id].ImagePath" alt=" " class="img-fluid"/>
+                                    <img src="@Model[id].ImagePath" alt=" " class="img-fluid" />
                                     <div class="proj_gallery_grid1_pos">
                                         <h3>@Model[id].ImageName</h3>
                                     </div>
@@ -616,6 +621,12 @@
         </div>
     </section>
     <!-- //Contact -->
+    <!--IFrame-->
+    <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1245.7325686059953!2d7.470586826640338!3d51.35774523129986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b93b7e9cc796b5%3A0x7b1f1c5fab044047!2sGaleria%20Kaufhof!5e0!3m2!1str!2sde!4v1625063395561!5m2!1str!2sde" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="" aria-hidden="false" loading="lazy"></iframe>
+    </div>
+    <hr>
+    <!--/IFrame-->
     <!--/footer-->
     <footer class="footer text-left">
         <div class="container py-4 py-sm-5">
@@ -711,6 +722,7 @@
                 </div>
             </div>
         </div>
+
     </footer>
     <!--//footer-->
     <!--model-forms-->

@@ -15,7 +15,7 @@ namespace MvcProjeKampi.Controllers
 
         public ActionResult Index(int? page) //Buradaki int? page bos gelmeye karsi önlem amaclidir
         {
-            var writerValues = writerManager.GetList().ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
+            var writerValues = writerManager.GetList().ToPagedList(page ?? 1, 12); //? işaretleri boş gelme/boş olma durumuna karşı önlem amaçlı,kacinci sayfadan                                                                                                       baslasin, sayfada kac deger olsun anlamina gelmektedir.
             return View(writerValues);
         }
 

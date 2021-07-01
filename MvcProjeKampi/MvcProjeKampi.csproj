@@ -217,6 +217,7 @@
     <Content Include="ScreenShots\HomePage - P4.JPG" />
     <Content Include="ScreenShots\HomePage - P5.JPG" />
     <Content Include="ScreenShots\HomePage - P6.JPG" />
+    <Content Include="ScreenShots\HomePage - P7 - Google IFrame.JPG" />
     <Content Include="ScreenShots\index - Admin.JPG" />
     <Content Include="ScreenShots\NLayered Architecture.JPG" />
     <Content Include="ScreenShots\Sendbox Details.JPG" />
@@ -237,6 +238,7 @@
     <Content Include="ScreenShots\Writer - Profile.JPG" />
     <Content Include="ScreenShots\Writer - Register.JPG" />
     <Content Include="ScreenShots\Writer Login Panel.JPG" />
+    <Content Include="ScreenShots\Writer.JPG" />
     <Content Include="ScreenShots\Writer.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2207,6 +2209,7 @@
     <Content Include="Themes\Vitrin\web\css\aos.css" />
     <Content Include="Themes\Vitrin\web\css\bootstrap.css" />
     <Content Include="Themes\Vitrin\web\css\fontawesome-all.css" />
+    <Content Include="Themes\Vitrin\web\css\iframe.css" />
     <Content Include="Themes\Vitrin\web\css\roadmap.css" />
     <Content Include="Themes\Vitrin\web\css\simpleLightbox.css" />
     <Content Include="Themes\Vitrin\web\css\snow.css" />
