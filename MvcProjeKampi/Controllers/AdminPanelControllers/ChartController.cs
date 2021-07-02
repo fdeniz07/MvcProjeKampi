@@ -15,6 +15,21 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
             return View();
         }
 
+        public ActionResult CategoryListPieChart()
+        {
+            return View();
+        }
+
+        public ActionResult HeadingListLineChart()
+        {
+            return View();
+        }
+
+        public ActionResult WriterListColumnChart()
+        {
+            return View();
+        }
+
         // Kategori icerisindeki Baslik Sayisi Listesi \\
 
         #region Mimarisiz Kategori icerisindeki Baslik Listesi Grafigi
@@ -51,10 +66,7 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
         }
 
         #endregion
-
-
-
-
+        
         public ActionResult CategoryListChart()
         {
             return Json(CategoryList(), JsonRequestBehavior.AllowGet);
@@ -73,9 +85,7 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
             }
             return categoryClasses;
         }
-
-
-
+        
         // Yazarlarin Baslik Sayisi Listesi \\
 
         #region Mimarili Yazar Baslik Sayisi Listesi Grafigi

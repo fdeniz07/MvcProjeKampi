@@ -2885,9 +2885,9 @@
     <Content Include="Views\Content\GetAllContent.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\WriterPanel\WriterPasswordChange.cshtml" />
-    <Content Include="Views\Chart\CategoryListChart.cshtml" />
-    <Content Include="Views\Chart\WriterListChart.cshtml" />
-    <Content Include="Views\Chart\HeadingListChart.cshtml" />
+    <Content Include="Views\Chart\CategoryListPieChart.cshtml" />
+    <Content Include="Views\Chart\WriterListColumnChart.cshtml" />
+    <Content Include="Views\Chart\HeadingListLineChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
