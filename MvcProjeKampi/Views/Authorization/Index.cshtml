@@ -1,0 +1,80 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Admin>
+@*@model List<Admin>*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    string color = "";
+    string buttonTyp = "";
+    string status = "";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th style="width: 1%">#</th>
+        <th style="width: 10%">Kullanıcı Adı</th>
+        <th style="width: 5%">Yetki</th>
+        <th style="width: 5%">Durumu</th>
+        @*<th style="width: 10%">Pasif Yap</th>
+        <th style="width: 10%">Yetkisini Degiştir</th>*@
+    </tr>
+    @foreach (var item in Model)
+    {
+        if (item.AdminStatus == true)
+        {
+            status = "Pasif Yap";
+            buttonTyp = "btn btn-danger";
+        }
+        if (item.AdminStatus == false)
+        {
+            status = "Aktif Yap";
+            buttonTyp = "btn btn-success";
+        }
+
+        <tr>
+            <th>@item.AdminId</th>
+            <td style="text-align: center">@item.AdminUserName</td>
+            <td style="text-align: center"><b>@item.AdminRole</b></td>
+            <td>
+                @{ if (item.AdminStatus)
+                    {
+                        <b style="color: green "> Aktif</b> }
+                    else
+                    {
+                        <b style="color: red">Pasif</b> }
+                }
+            </td>
+            <td>
+                <a href="/Authorization/DeleteAdmin/@item.AdminId" class="@buttonTyp">@status</a>
+
+                <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+                    Yetkisini Değiştir
+                </button>
+                @Html.Action("AuthorizationPartial", "Authorization")
+            </td>
+
+            @*<td><a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-warning">Yetkisini Değiştir</a></td>*@
+
+        </tr>
+    }
+</table>
+<a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Admin Tanımla</a>
+
+@* !!! ÖNEMLI NOT !!!!
+    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.
+    Bu islemi yaparsak asagida yazilacak komuta ihtiyac kalmaz.
+*@
+
+@* Asagidaki alan sayfalama isleminde sayfalarinda altinda sayfa numarasi gecislerini cözmektedir. *@
+
+@*@Html.PagedListPager((IPagedList)Model, page => Url.Action("AllHeadings", new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        {"page-link"}
+    })*@
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))

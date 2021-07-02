@@ -141,6 +141,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminPanelControllers\AboutController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\AuthorizationController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\CategoryController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\ChartController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\ContactController.cs" />
@@ -2890,6 +2891,9 @@
     <Content Include="Views\Chart\HeadingListColumnChart.cshtml" />
     <Content Include="Views\Heading\HeadingReport.cshtml" />
     <Content Include="Views\Test\SweetAlert.cshtml" />
+    <Content Include="Views\Authorization\Index.cshtml" />
+    <Content Include="Views\Authorization\UpdateRole.cshtml" />
+    <Content Include="Views\Authorization\AuthorizationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

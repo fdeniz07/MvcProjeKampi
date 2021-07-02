@@ -11,7 +11,7 @@ namespace EntityLayer.Concrete
         public string AdminUserName { get; set; }
 
         //public string  AdminMail { get; set; }
-        public byte[] AdminMail { get; set; } //-->Session da hashleme problemi oluyor
+        public byte[] AdminMail { get; set; }
 
         public byte[] AdminPasswordHash { get; set; }
 
@@ -19,6 +19,8 @@ namespace EntityLayer.Concrete
 
         [StringLength(1)]
         public string AdminRole { get; set; }
+
+        public bool AdminStatus { get; set; }
     }
 }
 

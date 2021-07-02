@@ -83,6 +83,10 @@
     <Compile Include="Migrations\202107011807439_mig_add_screenshot2.designer.cs">
       <DependentUpon>202107011807439_mig_add_screenshot2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107020737354_add_adminStatus.cs" />
+    <Compile Include="Migrations\202107020737354_add_adminStatus.designer.cs">
+      <DependentUpon>202107020737354_add_adminStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107011807439_mig_add_screenshot2.resx">
       <DependentUpon>202107011807439_mig_add_screenshot2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107020737354_add_adminStatus.resx">
+      <DependentUpon>202107020737354_add_adminStatus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

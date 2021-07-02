@@ -1,0 +1,31 @@
+﻿@using System.Web.UI.WebControls
+@using EntityLayer.Concrete
+@model Admin
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Admin Yetki Değiştirme</h2>
+            </div>
+            <form method="post" action="/Authorization/Index">
+                <div class="modal-body">
+                    @Html.Label("Admin ID")
+                    @Html.TextBoxFor(x => x.AdminId, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Admin Kullanıcı Adı")
+                    @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+                    @Html.DisplayFor(x => x.AdminUserName, new { @class = "form-control" })
+                    <br />
+                    <label>Durumu : </label>
+                    @Html.DropDownListFor(x => x.AdminStatus, new SelectListItem[] { new SelectListItem() { Text = " Aktif ", Value = "true" }, new SelectListItem() { Text = " Pasif ", Value = "false" } })
+                    <br />
+                    <br />
+                    <button class="btn btn-primary">Kaydet</button>
+                    <br />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br />
