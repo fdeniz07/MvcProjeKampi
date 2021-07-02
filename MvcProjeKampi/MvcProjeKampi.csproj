@@ -2889,6 +2889,7 @@
     <Content Include="Views\Chart\WriterListLineChart.cshtml" />
     <Content Include="Views\Chart\HeadingListColumnChart.cshtml" />
     <Content Include="Views\Heading\HeadingReport.cshtml" />
+    <Content Include="Views\Test\SweetAlert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

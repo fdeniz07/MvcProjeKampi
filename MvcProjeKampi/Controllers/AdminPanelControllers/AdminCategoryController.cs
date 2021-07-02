@@ -8,12 +8,12 @@ using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
-   
+    [Authorize(Roles = "B")] // Sadece "B" rolüne sahip kisiler görüntüleyebilsin
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal()); //Ileride Enttiy Framework'den vazgecilirse burasi degistirilebilir
 
-        [Authorize(Roles = "B")] // Sadece "B" rolüne sahip kisiler görüntüleyebilsin
+        
         public ActionResult Index(int? page)
         {
             var categoryValues = categoryManager.GetList().ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna                                                        karşı önlem amaçlı,kacinci sayfadan baslasin, sayfada kac deger olsun anlamina gelmektedir.

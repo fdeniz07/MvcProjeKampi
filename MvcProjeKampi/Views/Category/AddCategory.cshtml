@@ -23,6 +23,23 @@
     </div>
 }
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+
+<script>
+    $('#buton').click(function () {
+        swal({
+            title: "Tebrikler!",
+            text: "Kategori başarılı bir şekilde eklendi.",
+            buttons: false,
+            icon: "info",
+            timer:10000
+        }).then(function () {
+            window.location.reload(true);
+            tr.hide();
+        });
+    });
+</script>
 @*<form class="form-group" method="post">
         <input type="text" placeholder="Kategori Adı" name="CategoryName" class="form-control" />
         <br />
