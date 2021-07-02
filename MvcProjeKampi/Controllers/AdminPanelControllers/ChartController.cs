@@ -20,12 +20,12 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
             return View();
         }
 
-        public ActionResult HeadingListLineChart()
+        public ActionResult HeadingListColumnChart()
         {
             return View();
         }
 
-        public ActionResult WriterListColumnChart()
+        public ActionResult WriterListLineChart()
         {
             return View();
         }

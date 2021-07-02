@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "HeadingListChart";
+    ViewBag.Title = "WriterListChart";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -16,7 +16,7 @@
                 type: "POST",
                 dataType: "json",
                 contentType: "application/json",
-                url: '@Url.Action("HeadingListChart", "Chart")',
+                url: '@Url.Action("WriterListChart", "Chart")',
                 success: function (result) {
                     google.charts.load('current', {
                         'packages': ['corechart']
@@ -29,17 +29,17 @@
         });
         function drawChart(result) {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'HeadingName');
-            data.addColumn('number', 'HeadingCount');
+            data.addColumn('string', 'WriterName');
+            data.addColumn('number', 'WriterCount');
             var dataArray = [];
 
             $.each(result, function (i, obj) {
-                dataArray.push([obj.HeadingName, obj.HeadingCount]);
+                dataArray.push([obj.WriterName, obj.WriterCount]);
             });
             data.addRows(dataArray);
 
             var columnChartOptions = {
-                title: "Başlık - İçerik Grafiği",
+                title: "Yazar - Başlık Grafiği",
                 width: 1000,
                 height: 800,
                 bar: { groupWidth: "20%" },
@@ -51,8 +51,7 @@
     </script>
 </head>
 <body>
-    <div id="Piechart_div"></div>
+<div id="Piechart_div"></div>
 </body>
 </html>
-
 
