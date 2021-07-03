@@ -19,25 +19,25 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
             return View(adminValues);
         }
 
-        //[HttpGet]
-        //public ActionResult UpdateRole(int id)
-        //{
-        //    List<SelectListItem> adminValue = (from x in adminManager.GetList()
-        //        select new SelectListItem
-        //        {
-        //            Text = x.AdminUserName,
-        //            Value = x.AdminId.ToString()
-        //        }).ToList();
-        //    ViewBag.valueAdmin = adminValue;
-        //    return View(adminValue);
-        //}
+        [HttpGet]
+        public ActionResult UpdateRole(int id)
+        {
+            List<SelectListItem> adminValue = (from x in adminManager.GetList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.AdminRole,
+                                                   Value = x.AdminId.ToString()
+                                               }).ToList();
+            ViewBag.valueAdmin = adminValue;
+            return View(adminValue);
+        }
 
-        //[HttpPost]
-        //public ActionResult UpdateRole(Admin admin)
-        //{
-        //    adminManager.AdminUpdate(admin);
-        //    return RedirectToAction("Index");
-        //}
+        [HttpPost]
+        public ActionResult UpdateRole(Admin admin)
+        {
+            adminManager.AdminUpdate(admin);
+            return RedirectToAction("Index");
+        }
 
         public ActionResult DeleteAdmin(int id)
         {
@@ -56,10 +56,10 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
         }
 
 
-        public PartialViewResult AuthorizationPartial()
-        {
-            return PartialView();
-        }
+        //public PartialViewResult AuthorizationPartial()
+        //{
+        //    return PartialView();
+        //}
 
     }
 }

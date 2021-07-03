@@ -2,6 +2,7 @@
 @using EntityLayer.Concrete
 @model Admin
 
+
 <div class="modal" id="Modal1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -10,16 +11,19 @@
             </div>
             <form method="post" action="/Authorization/Index">
                 <div class="modal-body">
-                    @Html.Label("Admin ID")
+                    @*@Html.Label("Admin ID")
                     @Html.TextBoxFor(x => x.AdminId, new { @class = "form-control" })
                     <br />
                     @Html.Label("Admin Kullanıcı Adı")
                     @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
                     @Html.DisplayFor(x => x.AdminUserName, new { @class = "form-control" })
-                    <br />
+                    <br />*@
                     <label>Durumu : </label>
-                    @Html.DropDownListFor(x => x.AdminStatus, new SelectListItem[] { new SelectListItem() { Text = " Aktif ", Value = "true" }, new SelectListItem() { Text = " Pasif ", Value = "false" } })
+                    @Html.DropDownListFor(x => x.AdminRole, new SelectListItem[] { new SelectListItem() { Text = " A ", Value = "A" }, new SelectListItem() { Text = "B", Value = "B" } })
                     <br />
+                    @*@Html.Label("Kategori")
+                    @Html.DropDownListFor(x=>x.AdminId,(List<SelectListItem>)ViewBag.valueAdmin,new {@class="form-control"})*@
+                    <br/>
                     <br />
                     <button class="btn btn-primary">Kaydet</button>
                     <br />
