@@ -159,7 +159,15 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
     
   <p>HomePage - P6<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P6.JPG" />
+    
+  <p>HomePage - P7<p/>
+  <img src="" />
   
+  <p>Admin Panel - Add Admin<p/>
+  <img src="" />
+  
+  <p>Admin Panel - Roles<p/>
+  <img src="" />
 <!--
   <p><p/>
   <img src="" />
