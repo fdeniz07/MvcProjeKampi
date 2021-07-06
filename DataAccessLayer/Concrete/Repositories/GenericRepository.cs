@@ -13,6 +13,7 @@ namespace DataAccessLayer.Concrete.Repositories
 
         DbSet<T> _object;
 
+
         public GenericRepository()
         {
             _object = context.Set<T>();

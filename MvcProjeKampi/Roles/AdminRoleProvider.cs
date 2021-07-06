@@ -72,7 +72,7 @@ namespace MvcProjeKampi.Roles
                         {
                             if (mailCrypto[i] == item.AdminMail[i])
                             {
-                                return new string[] { item.AdminRole };
+                                return new string[] { item.Role.RoleName };
                             }
                         }
                     }

@@ -17,12 +17,13 @@
 
 <table class="table table-bordered">
     <tr>
-        <th style="width: 1%">#</th>
-        <th style="width: 10%">Kullanıcı Adı</th>
-        <th style="width: 5%">Yetki</th>
-        <th style="width: 5%">Durumu</th>
-        @*<th style="width: 10%">Pasif Yap</th>
-        <th style="width: 10%">Yetkisini Degiştir</th>*@
+        <th style="width: 1%; text-align: center">#</th>
+        <th style="width: 5%; text-align: center">Kullanıcı Adı</th>
+        <th style="width: 1%; text-align: center">Yetki</th>
+        <th style="width: 5%; text-align: center">Yetki Detay</th>
+        <th style="width: 2%; text-align: center">Durumu</th>
+        <th style="width: 3%; text-align: center">Aktof / Pasif</th>
+        <th style="width: 3%; text-align: center">Yetki Degiştir</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -37,34 +38,49 @@
             buttonTyp = "btn btn-success";
         }
 
-        <tr>
-            <th>@item.AdminId</th>
-            <td style="text-align: center">@item.AdminUserName</td>
-            <td style="text-align: center"><b>@item.AdminRole</b></td>
-            <td>
-                @{ if (item.AdminStatus)
-                    {
-                        <b style="color: green "> Aktif</b> }
-                    else
-                    {
-                        <b style="color: red">Pasif</b> }
-                }
-            </td>
-            <td>
-                <a href="/Authorization/DeleteAdmin/@item.AdminId" class="@buttonTyp">@status</a>
+<tr>
+    <th>@item.AdminId</th>
+    <td style="text-align: center">@item.AdminUserName</td>
+    <td style="text-align: center;background-color: gold"><b>@item.Role.RoleName</b></td>
+    <td style="text-align: center">@item.Role.Description</td>
+    <td style="text-align: center">
+        @{ if (item.AdminStatus)
+            {
+                <b style="color: green "> Aktif</b> }
+            else
+            {
+                <b style="color: red">Pasif</b> }
+        }
+    </td>
 
-                <button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-                    Yetkisini Değiştir
-                </button>
-                @*@Html.Action("AuthorizationPartial", "Authorization")*@
-            </td>
+    <td style="text-align: center">
+        <a href="/Authorization/DeleteAdmin/@item.AdminId" class="@buttonTyp">@status</a>
 
-            <td><a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-warning">Yetkisini Değiştir</a></td>
+        @*<a class="btn btn-primary" href="/Authorization/AuthorizationPartial/@item.AdminId">
+            <i class="fas fa-folder"></i>
+            Yetkisini Değiştir
+        </a>*@
 
-        </tr>
+        @*<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+            Yetkisini Değiştir
+        </button>*@
+
+        @*@Html.Action("AuthorizationPartial", "Authorization")*@
+    </td>
+    <td style="text-align: center">
+        <a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-primary">Yetkisini Değiştir</a>
+    </td>
+    @*<td><a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-warning">Yetkisini Değiştir</a></td>*@
+
+</tr>
     }
 </table>
-<a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Admin Tanımla</a>
+<a href="/Authorization/AddAdmin/" class="btn btn-info">Yeni Admin Tanımla</a>
+
+
+
+
+
 
 @* !!! ÖNEMLI NOT !!!!
     <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.

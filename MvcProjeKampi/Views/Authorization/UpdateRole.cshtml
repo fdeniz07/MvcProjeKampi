@@ -9,14 +9,19 @@
 @using (Html.BeginForm("UpdateRole", "Authorization", FormMethod.Post))
 {
     <div class="form-group">
-        @Html.Label("Admin ID")
-        @Html.TextBoxFor(x => x.AdminId, new {@class = "form-control"})
+        @Html.HiddenFor(x => x.AdminId, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.AdminPasswordHash, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.AdminMail, new { @class = "form-control" })
         <br/>
+        @*@Html.Label("Admin ID")
+        @Html.TextBoxFor(x => x.AdminId, new {@class = "form-control"})
+        <br/>*@
         @Html.Label("Admin Kullanıcı Adı")
         @Html.TextBoxFor(x => x.AdminUserName, new {@class = "form-control"})
         <br/>
         @Html.Label("Rol")
-        @Html.DropDownListFor(x => x.AdminId, (List<SelectListItem>) ViewBag.valueAdmin, new {@class = "form-control"})
+        @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.valueAdminRole, new {@class = "form-control"})
         <br/>
         <button class="btn btn-success">Güncelle</button>
     </div>

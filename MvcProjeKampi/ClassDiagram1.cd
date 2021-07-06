@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MvcProjeKampi.BundleConfig" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.FilterConfig" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.RouteConfig" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.MvcApplication" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.AboutController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAEAAAAAAAAAAAAAIgAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\AboutController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.AdminCategoryController" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAg=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\AdminCategoryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.CategoryController" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\CategoryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.ContactController" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAQAAAAAAgAACAEAAAAAAAIAMAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\ContactController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.ContentController" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAEAQAQAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\ContentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.ErrorPageController" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\ErrorPageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.GalleryController" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\GalleryController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.HeadingController" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAQBAAAAAAAAAAAAAAAABCAAAEAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\HeadingController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.HomeController" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAABAEACAAAAAAAAAAAAAAAAAEACQAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.LoginController" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAQAAAAAAAAAABAIAAAAACAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\LoginController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.MessageController" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABCAAAAAAAABAAEAAAEAQAgAAAAAEAHAAAAACAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\MessageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.RegisterController" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAEAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\RegisterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.SkillAreaController" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAEAAQAAABA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\SkillAreaController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.StatisticController" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\StatisticController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.TalentController" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAACAAAAAAAAECAIAEABAAAABA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\TalentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.WriterController" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAAAAAAAAAAAAAAAAAAABAAAAAAgAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\WriterController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.TestController" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUAAEAgAAAAAA=</HashCode>
+      <FileName>Controllers\TestController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.WriterPanelController" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACECICAQAAgAAAAAAAAAAAAAABCEEAAACAAAEAAAAAA=</HashCode>
+      <FileName>Controllers\WriterPanelContollers\WriterPanelController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.AdminPanelControllers.AuthorizationController" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQgAAAAAAAAAAAAAAAAAAAAAAEAAAgAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\AuthorizationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.AdminPanelControllers.ChartController" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAEgAAAAAAAIAAACAAAAAAQAAAAAEACQAIACA=</HashCode>
+      <FileName>Controllers\AdminPanelControllers\ChartController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.WriterPanelContollers.DefaultController" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBQAAAAAA=</HashCode>
+      <FileName>Controllers\WriterPanelContollers\DefaultController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.WriterPanelContollers.WriterPanelContentController" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAAAAAAAAABAAAAAAAAAAAAAACAAAAQAAAAAA=</HashCode>
+      <FileName>Controllers\WriterPanelContollers\WriterPanelContentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Controllers.WriterPanelContollers.WriterPanelMessageController" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAARCAAAAAAAABAgEACAEAQAgAAAIAEAHAAAAACAAAA=</HashCode>
+      <FileName>Controllers\WriterPanelContollers\WriterPanelMessageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Models.CaptchaResult" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\CaptchaResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Models.CategoryClass" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Charts\CategoryClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Models.WriterClass" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Charts\WriterClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Models.Charts.HeadingClass" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Charts\HeadingClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MvcProjeKampi.Roles.AdminRoleProvider" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEkAAwAAAEAAAAAAAABAAAABAAAAIAAAAEAAEQAAA=</HashCode>
+      <FileName>Roles\AdminRoleProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

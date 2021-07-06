@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using EntityLayer.Dto;
 using PagedList;
 
 namespace MvcProjeKampi.Controllers.AdminPanelControllers
@@ -12,23 +14,47 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
     {
 
         AdminManager adminManager = new AdminManager(new EfAdminDal());
+        IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()));
+        RoleManager roleManager = new RoleManager(new EfRoleDal());
 
         public ActionResult Index(int? page)
         {
-            var adminValues = adminManager.GetList().ToPagedList(page ?? 1, 8); ;
+            var adminValues = adminManager.GetList().ToPagedList(page ?? 1, 8);
             return View(adminValues);
+        }
+
+        [HttpGet]
+        public ActionResult AddAdmin()
+        {
+            List<SelectListItem> adminRoleValue = (from x in roleManager.GetRoles() 
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.RoleName,
+                                                   Value = x.RoleId.ToString()
+                                               }).ToList();
+            ViewBag.valueAdminRole = adminRoleValue;
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AddAdmin(AdminLogInDto adminLogInDto)
+        {
+            authService.AdminRegister(adminLogInDto.AdminUserName, adminLogInDto.AdminMail, adminLogInDto.AdminPassword,adminLogInDto.AdminRoleId);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
         public ActionResult UpdateRole(int id)
         {
-            List<SelectListItem> adminValue = (from x in adminManager.GetList()
+            List<SelectListItem> adminRoleValue = (from x in roleManager.GetRoles()
                                                select new SelectListItem
                                                {
-                                                   Text = x.AdminRole,
-                                                   Value = x.AdminId.ToString()
+                                                   Text = x.RoleName,
+                                                   Value = x.RoleId.ToString()
                                                }).ToList();
-            ViewBag.valueAdmin = adminValue;
+            ViewBag.valueAdminRole = adminRoleValue;
+            var adminValue = adminManager.GetByAdminID(id);
             return View(adminValue);
         }
 
@@ -56,10 +82,9 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
         }
 
 
-        //public PartialViewResult AuthorizationPartial()
-        //{
-        //    return PartialView();
-        //}
-
+        public PartialViewResult AuthorizationPartial()
+        {
+            return PartialView();
+        }
     }
 }

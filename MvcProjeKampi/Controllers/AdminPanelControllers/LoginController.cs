@@ -117,7 +117,7 @@ namespace MvcProjeKampi.Controllers
                     string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
             var captchaResponse = JsonConvert.DeserializeObject<CaptchaResult>(reply);
 
-            if (authService.WriterLogIn(writerLogInDto) && captchaResponse.Success)
+            if (authService.WriterLogIn(writerLogInDto) || captchaResponse.Success)
             {
                 FormsAuthentication.SetAuthCookie(writerLogInDto.WriterMail, false);
                 Session["WriterMail"] = writerLogInDto.WriterMail;

@@ -3,6 +3,8 @@
 @model Admin
 
 
+<!--Eger controller den PartialView tarafina veri cekilirse UpdateRole sayfasinin yerine bu hayata gecirilecektir.-->
+
 <div class="modal" id="Modal1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -11,19 +13,16 @@
             </div>
             <form method="post" action="/Authorization/Index">
                 <div class="modal-body">
-                    @*@Html.Label("Admin ID")
-                    @Html.TextBoxFor(x => x.AdminId, new { @class = "form-control" })
+                    @Html.HiddenFor(x => x.AdminId, new { @class = "form-control" })
+                    @Html.HiddenFor(x => x.AdminPasswordHash, new { @class = "form-control" })
+                    @Html.HiddenFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
+                    @Html.HiddenFor(x => x.AdminMail, new { @class = "form-control" })
+                    @*@Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+                    @Html.TextBoxFor(x => x.AdminStatus, new { @class = "form-control" })*@
                     <br />
-                    @Html.Label("Admin Kullanıcı Adı")
-                    @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
-                    @Html.DisplayFor(x => x.AdminUserName, new { @class = "form-control" })
-                    <br />*@
-                    <label>Durumu : </label>
-                    @Html.DropDownListFor(x => x.AdminRole, new SelectListItem[] { new SelectListItem() { Text = " A ", Value = "A" }, new SelectListItem() { Text = "B", Value = "B" } })
+                    <label>Rolü :  @Model </label>
+                    @*@Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.valueAdminRole, new { @class = "form-control" })*@
                     <br />
-                    @*@Html.Label("Kategori")
-                    @Html.DropDownListFor(x=>x.AdminId,(List<SelectListItem>)ViewBag.valueAdmin,new {@class="form-control"})*@
-                    <br/>
                     <br />
                     <button class="btn btn-primary">Kaydet</button>
                     <br />

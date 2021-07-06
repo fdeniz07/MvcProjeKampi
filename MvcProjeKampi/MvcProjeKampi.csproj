@@ -56,6 +56,30 @@
     <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.10.2.3\lib\netstandard2.0\FluentValidation.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.15.0.44797, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.15.0\lib\net452\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.15.0.44797, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.15.0\lib\net452\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.15.0.44797, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.15.0\lib\net452\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.15.0.44798, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.15.0\lib\net452\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.15.0.44797, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.15.0\lib\net452\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.15.0.44797, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.15.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.8\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -70,11 +94,29 @@
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -169,10 +211,85 @@
     <Compile Include="Models\Charts\CategoryClass.cs" />
     <Compile Include="Models\Charts\HeadingClass.cs" />
     <Compile Include="Models\Charts\WriterClass.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\BusinessLayer.dll" />
+    <Content Include="bin\BusinessLayer.pdb" />
+    <Content Include="bin\DataAccessLayer.dll" />
+    <Content Include="bin\DataAccessLayer.pdb" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\EntityFramework.xml" />
+    <Content Include="bin\EntityLayer.dll" />
+    <Content Include="bin\EntityLayer.pdb" />
+    <Content Include="bin\FluentValidation.dll" />
+    <Content Include="bin\FluentValidation.xml" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.AspNet.TelemetryCorrelation.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MvcProjeKampi.dll" />
+    <Content Include="bin\MvcProjeKampi.pdb" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\PagedList.dll" />
+    <Content Include="bin\PagedList.Mvc.dll" />
+    <Content Include="bin\PagedList.Mvc.xml" />
+    <Content Include="bin\PagedList.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.Buffers.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Memory.dll" />
+    <Content Include="bin\roslyn\System.Numerics.Vectors.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Buffers.dll" />
+    <Content Include="bin\System.ComponentModel.Annotations.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\System.Memory.dll" />
+    <Content Include="bin\System.Numerics.Vectors.dll" />
+    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -201,10 +318,15 @@
     <Content Include="Images\Gezi\Antalya\Kaleici ve Marina - Antalya.jpg" />
     <Content Include="Images\Gezi\Antalya\Kemer Jeep Safari - Antalya.jpeg" />
     <Content Include="Images\Gezi\Antalya\Köprülü Kanyon - Antalya.jpg" />
+    <Content Include="obj\Debug\MvcProjeKampi.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\MvcProjeKampi.dll" />
+    <Content Include="obj\Debug\MvcProjeKampi.pdb" />
     <Content Include="ScreenShots\404 Error Page.JPG" />
     <Content Include="ScreenShots\About.JPG" />
     <Content Include="ScreenShots\Add About.JPG" />
     <Content Include="ScreenShots\Admin Login Panel.JPG" />
+    <Content Include="ScreenShots\Admin Panel - Add Admin.JPG" />
+    <Content Include="ScreenShots\Admin Panel - Roles.JPG" />
     <Content Include="ScreenShots\Admin Register Site.JPG" />
     <Content Include="ScreenShots\Categories.JPG" />
     <Content Include="ScreenShots\Contact Message Details.JPG" />
@@ -274,6 +396,27 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="bin\BusinessLayer.dll.config" />
+    <Content Include="bin\DataAccessLayer.dll.config" />
+    <Content Include="bin\EntityLayer.dll.config" />
+    <Content Include="bin\MvcProjeKampi.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\MvcProjeKampi.csproj.AssemblyReference.cache" />
+    <Content Include="obj\Debug\MvcProjeKampi.csproj.CopyComplete" />
+    <Content Include="obj\Debug\MvcProjeKampi.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Tsc.out" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -2263,20 +2406,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_TalentLayout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Test.cshtml" />
-    <Content Include="Views\Shared\_Deneme.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\Test\Test2.cshtml" />
-    <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Category\GetCategoryList.cshtml" />
-    <Content Include="Views\Category\AddCategory.cshtml" />
     <Content Include="Themes\AdminLTE-3.0.4\.babelrc" />
     <Content Include="Themes\AdminLTE-3.0.4\.browserslistrc" />
     <Content Include="Themes\AdminLTE-3.0.4\.editorconfig" />
@@ -2532,36 +2661,6 @@
     <Content Include="Themes\AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="Themes\AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="Themes\AdminLTE-3.0.4\README.md" />
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\AdminCategory\Index.cshtml" />
-    <Content Include="Views\AdminCategory\AddCategory.cshtml" />
-    <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
-    <Content Include="Views\Statistic\Index.cshtml" />
-    <Content Include="Views\Writer\Index.cshtml" />
-    <Content Include="Views\Writer\AddWriter.cshtml" />
-    <Content Include="Views\Writer\EditWriter.cshtml" />
-    <Content Include="Views\Heading\Index.cshtml" />
-    <Content Include="Views\Heading\AddHeading.cshtml" />
-    <Content Include="Views\Content\ContentByHeading.cshtml" />
-    <Content Include="Views\Heading\EditHeading.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\About\AboutPartial.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Contact\GetContactDetails.cshtml" />
-    <Content Include="Views\Contact\PartialMessageMenu.cshtml" />
-    <Content Include="Views\Message\Inbox.cshtml" />
-    <Content Include="Views\Message\Sendbox.cshtml" />
-    <Content Include="Views\Message\NewMessage.cshtml" />
-    <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
-    <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
-    <Content Include="Views\Message\DraftMessages.cshtml" />
-    <Content Include="Views\Message\GetDraftDetails.cshtml" />
-    <Content Include="Views\ErrorPage\Page404.cshtml" />
-    <Content Include="Views\Contact\PartialMessageList.cshtml" />
-    <Content Include="Views\Contact\PartialMessageListFooter.cshtml" />
-    <Content Include="Views\Contact\PartialMessageListFooterButton.cshtml" />
-    <Content Include="Views\Gallery\Index.cshtml" />
-    <Content Include="Views\LogIn\AdminLogIn.cshtml" />
     <Content Include="Themes\login-form-19\.DS_Store" />
     <Content Include="Themes\login-form-19\css\.DS_Store" />
     <Content Include="Themes\login-form-19\css\bootstrap\.DS_Store" />
@@ -2661,31 +2760,7 @@
     <Content Include="Themes\login-form-19\scss\bootstrap\_utilities.scss" />
     <Content Include="Themes\login-form-19\scss\bootstrap\_variables.scss" />
     <Content Include="Themes\login-form-19\scss\style.scss" />
-    <Content Include="Views\ErrorPage\Page403Error.cshtml" />
     <Content Include="Themes\another-403-forbidden-pen\README.markdown" />
-    <Content Include="Views\Talent\Index.cshtml" />
-    <Content Include="Views\Talent\AddTalent.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\SkillArea\AddSkillArea.cshtml" />
-    <Content Include="Views\SkillArea\Index.cshtml" />
-    <Content Include="Views\Register\AdminRegister.cshtml" />
-    <Content Include="Views\Shared\_WriterLayout.cshtml" />
-    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
-    <Content Include="Views\WriterPanel\MyHeading.cshtml" />
-    <Content Include="Views\WriterPanel\NewHeading.cshtml" />
-    <Content Include="Views\WriterPanel\EditHeading.cshtml" />
-    <Content Include="Views\WriterPanelMessage\Inbox.cshtml" />
-    <Content Include="Views\WriterPanelMessage\PartialMessageMenu.cshtml" />
-    <Content Include="Views\WriterPanelMessage\Sendbox.cshtml" />
-    <Content Include="Views\WriterPanelMessage\NewMessage.cshtml" />
-    <Content Include="Views\WriterPanelMessage\GetSendboxMessageDetails.cshtml" />
-    <Content Include="Views\WriterPanelMessage\GetInboxMessageDetails.cshtml" />
-    <Content Include="Views\WriterPanelMessage\GetDraftDetails.cshtml" />
-    <Content Include="Views\WriterPanelMessage\DraftMessages.cshtml" />
-    <Content Include="Views\WriterPanelMessage\PartialMessageListFooterButton.cshtml" />
-    <Content Include="Views\WriterPanelMessage\PartialMessageList.cshtml" />
-    <Content Include="Views\WriterPanelMessage\PartialMessageListFooter.cshtml" />
-    <Content Include="Views\WriterPanelContent\MyContent.cshtml" />
     <Content Include="Themes\login-form-20\.DS_Store" />
     <Content Include="Themes\login-form-20\css\.DS_Store" />
     <Content Include="Themes\login-form-20\css\bootstrap\.DS_Store" />
@@ -2785,11 +2860,8 @@
     <Content Include="Themes\login-form-20\scss\bootstrap\_utilities.scss" />
     <Content Include="Themes\login-form-20\scss\bootstrap\_variables.scss" />
     <Content Include="Themes\login-form-20\scss\style.scss" />
-    <Content Include="Views\LogIn\WriterLogIn.cshtml" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
-    <Content Include="Views\Register\WriterRegister.cshtml" />
-    <Content Include="Views\Default\Headings.cshtml" />
     <Content Include="Themes\captcha\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
     <Content Include="Themes\captcha\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
     <Content Include="Themes\captcha\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
@@ -2865,11 +2937,6 @@
     <Content Include="Themes\captcha\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Themes\captcha\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Themes\captcha\vendor\bootstrap\css\bootstrap.min.css.map" />
-    <Content Include="Views\Default\Index.cshtml" />
-    <Content Include="Views\WriterPanel\AllHeadings.cshtml" />
-    <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
-    <Content Include="Views\WriterPanelContent\ToDoList.cshtml" />
-    <Content Include="Views\Test\Test3.cshtml" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-brands-400.eot" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-brands-400.ttf" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-brands-400.woff" />
@@ -2882,21 +2949,100 @@
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.ttf" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.woff" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.woff2" />
-    <Content Include="Views\Home\HomePage.cshtml" />
-    <Content Include="Views\Content\GetAllContent.cshtml" />
-    <Content Include="Views\Chart\Index.cshtml" />
-    <Content Include="Views\WriterPanel\WriterPasswordChange.cshtml" />
-    <Content Include="Views\Chart\CategoryListPieChart.cshtml" />
-    <Content Include="Views\Chart\WriterListLineChart.cshtml" />
-    <Content Include="Views\Chart\HeadingListColumnChart.cshtml" />
-    <Content Include="Views\Heading\HeadingReport.cshtml" />
-    <Content Include="Views\Test\SweetAlert.cshtml" />
+    <Content Include="Views\About\AboutPartial.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\AdminCategory\AddCategory.cshtml" />
+    <Content Include="Views\AdminCategory\Index.cshtml" />
+    <Content Include="Views\AdminCategory\UpdateCategory.cshtml" />
+    <Content Include="Views\Authorization\AuthorizationPartial.cshtml" />
     <Content Include="Views\Authorization\Index.cshtml" />
     <Content Include="Views\Authorization\UpdateRole.cshtml" />
-    <Content Include="Views\Authorization\AuthorizationPartial.cshtml" />
+    <Content Include="Views\Category\AddCategory.cshtml" />
+    <Content Include="Views\Category\GetCategoryList.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Chart\CategoryListPieChart.cshtml" />
+    <Content Include="Views\Chart\HeadingListColumnChart.cshtml" />
+    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Chart\WriterListLineChart.cshtml" />
+    <Content Include="Views\Contact\GetContactDetails.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\PartialMessageList.cshtml" />
+    <Content Include="Views\Contact\PartialMessageListFooter.cshtml" />
+    <Content Include="Views\Contact\PartialMessageListFooterButton.cshtml" />
+    <Content Include="Views\Contact\PartialMessageMenu.cshtml" />
+    <Content Include="Views\Content\ContentByHeading.cshtml" />
+    <Content Include="Views\Content\GetAllContent.cshtml" />
+    <Content Include="Views\Default\Headings.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\ErrorPage\Page403Error.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Heading\AddHeading.cshtml" />
+    <Content Include="Views\Heading\EditHeading.cshtml" />
+    <Content Include="Views\Heading\HeadingReport.cshtml" />
+    <Content Include="Views\Heading\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\LogIn\AdminLogIn.cshtml" />
+    <Content Include="Views\LogIn\WriterLogIn.cshtml" />
+    <Content Include="Views\Message\DraftMessages.cshtml" />
+    <Content Include="Views\Message\GetDraftDetails.cshtml" />
+    <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
+    <Content Include="Views\Message\GetSendboxMessageDetails.cshtml" />
+    <Content Include="Views\Message\Inbox.cshtml" />
+    <Content Include="Views\Message\NewMessage.cshtml" />
+    <Content Include="Views\Message\Sendbox.cshtml" />
+    <Content Include="Views\Register\AdminRegister.cshtml" />
+    <Content Include="Views\Register\WriterRegister.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_Deneme.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_TalentLayout.cshtml" />
+    <Content Include="Views\Shared\_WriterLayout.cshtml" />
+    <Content Include="Views\SkillArea\AddSkillArea.cshtml" />
+    <Content Include="Views\SkillArea\Index.cshtml" />
+    <Content Include="Views\Statistic\Index.cshtml" />
+    <Content Include="Views\Talent\AddTalent.cshtml" />
+    <Content Include="Views\Talent\Index.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\SweetAlert.cshtml" />
+    <Content Include="Views\Test\Test2.cshtml" />
+    <Content Include="Views\Test\Test3.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
+    <Content Include="Views\WriterPanelContent\MyContent.cshtml" />
+    <Content Include="Views\WriterPanelContent\ToDoList.cshtml" />
+    <Content Include="Views\WriterPanelMessage\DraftMessages.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetDraftDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetInboxMessageDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\GetSendboxMessageDetails.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Inbox.cshtml" />
+    <Content Include="Views\WriterPanelMessage\NewMessage.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageList.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageListFooter.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageListFooterButton.cshtml" />
+    <Content Include="Views\WriterPanelMessage\PartialMessageMenu.cshtml" />
+    <Content Include="Views\WriterPanelMessage\Sendbox.cshtml" />
+    <Content Include="Views\WriterPanel\AllHeadings.cshtml" />
+    <Content Include="Views\WriterPanel\EditHeading.cshtml" />
+    <Content Include="Views\WriterPanel\MyHeading.cshtml" />
+    <Content Include="Views\WriterPanel\NewHeading.cshtml" />
+    <Content Include="Views\WriterPanel\WriterPasswordChange.cshtml" />
+    <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
+    <Content Include="Views\Writer\AddWriter.cshtml" />
+    <Content Include="Views\Writer\EditWriter.cshtml" />
+    <Content Include="Views\Writer\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Authorization\AddAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Writer\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2961,9 +3107,19 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.15.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.15.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.15.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.15.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.15.0\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.15.0\build\Microsoft.ApplicationInsights.Web.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.15.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.15.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.15.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.15.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.15.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.15.0\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.15.0\build\Microsoft.ApplicationInsights.Web.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
