@@ -1,5 +1,8 @@
 ﻿@using EntityLayer.Concrete
-@model List<Talent>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Talent>
+@*@model List<Talent>*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TalentLayout.cshtml";
@@ -9,27 +12,27 @@
 <body>
     <!-- main -->
     <div class="main">
-
         <h1>Kişisel Yeteneklerim Sayfası</h1>
-        <div class="main-info w3l">
+        <div class="main-info">
             <div class="main-row">
-                <p><a href="/AdminCategory/Index" class="btn btn-primary">Ana Sayfaya Git</a></p>
-                <br />
-                <p><a href="/SkillArea/Index" class="btn btn-primary">Yetenek Bölümlerine Git</a></p>
-                <!-- main-row-one -->
-
-                <div class="profile-grid logo wthree">
-                    <img src="~/Images/FatihDeniz.jpg" alt="">
-                    <h2>Fatih Deniz</h2>
-                    <p>Kişinin yetenekleri, bilgisinin gölgesinde kök salar.</p>
-                </div>
-                <h3 class="title">Yetenekler</h3>
                 <td>
-                    <div>
-                        <a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary"  style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>
-                        <a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary"  style="color: white"><i class="fas fa-pencil-alt"></i> Yetenekleri Güncelle</button></a>
+                    <div style="text-align: center">
+                        <a href="/Heading/Index/" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Ana Sayfaya Git</button></a>
+                        @*<a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>*@
+                        <a href="/Talent/TalentCard" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Yetenekleri Güncelle</button></a>
                     </div>
+                    <br/>
                 </td>
+                @*<a href="/AdminCategory/Index" class="btn btn-primary">Ana Sayfaya Git</a>&nbsp;<a href="/SkillArea/Index" class="btn btn-primary">Yetenek Bölümlerine Git</a><br /><br />*@
+                <!-- main-row-one -->
+                <td>                <div class="profile-grid logo wthree">
+                        <img src="~/Images/FatihDeniz.jpg" alt="">
+                        <h2>Fatih Deniz</h2>
+                        <p>Kişinin yetenekleri, bilgisinin gölgesinde kök salar.</p>
+                    </div>
+                    @*<h3 class="title">Yetenekler</h3></td>*@
+
+
                 <br />
                 <div class="col-md-12 skills-right bar_group">
                     @foreach (var item in Model)
@@ -37,6 +40,7 @@
                         <div class='bar_group__bar thin' label=' @item.SkillArea.Area :&nbsp; @item.SkillName &nbsp;&nbsp; %@item.SkillLevel' value='@item.SkillLevel'></div>
                     }
                 </div>
+                <div style="color: beige; font-size: 40px;"> @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))</div>
                 <!--bar-js-->
                 <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>
                 <div class="social-icons agileits">
@@ -55,3 +59,17 @@
     </div>
 </body>
 
+
+
+@* !!! ÖNEMLI NOT !!!!
+    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.
+    Bu islemi yaparsak asagida yazilacak komuta ihtiyac kalmaz.
+*@
+
+@* Asagidaki alan sayfalama isleminde sayfalarinda altinda sayfa numarasi gecislerini cözmektedir. *@
+
+@*@Html.PagedListPager((IPagedList)Model, page => Url.Action("AllHeadings", new { page }), new PagedListRenderOptions
+    {
+        LiElementClasses = new List<string>
+        {"page-link"}
+    })*@

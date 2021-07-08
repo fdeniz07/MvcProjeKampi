@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_TalentLayout.cshtml";
 }
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,31 +16,26 @@
         <h1>Yetenek Bölümü Ekleme Sayfası</h1>
         <div class="main-info">
             <div class="main-row">
-                <p><a href="/AdminCategory/Index" class="btn btn-primary"><b>Ana Sayfaya Git &nbsp&nbsp&nbsp</b></a> <a href="#" class="btn btn-primary"><b>&nbsp&nbsp&nbsp&nbsp Yetenek Bölümlerini Güncelle</b></a></p>
-                
-                <p><a href="/Talent/Index" class="btn btn-primary"><b>Geri Git </b></a></p>
-                <br />
+                <td>
+                    <div style="text-align: center">
+                        <a href="/SkillArea/Index" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Geri Git</button></a>
+                    </div>
+                    <br />
+                </td>
                 <!-- main-row-one -->
-
-                <div class="profile-grid logo wthree">
-                </div>
-                <h3 class="title">Yetenek Bölümleri</h3>
-                <br />
-                <div class="col-md-6 skills-right bar_group">
+                <div class="col-md-6 skills-right bar_group" style="max-width: 100%">
                     @using (Html.BeginForm("AddSkillArea", "SkillArea", FormMethod.Post))
                     {
                         <form method="post" action="#">
                             <div class="modal-body">
-                                @Html.Label("Yetenek Bölüm Adı")
+                                @Html.Label("Yetenek Bölümü Adı")
                                 <br />
                                 @Html.TextBoxFor(x => x.Area, new { @class = "form-control" })
-                                @*@Html.ValidationMessageFor(x => x.Area)*@
+                                @*@Html.ValidationMessageFor(x => x.Area, "", new { @class = "text-danger" })*@
                                 <br /> <br />
-                                @Html.Label("Yetenek Bölüm Alanı Detayı")
+                                @Html.Label("Yetenek Bölümü Detayı")
                                 <br />
                                 @Html.TextBoxFor(x => x.AreaDetails, new { @class = "form-control" })
-                                @*@Html.ValidationMessageFor(x => x.AreaDetails)*@
-                                <br /> <br />
                                 <br /> <br />
                                 <button class="btn btn-primary">Kaydet</button>
                                 <br />

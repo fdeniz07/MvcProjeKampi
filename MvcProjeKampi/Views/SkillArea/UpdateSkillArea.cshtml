@@ -1,0 +1,68 @@
+﻿@model EntityLayer.Concrete.SkillArea
+@{
+    ViewBag.Title = "UpdateSkillArea";
+    Layout = "~/Views/Shared/_TalentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yetenek Alanı Güncelleme</title>
+</head>
+<body>
+    <!-- main -->
+    <div class="main">
+
+        <h1>Yetenek Alanı Güncelleme Sayfası</h1>
+        <div class="main-info">
+            <div class="main-row">
+
+                <td>
+                    <div style="text-align: center">
+                        <a href="/SkillArea/Index" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Geri Git</button></a>
+                        @*<a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>*@
+                        <a href="/SkillArea/AddSkillArea" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>
+                    </div>
+                    <br />
+                </td>
+
+                <!-- main-row-one -->
+
+                <div class="profile-grid logo wthree">
+                </div>
+                <h3 class="title">Yetenek Alanı Güncelle</h3>
+                <br />
+                <div class="col-md-6 skills-right bar_group">
+                    @using (Html.BeginForm("UpdateSkillArea", "SkillArea", FormMethod.Post))
+                    {
+                        <form method="post" action="#">
+                            <div class="modal-body">
+                                @Html.HiddenFor(x => x.SkillAreaId, new { @class = "form-control" })
+                                @Html.Label("Yetenek Alanı Adı")
+                                <br />
+                                @Html.TextBoxFor(x => x.Area, new { @class = "form-control" })
+                                @*@Html.ValidationMessageFor(x => x.SkillName, "", new { @class = "text-danger" })*@
+                                <br /> <br />
+                                @Html.Label("Yetenek Alanı Detayı")
+                                <br />
+                                @Html.TextBoxFor(x => x.AreaDetails, new { @class = "form-control" })
+                                <br /> <br />
+                                <button class="btn btn-primary">Kaydet</button>
+                                <br />
+                            </div>
+                        </form>
+                    }
+                </div>
+                <!--bar-js-->
+                <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <p>
+        </p>
+    </div>
+</body>
+</html>
+
+
+

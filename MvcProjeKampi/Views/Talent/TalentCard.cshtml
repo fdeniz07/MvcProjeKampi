@@ -1,0 +1,53 @@
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Talent>
+@{
+    ViewBag.Title = "TalentCard";
+    Layout = "~/Views/Shared/_TalentLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yetenek Güncelleme</title>
+</head>
+<body>
+    <br />
+    <h1>Yeteneklerim Sayfası</h1>
+    <br />
+    <div style="margin-right: 1em; margin-left: 1em">
+        <table class="table table-bordered" style="color: azure">
+            <tr>
+                <th style="width: 1%; text-align: center"><b>#</b></th>
+                <th style="width: 5%; text-align: center"><b>Yetenek Adı</b></th>
+                <th style="width: 5%; text-align: center"><b>Yetenek Detayı</b></th>
+                <th style="width: 1%; text-align: center"><b>Yetenek Düzeyi</b></th>
+                <th style="width: 5%; text-align: center"><b>Yetenek Alanı</b></th>
+                <th style="width: 1%; text-align: center"><b>Sil</b></th>
+                <th style="width: 1%; text-align: center"><b>Güncelle</b></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="width: 1%; text-align: center">@item.SkillId</td>
+                    <td style="width: 5%; text-align: center">@item.SkillName</td>
+                    <td style="width: 5%; text-align: center">@item.SkillDetails</td>
+                    <td style="width: 1%; text-align: center"> @item.SkillLevel</td>
+                    <td style="width: 5%; text-align: center">@item.SkillArea.Area</td>
+                    <td style="width: 1%; text-align: center"><a href="/Talent/DeleteTalent/@item.SkillId" class="btn btn-danger">Sil</a></td>
+                    <td style="width: 1%; text-align: center"><a href="/Talent/UpdateTalent/@item.SkillId" class="btn btn-warning">Güncelle</a></td>
+                </tr>
+            }
+        </table>
+        <div style="color: beige">
+            <ul class="alert-light" style="font-size: 20px"> @Html.PagedListPager((IPagedList)Model, page => Url.Action("TalentCard", new { page }))</ul>
+        </div>
+        <a href="/Talent/Index" class="btn btn-warning">Geri Git</a>
+        <a href="/Talent/AddTalent" class="btn btn-success">Yeni Yetenek Ekle</a>
+        <a href="/SkillArea/Index" class="btn btn-danger">Yetenek Alanları</a>
+    </div>
+</body>
+</html>
+
+

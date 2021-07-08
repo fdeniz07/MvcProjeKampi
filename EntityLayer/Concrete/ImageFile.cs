@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
@@ -12,5 +13,7 @@ namespace EntityLayer.Concrete
 
         [StringLength(500)]
         public string ImagePath { get; set; }
+
+        public DateTime ImageDate { get; set; }
     }
 }

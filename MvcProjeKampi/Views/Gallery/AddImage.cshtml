@@ -1,0 +1,118 @@
+﻿@using MvcProjeKampi.Models
+@model MvcProjeKampi.Models.ImageViewModel
+
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="panel-heading">
+        <div class="col-md-12">
+            <h3>
+                <i class="fa fa-file-text-o"></i>
+                <span>Galeri Resim Ekleme Sayfası</span>
+            </h3>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="icon-text">
+        <div class="col-md-12">
+            <h6>
+                <i class="fas fa-info-circle"></i>
+                <span class="icon has-text-info">Yükleyeceğiniz resim formatı .jpg | .jpeg | .png | .gif uzantılı ve max. dosya boyutu olmalıdır</span>
+            </h6>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-push-2">
+        <section>
+            @using (Html.BeginForm("AddImage", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+            {
+                @*@Html.AntiForgeryToken()*@
+
+                <div class="well bs-component">
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8 col-md-push-2">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <p class="btn btn-default btn-file">
+                                            @*Resim Dosyası Seç…*@
+                                            <button style="display:block;width:200px; height:30px;" onclick="document.getElementById('getFile').click()">Resim Dosyası Seç…</button>
+                                            <input type='file' id="getFile" style="display:none">
+                                            @Html.TextBoxFor(x => x.FileAttach, new
+                                            {
+                                                type = "file",
+                                                placeholder = Html.DisplayNameFor(x => x.FileAttach),
+                                                @class = "form-control"
+                                            })
+                                        </p>
+                                    </span>
+                                    @*<input type="text" class="form-control" name="file" id="file" value="" readonly>*@
+                                </div>
+                                @if (Model.IsValid && !string.IsNullOrEmpty(Model.Message))
+                                {
+                                    <span class="text-success">@Model.Message</span>
+                                }
+                                else
+                                {
+                                    <span class="text-danger">@Model.Message</span>@Html.ValidationMessageFor(m => m.FileAttach, "", new { @class = "text-danger" })
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+                    <h3 class="text-danger">@ViewBag.ActionMessage</h3>
+                    <div class="form-group">
+                        <div class="col-md-offset-5 col-md-10">
+                            <input type="submit" class="btn btn-danger" value="Yükle" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Resim Ekleme Sayfası</h2>
+    <br />
+    @using (Html.BeginForm("AddImage", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+
+            <br /><br />
+            @Html.Label("Resim")
+            <br />
+            <input type="file" name="ImagePath" />
+            <br /><br />
+            <button class="btn btn-success">Resim Ekle</button>
+        </div>
+    }*@
+

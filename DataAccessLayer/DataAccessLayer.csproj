@@ -93,6 +93,10 @@
     <Compile Include="Migrations\202107052027494_mig_roles.designer.cs">
       <DependentUpon>202107052027494_mig_roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107072251129_mig_addImageDate_inImageFile.cs" />
+    <Compile Include="Migrations\202107072251129_mig_addImageDate_inImageFile.designer.cs">
+      <DependentUpon>202107072251129_mig_addImageDate_inImageFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -115,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107052027494_mig_roles.resx">
       <DependentUpon>202107052027494_mig_roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107072251129_mig_addImageDate_inImageFile.resx">
+      <DependentUpon>202107072251129_mig_addImageDate_inImageFile.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

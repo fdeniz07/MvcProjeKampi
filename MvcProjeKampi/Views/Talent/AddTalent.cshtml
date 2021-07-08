@@ -1,5 +1,4 @@
 ﻿
-
 @model EntityLayer.Concrete.Talent
 @{
     ViewBag.Title = "AddTalent";
@@ -17,51 +16,51 @@
         <h1>Yeni Yetenek Ekleme Sayfası</h1>
         <div class="main-info">
             <div class="main-row">
-                <p><a href="/AdminCategory/Index" class="btn btn-primary"><b>Ana Sayfaya Git &nbsp&nbsp&nbsp</b></a> <a href="/SkillArea/AddSkillArea" class="btn btn-primary"><b>&nbsp&nbsp&nbsp&nbsp Yeni Yetenek Bölümü Ekle</b></a></p>
 
-                <p><a href="/Talent/Index" class="btn btn-primary"><b>Geri Git </b></a></p>
-                    <br />
-                    <!-- main-row-one -->
-
-                    <div class="profile-grid logo wthree">
+                <td>
+                    <div style="text-align: center">
+                        <a href="/Talent/TalentCard" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Geri Git</button></a>
+                        @*<a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>*@
+                        @*<a href="/Talent/AddTalent" class="btn btn-info"><button type="post" class="btn btn-outline-secondary" style="color: white"><i class="fas fa-pencil-alt"></i> Yeni Yetenek Ekle</button></a>*@
                     </div>
-                    <h3 class="title">Yetenekler</h3>
                     <br />
-                    <div class="col-md-6 skills-right bar_group">
-                        @using (Html.BeginForm("AddTalent", "Talent", FormMethod.Post))
-                        {
-                            <form method="post" action="#">
-                                <div class="modal-body">
-                                    @Html.Label("Yetenek Adı")
-                                    <br />
-                                    @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.SkillName)
-                                    <br /> <br />
-                                    @Html.Label("Yetenek Detayı")
-                                    <br />
-                                    @Html.TextBoxFor(x => x.SkillDetails, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.SkillName)
-                                    <br /> <br />
-                                    @Html.Label("Yetenek Bilgisi (100 üzerinden)")
-                                    <br />
-                                    @Html.TextBoxFor(x => x.SkillLevel, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.SkillName)
-                                    <br /> <br />
-                                    @Html.Label("Yetenek Bölümü")
-                                    <br />
-                                    @Html.DropDownListFor(x => x.SkillAreaId, (List<SelectListItem>)ViewBag.valueSkill, new { @class = "form-control" })
+                </td>
 
-                                    <br /> <br />
-                                    <button class="btn btn-primary">Kaydet</button>
-                                    <br />
-                                </div>
-                            </form>
-                        }
-                    </div>
-                    <!--bar-js-->
-                    <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>
-                    <div class="clear"> </div>
-</div>
+                <!-- main-row-one -->
+                <div class="col-md-6 skills-right bar_group" style="max-width: 100%">
+                    @using (Html.BeginForm("AddTalent", "Talent", FormMethod.Post))
+                    {
+                        <form method="post" action="#">
+                            <div class="modal-body">
+                                @Html.Label("Yetenek Adı")
+                                <br />
+                                @Html.TextBoxFor(x => x.SkillName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.SkillName, "", new { @class = "text-danger" })
+                                <br /> <br />
+                                @Html.Label("Yetenek Detayı")
+                                <br />
+                                @Html.TextBoxFor(x => x.SkillDetails, new { @class = "form-control" })
+                                <br /> <br />
+                                @Html.Label("Yetenek Bilgisi (100 üzerinden)")
+                                <br />
+                                @Html.TextBoxFor(x => x.SkillLevel, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.SkillLevel, "", new { @class = "text-danger" })
+                                <br /> <br />
+                                @Html.Label("Yetenek Bölümü")
+                                <br />
+                                @Html.DropDownListFor(x => x.SkillAreaId, (List<SelectListItem>)ViewBag.valueSkill, new { @class = "form-control" })
+
+                                <br /> <br />
+                                <button class="btn btn-primary">Kaydet</button>
+                                <br />
+                            </div>
+                        </form>
+                    }
+                </div>
+                <!--bar-js-->
+                <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>
+                <div class="clear"> </div>
+            </div>
         </div>
         <p>
         </p>

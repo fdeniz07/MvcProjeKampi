@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "FileUpload";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>@ViewBag.ActionMessage</h3>
+
+@using (Html.BeginForm("FileUpload", "ImageTest", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>Resim Adı</div>
+    <input type="text" name="txtImage"/><br/>
+    <input type="file" name="file" id="file" />
+    <div style="padding-left: 100px">
+        <input type="submit" value="Upload Image" />
+    </div>
+}

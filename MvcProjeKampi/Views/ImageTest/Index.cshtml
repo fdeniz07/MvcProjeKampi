@@ -1,0 +1,71 @@
+﻿@using MvcProjeKampi.Models
+@model MvcProjeKampi.Models.ImageViewModel
+
+@{
+    ViewBag.Title = "ASP.NET MVC5: Limit Upload File Size";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="panel-heading">
+        <div class="col-md-8">
+            <h3>
+                <i class="fa fa-file-text-o"></i>
+                <span>ASP.NET MVC5: Limit Upload File Size</span>
+            </h3>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<div class="row">
+    <div class="col-md-6 col-md-push-2">
+        <section>
+            @using (Html.BeginForm("Index", "ImageTest", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="well bs-component">
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8 col-md-push-2">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <span class="btn btn-default btn-file">
+                                            Browse…
+                                            @Html.TextBoxFor(m => m.FileAttach, new { type = "file", placeholder = Html.DisplayNameFor(m => m.FileAttach), @class = "form-control" })
+                                        </span>
+                                    </span>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
+                                @if (Model.IsValid && !string.IsNullOrEmpty(Model.Message))
+                                {
+                                    <span class="text-success">@Model.Message</span>
+                                }
+                                else
+                                {
+                                    <span class="text-danger">@Model.Message</span>@Html.ValidationMessageFor(m => m.FileAttach, "", new { @class = "text-danger" })
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-5 col-md-10">
+                            <input type="submit" class="btn btn-danger" value="Upload" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+

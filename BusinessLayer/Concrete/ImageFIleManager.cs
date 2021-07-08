@@ -14,9 +14,29 @@ namespace BusinessLayer.Concrete
             _imageFileDal = imageFileDal;
         }
 
+        public ImageFile GetByIdImageFile(int id)
+        {
+            return _imageFileDal.Get(x => x.ImageId == id);
+        }
+
         public List<ImageFile> GetList()
         {
             return _imageFileDal.List();
+        }
+
+        public void ImageAdd(ImageFile imageFile)
+        {
+            _imageFileDal.Insert(imageFile);
+        }
+
+        public void ImageDelete(ImageFile imageFile)
+        {
+            _imageFileDal.Delete(imageFile);
+        }
+
+        public void ImageUpdate(ImageFile imageFile)
+        {
+            _imageFileDal.Update(imageFile);
         }
     }
 }

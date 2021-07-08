@@ -35,14 +35,14 @@
                                                 <div class="form-group">
                                                     @Html.Label("Alıcı Adı")
                                                     @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(x => x.ReceiverMail)
+                                                    @Html.ValidationMessageFor(x => x.ReceiverMail, "", new { @class = "text-danger" })
                                                     @*@Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control", placeholder = "Alıcı Adı:" })
                                                         @Html.ValidationMessageFor(x => x.ReceiverMail, "", new { @class = "text-danger" })*@
                                                 </div>
                                                 <div class="form-group">
                                                     @Html.Label("Konu")
                                                     @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
-                                                    @Html.ValidationMessageFor(x => x.Subject)
+                                                    @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })
                                                     @*@Html.TextBoxFor(x => x.Subject, new { @class = "form-control", placeholder = "Konu:" })
                                                         @Html.ValidationMessageFor(x => x.Subject, "", new { @class = "text-danger" })*@
                                                 </div>

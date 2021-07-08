@@ -2,6 +2,7 @@
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -9,9 +10,9 @@ namespace MvcProjeKampi.Controllers
     {
         SkillAreaManager skillAreaManager = new SkillAreaManager(new EfSkillAreaDal());
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            var skillAreaValues = skillAreaManager.GetList();
+            var skillAreaValues = skillAreaManager.GetList().ToPagedList(page ?? 1, 8); //? işaretleri boş gelme/boş olma durumuna 
             return View(skillAreaValues);
         }
 
@@ -29,19 +30,21 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult UpdateTalent(int id)
+        [HttpGet]
+        public ActionResult UpdateSkillArea(int id)
         {
             var talentValues = skillAreaManager.GetByIdSkillArea(id);
             return View(talentValues);
         }
 
-        public ActionResult UpdateTalent(SkillArea skillArea)
+        [HttpPost]
+        public ActionResult UpdateSkillArea(SkillArea skillArea)
         {
             skillAreaManager.SkillAreaUpdate(skillArea);
             return RedirectToAction("Index");
         }
 
-        public ActionResult DeleteTalent(int Id)
+        public ActionResult DeleteSkillArea(int Id)
         {
             var talentValues = skillAreaManager.GetByIdSkillArea(Id);
             skillAreaManager.SkillAreaDelete(talentValues);

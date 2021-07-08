@@ -57,7 +57,8 @@ namespace BusinessLayer.Concrete
                 AdminMail = mailHash,
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,
-                RoleId = adminRole
+                RoleId = adminRole,
+                AdminStatus = false
             };
             _adminService.AdminAdd(admin);
         }
@@ -101,6 +102,7 @@ namespace BusinessLayer.Concrete
             };
             _writerService.WriterAdd(writer);
         }
+
     }
 }
 //string writerName, string writerSurName, string writerTitle, string writerAbout, string writerImage, 

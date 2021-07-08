@@ -17,10 +17,11 @@
         @*@Html.Label("Admin ID")
         @Html.TextBoxFor(x => x.AdminId, new {@class = "form-control"})
         <br/>*@
-        @Html.Label("Admin Kullanıcı Adı")
-        @Html.TextBoxFor(x => x.AdminUserName, new {@class = "form-control"})
+        @Html.Label("Kullanıcı Adı :")
         <br/>
-        @Html.Label("Rol")
+        @Html.ValueFor(x => x.AdminUserName)
+        <br/><br/>
+        @Html.Label("Rol :")
         @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.valueAdminRole, new {@class = "form-control"})
         <br/>
         <button class="btn btn-success">Güncelle</button>

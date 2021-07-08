@@ -1,6 +1,8 @@
-﻿
-@using EntityLayer.Concrete
-@model List<SkillArea>
+﻿@using EntityLayer.Concrete
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<SkillArea>
+@*@model List<SkillArea>*@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TalentLayout.cshtml";
@@ -15,41 +17,51 @@
     <!-- main -->
     <div class="main">
 
-        <h1>Yetenek Bölümü Sayfası</h1>
+        <h1>Yetenek Alanı Sayfası</h1>
         <div class="main-info">
             <div class="main-row">
-                <p><a href="/AdminCategory/Index" class="btn btn-primary"><b>Ana Sayfaya Git </b></a> &nbsp&nbsp<a href="/Talent/Index" class="btn btn-primary"><b> Geri Git</b></a></p>
 
-                <!-- main-row-one -->
-
-                <div class="profile-grid logo wthree">
-                </div>
-                <h3 class="title">Yetenek Bölümleri</h3>
-                <br />
-                <div class="col-md-6 skills-right bar_group">
+                <td>
+                    <div style="text-align: center">
+                        <a href="/Talent/TalentCard" class="btn btn-info">
+                            <button type="post" class="btn btn-outline-secondary" style="color: white">
+                                <i class="fas fa-pencil-alt"></i>
+                                Geri Git
+                            </button>
+                        </a>
+                    </div>
                     <br />
-                    <table class="table table-striped">
+                </td>
+                <!-- main-row-one -->
+                <div style="margin-right: 1em; margin-left: 1em">
+                    <br />
+                    <table class="table table-bordered" style="color: azure">
                         <tr>
-                            <th><b>ID</b></th>
-                            <th><b>Yetenek Bölümü</b></th>
-                            <th><b>Sil</b></th>
-                            <th><b>Güncelle</b></th>
+                            <th style="width: 1%; text-align: center"><b>#</b></th>
+                            <th style="width: 10%; text-align: center"><b>Yetenek Alanı</b></th>
+                            <th style="width: 15%; text-align: center"><b>Yetenek Alanı Detayı</b></th>
+                            <th style="width: 1%; text-align: center"><b>Sil</b></th>
+                            <th style="width: 1%; text-align: center"><b>Güncelle</b></th>
                         </tr>
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <th><b>@item.SkillAreaId</b></th>
-                                <td><b>@item.Area</b></td>
-                                <td><a href="/SkillArea/DeleteSkillArea/@item.SkillAreaId" class="btn btn-danger">Sil</a></td>
-                                <td><a href="/SkillArea/UpdateSkillArea/@item.SkillAreaId" class="btn btn-warning">Güncelle</a></td>
+                                <th style="width: 1%; text-align: center"><b>@item.SkillAreaId</b></th>
+                                <td style="width: 10%; text-align: center"><b>@item.Area</b></td>
+                                <td style="width: 15%; text-align: center"><b>@item.AreaDetails</b></td>
+                                <td style="width: 1%; text-align: center"><a href="/SkillArea/DeleteSkillArea/@item.SkillAreaId" class="btn btn-danger">Sil</a></td>
+                                <td style="width: 1%; text-align: center"><a href="/SkillArea/UpdateSkillArea/@item.SkillAreaId" class="btn btn-warning">Güncelle</a></td>
                             </tr>
                         }
                     </table>
-                    <a href="/SkillArea/AddSkillArea" class="btn btn-info">Kaydet</a>
+                    <div style="color: beige">
+                        <ul class="alert-light" style="font-size: 20px"> @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))</ul>
+                    </div>
+                    <a href="/SkillArea/AddSkillArea" class="btn btn-info">Yeni Yetenek Alanı Ekle</a>
                 </div>
                 <!--bar-js-->
                 <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>
-                <div class="clear"> </div>
+
             </div>
         </div>
         <p>

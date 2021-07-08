@@ -36,7 +36,7 @@ namespace MvcProjeKampi.Controllers
                     string.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", secret, response));
             var captchaResponse = JsonConvert.DeserializeObject<CaptchaResult>(reply);
             
-            if (authService.AdminLogIn(adminLogInDto) || captchaResponse.Success)
+            if (authService.AdminLogIn(adminLogInDto) || captchaResponse.Success )
             {
                 FormsAuthentication.SetAuthCookie(adminLogInDto.AdminMail, false);
                 Session["AdminMail"] = adminLogInDto.AdminMail;
