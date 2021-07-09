@@ -8,6 +8,8 @@ using MvcProjeKampi.Models;
 
 namespace MvcProjeKampi.Controllers.AdminPanelControllers
 {
+
+    // Bu Controller sadece test amacli olusturulmsutur. Burayi almaniza gerek yoktur.
     /// <summary>  
     /// Image controller class.  
     /// </summary>  

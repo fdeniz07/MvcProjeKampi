@@ -1,0 +1,126 @@
+﻿@using EntityLayer.Concrete;
+@using MvcProjeKampi.Models;
+
+@*@using MvcProjeKampi.Models
+
+    @model MvcProjeKampi.Models.ImageViewModel*@
+@{
+    ViewBag.Title = "UpdateImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    //Model ve Deger'in ayni anda burada kullanilmasi durumu
+
+    //Kaynak : https://www.c-sharpcorner.com/UploadFile/ff2f08/multiple-models-in-single-view-in-mvc/
+
+    ImageFile image = ViewData["Image"] as ImageFile;
+    ImageViewModel viewMdl = ViewData["Models"] as ImageViewModel;
+}
+<br />
+<div class="row">
+    <div class="panel-heading">
+        <div class="col-md-12">
+            <h3>
+                <i class="fa fa-file-text-o"></i>
+                <span>Galeri Resim Güncelleme Sayfası</span>
+            </h3>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="icon-text">
+        <div class="col-md-12">
+            <h6>
+                <i class="fas fa-info-circle"></i>
+                <span class="icon has-text-info">Yükleyeceğiniz resim formatı .jpg | .jpeg | .png | .gif uzantılı ve max. dosya boyutu olmalıdır</span>
+            </h6>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-push-2">
+        <section>
+            @using (Html.BeginForm("UpdateImage", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+            {
+                @*@Html.AntiForgeryToken()*@
+                <div class="well bs-component">
+                    <br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-8 col-md-push-2">
+                                @Html.HiddenFor(x => image.ImageId, new { @class = "form-control" })
+                                @Html.HiddenFor(x => image.ImagePath, new { @class = "form-control" })
+                                @Html.Label("Resim Adı :") &nbsp;&nbsp;&nbsp;@image.ImageName &nbsp;
+                                <input id="btnAdd" type="button" value="Adını Değiştir" onclick="AddTextBox()" class="btn btn-warning"/>
+                                <br/><br/>
+                                <div id="TextBoxContainer">
+                                    <!--Textboxes will be added here -->
+                                </div>
+                                <br/>
+                                <input type="submit" value="Değişikliği Onayla" class="btn btn-primary"/>
+                                <br/><br/>
+                                <div>
+                                    <a href="@image.ImagePath" data-toggle="lightbox" data-title="@image.ImageName" data-gallery="gallery">
+                                        <img src="@image.ImagePath" class="img-fluid mb-2" alt="white sample" style="height: 150px; width: 400px;"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+
+<!--Script Hakkinda-->
+<!--
+Bu script Adini Degistir butonuna basildigi zaman yeni bir textbox ve buton olusturuyor. 
+
+Detaylari : https://www.aspsnippets.com/Articles/Implement-Dynamic-TextBox-controls-with-Add-Remove-Button-in-ASPNet-MVC.aspx
+
+-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    function GetDynamicTextBox(value) {
+        var div = $("<div />");
+
+        var textBox = $("<input />").attr("type", "textbox").attr("name", "DynamicTextBox");
+        textBox.val(value);
+        div.append(textBox);
+
+        var button = $("<input />").attr("type", "button").attr("value", "Kaldır");
+        button.attr("onclick", "RemoveTextBox(this)");
+        div.append(button);
+
+        return div;
+    }
+    function AddTextBox() {
+        var div = GetDynamicTextBox("");
+        $("#TextBoxContainer").append(div);
+    }
+
+    function RemoveTextBox(button) {
+        $(button).parent().remove();
+    }
+
+    $(function () {
+        var values = eval('@Html.Raw(ViewBag.Values)');
+        if (values != null) {
+            $("#TextBoxContainer").html("");
+            $(values).each(function () {
+                $("#TextBoxContainer").append(GetDynamicTextBox(this));
+            });
+        }
+    });
+</script>
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        $(function () {
+            alert("@ViewBag.Message")
+        });
+    </script>
+}
+

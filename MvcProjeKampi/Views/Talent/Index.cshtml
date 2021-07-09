@@ -34,12 +34,13 @@
 
 
                 <br />
-                <div class="col-md-12 skills-right bar_group">
+                <div class="col-md-14 skills-right bar_group">
                     @foreach (var item in Model)
                     {
-                        <div class='bar_group__bar thin' label=' @item.SkillArea.Area :&nbsp; @item.SkillName &nbsp;&nbsp; %@item.SkillLevel' value='@item.SkillLevel'></div>
+                        <div class='bar_group__bar thin' label=' @item.SkillArea.Area :&nbsp; @item.SkillName &nbsp;&nbsp; %@item.SkillLevel' value='@item.SkillLevel'><br /> @item.SkillDetails  <br /></div>
                     }
                 </div>
+                <br/><br />
                 <div style="color: beige; font-size: 40px;"> @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))</div>
                 <!--bar-js-->
                 <script src="~/Themes/Skills_Theme/web/js/bars.js"></script>

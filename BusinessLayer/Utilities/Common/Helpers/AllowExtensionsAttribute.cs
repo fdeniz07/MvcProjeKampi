@@ -55,7 +55,9 @@ namespace BusinessLayer.Utilities.Common.Helpers
         #endregion
 
         /*
-         In ASP.NET MVC 5, creating customized data annotations/attributes is one of the cool features. 
+        Detayli bilgiler icin asagidaki aciklamalardan ya da kaynak adreslerinden yararlanabilirsiniz.
+
+        In ASP.NET MVC 5, creating customized data annotations/attributes is one of the cool features. 
         The ASP.NET MVC 5 platform already contains a default FileExtensions attribute, but, 
         the issue with this pre-built data annotation/attribute is that it is applicable only on string type view model properties and in my case, 
         I am uploading the files via "HttpPostedFileBase" data type view model property. 

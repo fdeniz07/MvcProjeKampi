@@ -274,7 +274,14 @@
     <Content Include="ScreenShots\Draft Message Panel.JPG" />
     <Content Include="ScreenShots\DB Schema - Begin.jpg" />
     <Content Include="ScreenShots\DB Schema.JPG" />
+    <Content Include="ScreenShots\Gallery - Add Image Size Limit.JPG" />
+    <Content Include="ScreenShots\Gallery - Add Image Type Validation.JPG" />
+    <Content Include="ScreenShots\Gallery - Image Name Change.JPG" />
+    <Content Include="ScreenShots\Gallery Panel - New.JPG" />
     <Content Include="ScreenShots\Gallery Panel.JPG" />
+    <Content Include="ScreenShots\Graphic - Column Chart.JPG" />
+    <Content Include="ScreenShots\Graphic - Line Chart.JPG" />
+    <Content Include="ScreenShots\Graphic - Pie Chart.JPG" />
     <Content Include="ScreenShots\Hashing.JPG" />
     <Content Include="ScreenShots\Heading.png" />
     <Content Include="ScreenShots\HomePage - P1.JPG" />
@@ -286,6 +293,7 @@
     <Content Include="ScreenShots\HomePage - P7 - Google IFrame.JPG" />
     <Content Include="ScreenShots\index - Admin.JPG" />
     <Content Include="ScreenShots\NLayered Architecture.JPG" />
+    <Content Include="ScreenShots\Reporting.JPG" />
     <Content Include="ScreenShots\Sendbox Details.JPG" />
     <Content Include="ScreenShots\Sendbox Panel.JPG" />
     <Content Include="ScreenShots\Statistics.png" />
@@ -295,6 +303,9 @@
     <Content Include="ScreenShots\Talent - Add New Skills.JPG" />
     <Content Include="ScreenShots\Talent - Index.JPG" />
     <Content Include="ScreenShots\Talent - Skill Index.JPG" />
+    <Content Include="ScreenShots\Talent - Skill Update.JPG" />
+    <Content Include="ScreenShots\Talent - TalentCard Update.JPG" />
+    <Content Include="ScreenShots\Talent - TalentCard.JPG" />
     <Content Include="ScreenShots\Writer - All Headings.JPG" />
     <Content Include="ScreenShots\Writer - ContentByHeading.JPG" />
     <Content Include="ScreenShots\Writer - Contents.JPG" />
@@ -2964,6 +2975,7 @@
     <Content Include="Views\ImageTest\Index.cshtml" />
     <Content Include="Views\ImageTest\Test.cshtml" />
     <Content Include="Views\ImageTest\FileUpload.cshtml" />
+    <Content Include="Views\Gallery\UpdateImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

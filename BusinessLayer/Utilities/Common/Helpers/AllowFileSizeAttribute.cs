@@ -52,7 +52,9 @@ namespace BusinessLayer.Utilities.Common.Helpers
         }
 
         /*
-         In ASP.NET MVC5, creating customized data annotations/attributes is one of the cool features. In the above code, 
+        Detayli bilgiler icin asagidaki aciklamalardan ya da kaynak adreslerinden yararlanabilirsiniz.
+
+        In ASP.NET MVC5, creating customized data annotations/attributes is one of the cool features. In the above code, 
         I have created a new class "AllowFileSizeAttribute" (by following the naming convention of custom attribute class) and 
         inherited ValidationAttribute class. Then, I have created a public property "FileSize" and set its default value as 1 GB 
         in bytes which means that my custom attribute will accept only uploaded files with a maximum file size less than or equal to 1 GB. S

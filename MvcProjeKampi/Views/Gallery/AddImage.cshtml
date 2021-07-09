@@ -5,7 +5,6 @@
     ViewBag.Title = "AddImage";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <br />
 <div class="row">
     <div class="panel-heading">
@@ -28,17 +27,14 @@
         </div>
     </div>
 </div>
-
 <div class="row">
     <div class="col-md-6 col-md-push-2">
         <section>
             @using (Html.BeginForm("AddImage", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
             {
                 @*@Html.AntiForgeryToken()*@
-
                 <div class="well bs-component">
                     <br />
-
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-8 col-md-push-2">
@@ -69,12 +65,11 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="col-md-12">
                         </div>
                     </div>
-                    <h3 class="text-danger">@ViewBag.ActionMessage</h3>
+                    <h4 class="text-danger">@ViewBag.ActionMessage</h4>
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-10">
                             <input type="submit" class="btn btn-danger" value="Yükle" />
