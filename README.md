@@ -88,6 +88,15 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <p>Talent - Index<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Index.JPG" />
   
+  <p>Talent - Skill Update<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Skill%20Update.JPG" />
+  
+  <p>Talent - TalentCard<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20TalentCard.JPG" /> 
+  
+  <p>Talent - Update TalentCard<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20TalentCard%20Update.JPG" />
+  
   <p>Talent-Add New Skills<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Talent%20-%20Add%20New%20Skills.JPG" />
   
@@ -133,26 +142,20 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <p>Content - Searching<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Content%20-%20Searching.JPG" />
   
-  
   <p>Content - Searched KeyWord<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Content%20-%20Searched%20KeyWord.JPG" />
-  
   
   <p>HomePage - P1<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P1.JPG" />
   
-  
   <p>HomePage - P2<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P2.JPG" />
-  
   
   <p>HomePage - P3<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P3.JPG" />
   
-  
   <p>HomePage - P4<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P4.JPG" />
-  
   
   <p>HomePage - P5<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/HomePage%20-%20P5.JPG" />
@@ -168,6 +171,21 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   
   <p>Admin Panel - Roles<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Admin%20Panel%20-%20Roles.JPG" />
+  
+  <p>Gallery - Index (new)<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20Panel%20-%20New.JPG" />
+  
+  <p>Gallery - Add Image - Size Limit Kontrol<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20-%20Add%20Image%20Size%20Limit.JPG" />
+  
+  <p>Gallery - Add Image - Type Kontrol<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20-%20Add%20Image%20Type%20Validation.JPG" />
+  
+  <p>Gallery - Update Image Name<p/>
+  <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20-%20Image%20Name%20Change.JPG" />  
+   
+
+  
 <!--
   <p><p/>
   <img src="" />
