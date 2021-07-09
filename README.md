@@ -175,10 +175,10 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
   <p>Gallery - Index (new)<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20Panel%20-%20New.JPG" />
   
-  <p>Gallery - Add Image - Size Limit Kontrol<p/>
+  <p>Gallery - Add Image - Size Limit Control<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20-%20Add%20Image%20Size%20Limit.JPG" />
   
-  <p>Gallery - Add Image - Type Kontrol<p/>
+  <p>Gallery - Add Image - Type Control<p/>
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/Gallery%20-%20Add%20Image%20Type%20Validation.JPG" />
   
   <p>Gallery - Update Image Name<p/>
