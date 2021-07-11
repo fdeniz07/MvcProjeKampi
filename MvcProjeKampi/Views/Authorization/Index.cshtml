@@ -24,6 +24,7 @@
         <th style="width: 2%; text-align: center">Durumu</th>
         <th style="width: 3%; text-align: center">Aktof / Pasif</th>
         <th style="width: 3%; text-align: center">Yetki Degiştir</th>
+        @*<th style="width: 3%; text-align: center">Bilgilerini Güncelle</th>*@
     </tr>
     @foreach (var item in Model)
     {
@@ -71,7 +72,9 @@
         <a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-primary">Yetkisini Değiştir</a>
     </td>
     @*<td><a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-warning">Yetkisini Değiştir</a></td>*@
-
+    @*<td>
+        <a href="/Authorization/UpdateProfile/@item.AdminId" class="btn btn-danger">Bilgilerini Güncelle</a>
+    </td>*@
 </tr>
     }
 </table>

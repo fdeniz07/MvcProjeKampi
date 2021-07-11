@@ -12,7 +12,6 @@
 
 <!DOCTYPE html>
 <html>
-
 <body class="hold-transition sidebar-mini">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -26,12 +25,10 @@
 
     <!-- Main content -->
     <section class="content">
-
         <!-- Default box -->
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Başlık İşlemleri</h3>
-
+                <h2>Başlık İşlemleri</h2>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -125,7 +122,7 @@
                     </a>
                     <br />
                     <small>
-                        @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
+                        @(((DateTime) item.HeadingDate).ToString("dd-MMM-yyyy"))
                     </small>
                 </td>
                 <td>
@@ -137,11 +134,11 @@
                 </td>
                 <td>
                     @{ if (item.HeadingStatus)
-                        {
-        <b style="color: green "> Aktif</b> }
-    else
-    {
-<b style="color: red">Pasif</b> } }
+                                        {
+                        <b style="color: green"> Aktif</b> }
+                                        else
+                                        {
+                        <b style="color: red">Pasif</b> } }
                 </td>
                 <td class="project-state">
                     <span class="@color">@item.Category.CategoryName</span>
@@ -160,36 +157,35 @@
                     <a class="btn" href="/Heading/DeleteHeading/@item.HeadingId">
                         <i class="fas fa-trash"></i>
                         @{ string status = "";
-                            string statusColor = "";
+                                            string statusColor = "";
 
-                            if (item.HeadingStatus == true)
-                            {
-                                status = "Pasif Yap";
-                                buttonTyp = "btn btn-danger";
-                                statusColor = "badge badge-danger";
-                            }
-                            if (item.HeadingStatus == false)
-                            {
-                                status = "Aktif Yap";
-                                buttonTyp = "btn btn-success";
-                                statusColor = "badge badge-success";
-                            }
-                            //switch (item.HeadingStatus)
-                            //{
-                            //    case true:
-                            //        statusColor = "badge badge-success";
-                            //        status = "Aktif";
-                            //        break;
-                            //    case false:
-                            //        statusColor = "badge badge-danger";
-                            //        status = "Pasif";
-                            //        break;
-                            //}
-            <span class="@statusColor">@status</span> }
+                                            if (item.HeadingStatus == true)
+                                            {
+                                                status = "Pasif Yap";
+                                                buttonTyp = "btn btn-danger";
+                                                statusColor = "badge badge-danger";
+                                            }
+                                            if (item.HeadingStatus == false)
+                                            {
+                                                status = "Aktif Yap";
+                                                buttonTyp = "btn btn-success";
+                                                statusColor = "badge badge-success";
+                                            }
+                                            //switch (item.HeadingStatus)
+                                            //{
+                                            //    case true:
+                                            //        statusColor = "badge badge-success";
+                                            //        status = "Aktif";
+                                            //        break;
+                                            //    case false:
+                                            //        statusColor = "badge badge-danger";
+                                            //        status = "Pasif";
+                                            //        break;
+                                            //}
+                            <span class="@statusColor">@status</span> }
                     </a>
                 </td>
-            </tr>
-}
+            </tr>}
                     </tbody>
                 </table>
             </div>

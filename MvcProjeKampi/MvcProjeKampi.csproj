@@ -208,6 +208,7 @@
     <Compile Include="Controllers\AdminPanelControllers\LoginController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\MessageController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\RegisterController.cs" />
+    <Compile Include="Controllers\AdminPanelControllers\ScheduleController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\SkillAreaController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\StatisticController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\TalentController.cs" />
@@ -225,6 +226,7 @@
     <Compile Include="Models\Charts\HeadingClass.cs" />
     <Compile Include="Models\Charts\WriterClass.cs" />
     <Compile Include="Models\ImageViewModel.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles\AdminRoleProvider.cs" />
@@ -2329,6 +2331,8 @@
     <Content Include="Themes\Vitrin\web\webfonts\fa-brands-400.svg" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-regular-400.svg" />
     <Content Include="Themes\Vitrin\web\webfonts\fa-solid-900.svg" />
+    <Content Include="Views\LogIn\AdminLogIn.cshtml" />
+    <Content Include="Views\LogIn\WriterLogIn.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2916,8 +2920,6 @@
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
-    <Content Include="Views\LogIn\AdminLogIn.cshtml" />
-    <Content Include="Views\LogIn\WriterLogIn.cshtml" />
     <Content Include="Views\Message\DraftMessages.cshtml" />
     <Content Include="Views\Message\GetDraftDetails.cshtml" />
     <Content Include="Views\Message\GetInboxMessageDetails.cshtml" />
@@ -2976,6 +2978,9 @@
     <Content Include="Views\ImageTest\Test.cshtml" />
     <Content Include="Views\ImageTest\FileUpload.cshtml" />
     <Content Include="Views\Gallery\UpdateImage.cshtml" />
+    <Content Include="Views\Authorization\UpdateProfile.cshtml" />
+    <Content Include="Views\Schedule\Index.cshtml" />
+    <Content Include="Views\Schedule\Agenda.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

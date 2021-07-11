@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace CoreLayer.Utilities.Cryptos.Hashing
@@ -57,6 +58,14 @@ namespace CoreLayer.Utilities.Cryptos.Hashing
                 }
                 return true;
             }
+        }
+
+        public static string AdminPasswordDecode(string password)
+        {
+            UTF8Encoding encoder = new UTF8Encoding();
+            SHA512Managed sha512Hasher = new SHA512Managed();
+            byte[] hashedDataBytes = sha512Hasher.ComputeHash(encoder.GetBytes(password));
+            return Convert.ToBase64String(hashedDataBytes);
         }
 
         //----------------------------------- WRITER --------------------------------------------\\

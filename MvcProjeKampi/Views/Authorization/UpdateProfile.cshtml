@@ -1,0 +1,34 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Profil Düzenle</h2>
+
+@using (Html.BeginForm("UpdateProfile", "Authorization", FormMethod.Post))
+{
+    <div class="form-group">
+        @*@Html.Label("Yazar ID")*@
+        @Html.HiddenFor(x => x.AdminId, new { @class = "form-control" })
+        @Html.Label("Admin Adı")
+        @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Admin Mail")
+        @Html.TextBoxFor(x => x.AdminMail, new { @class = "form-control" })
+        <br />
+        @Html.Label("Admin Şifre")
+        @Html.PasswordFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
+        <br />
+        @Html.Label("Admin Durum")
+        @Html.TextBoxFor(x => x.AdminStatus, new { @class = "form-control" })
+        <br />
+        @Html.Label("Admin Rolü")
+        @Html.TextBoxFor(x => x.Role.RoleName, new { @class = "form-control" })
+        <br />
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

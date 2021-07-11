@@ -5,10 +5,13 @@
     ViewBag.Title = "GetAllContent";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<br/>
+<h2>Tüm İçerikler</h2>
+<br/>
 @using (Html.BeginForm("GetAllContent", "Content", FormMethod.Post))
 {
     <p>
-        Aranacak Kelimeyi Giriniz : @Html.TextBox("searchKeyWord")
+        <b>Aranacak Kelimeyi Giriniz : @Html.TextBox("searchKeyWord")</b>
         <input type="submit" value="Ara"/>
     </p>
 }
