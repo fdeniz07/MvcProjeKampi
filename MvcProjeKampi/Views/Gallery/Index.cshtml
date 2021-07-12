@@ -54,7 +54,7 @@
                                             @*<a href="/Gallery/UpdateImage/@item.ImageId" class="btn btn-warning">Güncelle</a>*@
                                             <a href="/Gallery/DeleteImage/@item.ImageId" class="btn btn-danger">Sil</a>
                                         </div>
-                                        <br/>
+                                        <br />
                                     </div>
                                 }
                             </div>
@@ -67,13 +67,14 @@
     <a href="/Gallery/AddImage" class="btn btn-outline-info">Yeni Resim Ekle </a>
 
     @*<button class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
-        Yeni Resim Ekle
-    </button>*@
+            Yeni Resim Ekle
+        </button>*@
 
 
     <div style="color: beige;"> @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))</div>
     <!-- jQuery -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
+    <script src="~/Themes/jquery/jquery.min.js"></script>
 </body>
 </html>
 

@@ -9,25 +9,28 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>MVC Proje Kampı</title>
-    
+
     <!--PagedList Kullanimi-->
-    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.*@ 
+    <link rel="stylesheet" href="~/Content/PagedList.css" /> @*Sayfalama icin ilgili paketler kurulduktan sonra Content icerisine gelen css dosyasinin yolu Layout sayfalarina eklenir.*@
 
     <!-- Ekko Lightbox -->
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">
+    @*<link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.css">*@
+    <link href="~/Themes/ekko-lightbox/ekko-lightbox.css" rel="stylesheet" />
     <!-- summernote -->
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+    @*<link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">*@
+    <link href="~/Themes/summernote/summernote-bs4.css" rel="stylesheet" />
     <!-- Theme style -->
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    @*<link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">*@
+    <script src="~/Themes/dist/js/adminlte.min.js"></script>
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    @*<link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">*@
+    <link href="~/Themes/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    @*<link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">*@
+    <link href="~/Themes/fontawesome-free/css/all.min.css" rel="stylesheet" />
     <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="~/Themes/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -47,7 +50,7 @@ to get the desired effect
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="~/Themes/AdminLTE-3.0.4/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                <img src="~/Themes/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                      style="opacity: .8">
                 <span class="brand-text font-weight-light">MVC Proje Kampı</span>
             </a>
@@ -56,7 +59,7 @@ to get the desired effect
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Themes/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="~/Themes/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/WriterPanel/WriterProfile/" class="d-block">Yazar Paneli</a>
@@ -87,7 +90,7 @@ to get the desired effect
                             <a href="/WriterPanel/AllHeadings/" class="nav-link">
                                 <i class="nav-icon fas fa-list-alt"></i>
                                 <p>
-                                   Tüm Başlıklar
+                                    Tüm Başlıklar
                                 </p>
                             </a>
                         </li>
@@ -145,22 +148,22 @@ to get the desired effect
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>*@
+    <script src="~/Themes/jquery/jquery.min.js"></script>
     <!-- jQuery UI -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>*@
+    <script src="~/Themes/jquery-ui/jquery-ui.min.js"></script>
     <!-- Ekko Lightbox -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>*@
+    <script src="~/Themes/ekko-lightbox/ekko-lightbox.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>*@
+    <script src="~/Themes/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>*@
+    <script src="~/Themes/dist/js/demo.js"></script>
     <!-- Filterizr-->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/filterizr/jquery.filterizr.min.js"></script>*@
 
     <!-- Page specific script -->
     <script>
@@ -180,27 +183,25 @@ to get the desired effect
         })</script>
 
     <!-- Bootstrap -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/Themes/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
-    <script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
-
-    <!-- AdminLTE App -->
-    <script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/dist/js/adminlte.js"></script>*@
+    <script src="~/Themes/dist/js/adminlte.js"></script>
     <!--icheck-mailbox-->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-mailbox.js"></script>
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-mailbox.js"></script>*@
 
     <!-- OPTIONAL SCRIPTS -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>*@
+    <script src="~/Themes/chart.js/Chart.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>
-    <script src="~/Themes/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/dist/js/demo.js"></script>*@
+    <script src="~/Themes/dist/js/demo.js"></script>
+    @*<script src="~/Themes/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>*@
+    <script src="~/Themes/dist/js/pages/dashboard3.js"></script>
     <!-- Summernote -->
-    <script src="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
-
+    @*<script src="~/Themes/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>*@
+    <script src="~/Themes/summernote/summernote-bs4.min.js"></script>
     <!-- Page Script -->
     <script>
         $(function () {
