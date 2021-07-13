@@ -9,7 +9,7 @@ Admin Login
 Username: admin2@gmail.com
 Password : 123
 
-Author Introduction
+Writer Login
 Username: emel@hotmail.com / atilla@yahoo.com
 Password : 123
 
