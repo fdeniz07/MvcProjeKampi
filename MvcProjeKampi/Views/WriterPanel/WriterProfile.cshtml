@@ -24,14 +24,14 @@
     @Html.Label("Yazar Mail")
     @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.WriterMail, null, new { @class = "text-danger" })
-    <br />
+    @*<br />*@
     @*@Html.HiddenFor(x => x.WriterPasswordHash, new { @class = "form-control" })*@
 
-    @Html.Label("Yazar Şifre") @*Bu kısım şifre hash'li olduğu için hata veriyor.'*@
+    @*@Html.Label("Yazar Şifre")*@ @*Bu kısım şifre hash'li olduğu için hata veriyor.'*@
     @*@Html.PasswordFor(x => x.WriterPasswordHash, new { @class = "form-control" })*@
     @*@Html.ValidationMessageFor(x => x.WriterPasswordHash)*@
-    <br />
-    <button class="btn btn-danger" data-toggle="modal" data-target="#Modal1">Yeni Şifre Oluştur</button>
+    @*<br />
+    <button class="btn btn-danger" data-toggle="modal" data-target="#Modal1">Yeni Şifre Oluştur</button>*@
     @*@Html.Action("WriterPasswordChange", "WriterPanel")*@
     <br />
 

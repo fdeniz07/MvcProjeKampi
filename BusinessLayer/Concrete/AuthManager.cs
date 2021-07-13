@@ -47,7 +47,7 @@ namespace BusinessLayer.Concrete
             }
         }
 
-        public void AdminRegister(string adminUserName, string adminMail, string password,int adminRole)
+        public void AdminRegister(string adminUserName, string adminMail, string password,int adminRole,int status)
         {
             byte[] mailHash, passwordHash, passwordSalt;
             HashingHelper.AdminCreatePasswordHash(adminMail, password, out mailHash, out passwordHash, out passwordSalt);
@@ -58,7 +58,7 @@ namespace BusinessLayer.Concrete
                 AdminPasswordHash = passwordHash,
                 AdminPasswordSalt = passwordSalt,
                 RoleId = adminRole,
-                AdminStatus = false
+                StatusId = status
             };
             _adminService.AdminAdd(admin);
         }

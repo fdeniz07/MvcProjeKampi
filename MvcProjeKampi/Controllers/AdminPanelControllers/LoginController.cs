@@ -17,7 +17,7 @@ namespace MvcProjeKampi.Controllers
     {
         IAuthService authService = new AuthManager(new AdminManager(new EfAdminDal()), new WriterManager(new EfWriterDal()));
 
-        Context context = new Context();
+        //Context context = new Context();
 
         [HttpGet]
         public ActionResult AdminLogin()
@@ -29,7 +29,12 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AdminLogIn(AdminLogInDto adminLogInDto)
         {
             var response = Request["g-recaptcha-response"];
-            const string secret = "6Lc9zzgbAAAAAFBGD3Gb201yvNAX4Tb5LAzlqy0d";
+            /* const string secret = "6Lc9zzgbAAAAAFBGD3Gb201yvNAX4Tb5LAzlqy0d";*/ //Localhost icin Google Captcha v2
+
+
+            /*const string secret = "6LewJJEbAAAAAIslbgvowPTE0lZ8Yiwk5-cV6p7s"; *///Localhost icin Google Captcha v3
+            const string secret = "6LdF9ZAbAAAAAOq5NKMx8jK2K-O5ISBLXWOwOKI7"; //"6LdF9ZAbAAAAAOq5NKMx8jK2K-O5ISBLXWOwOKI7"; - //Canli Site icin mail ile site adi kayit yaptirilir Google Captcha v3
+
             var client = new WebClient();
             var reply =
                 client.DownloadString(
@@ -110,7 +115,11 @@ namespace MvcProjeKampi.Controllers
         public ActionResult WriterLogIn(WriterLogInDto writerLogInDto)
         {
             var response = Request["g-recaptcha-response"];
-            const string secret = "6Lc9zzgbAAAAAFBGD3Gb201yvNAX4Tb5LAzlqy0d";
+            /* const string secret = "6Lc9zzgbAAAAAFBGD3Gb201yvNAX4Tb5LAzlqy0d";*/ //Localhost icin Google Captcha v2
+
+
+            /*const string secret = "6LewJJEbAAAAAIslbgvowPTE0lZ8Yiwk5-cV6p7s"; *///Localhost icin Google Captcha v3
+            const string secret = "6LdF9ZAbAAAAAOq5NKMx8jK2K-O5ISBLXWOwOKI7"; //"6LdF9ZAbAAAAAOq5NKMx8jK2K-O5ISBLXWOwOKI7"; - //Canli Site icin mail ile site adi kayit yaptirilir Google Captcha v3
             var client = new WebClient();
             var reply =
                 client.DownloadString(

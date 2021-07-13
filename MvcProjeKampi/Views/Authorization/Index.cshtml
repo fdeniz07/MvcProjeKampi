@@ -22,18 +22,19 @@
         <th style="width: 1%; text-align: center">Yetki</th>
         <th style="width: 5%; text-align: center">Yetki Detay</th>
         <th style="width: 2%; text-align: center">Durumu</th>
-        <th style="width: 3%; text-align: center">Aktof / Pasif</th>
+        <th style="width: 3%; text-align: center">Aktif / Pasif</th>
         <th style="width: 3%; text-align: center">Yetki Degiştir</th>
-        @*<th style="width: 3%; text-align: center">Bilgilerini Güncelle</th>*@
+        <th style="width: 3%; text-align: center">Bilgilerini Güncelle</th>
+        <th style="width: 1%; text-align: center">Sil</th>
     </tr>
     @foreach (var item in Model)
     {
-        if (item.AdminStatus == true)
+        if (item.StatusId==2)
         {
             status = "Pasif Yap";
             buttonTyp = "btn btn-danger";
         }
-        if (item.AdminStatus == false)
+        if (item.StatusId==1)
         {
             status = "Aktif Yap";
             buttonTyp = "btn btn-success";
@@ -45,17 +46,16 @@
     <td style="text-align: center;background-color: gold"><b>@item.Role.RoleName</b></td>
     <td style="text-align: center">@item.Role.Description</td>
     <td style="text-align: center">
-        @{ if (item.AdminStatus)
-            {
-                <b style="color: green "> Aktif</b> }
-            else
-            {
-                <b style="color: red">Pasif</b> }
+        @{ if (item.StatusId==2)
+           {
+               <b style="color: green "> Aktif</b> }
+           else
+           {
+               <b style="color: red">Pasif</b> }
         }
     </td>
-
     <td style="text-align: center">
-        <a href="/Authorization/DeleteAdmin/@item.AdminId" class="@buttonTyp">@status</a>
+        <a href="/Authorization/ChangeAdminStatus/@item.AdminId" class="@buttonTyp">@status</a>
 
         @*<a class="btn btn-primary" href="/Authorization/AuthorizationPartial/@item.AdminId">
             <i class="fas fa-folder"></i>
@@ -72,9 +72,12 @@
         <a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-primary">Yetkisini Değiştir</a>
     </td>
     @*<td><a href="/Authorization/UpdateRole/@item.AdminId" class="btn btn-warning">Yetkisini Değiştir</a></td>*@
-    @*<td>
-        <a href="/Authorization/UpdateProfile/@item.AdminId" class="btn btn-danger">Bilgilerini Güncelle</a>
-    </td>*@
+    <td style="text-align: center">
+        <a href="/Authorization/UpdateProfile/@item.AdminId" class="btn btn-warning">Bilgilerini Güncelle</a>
+    </td>
+   
+    
+    <td style="text-align: center"><a href="/Authorization/DeleteAdmin/@item.AdminId" class="btn btn-danger">Sil</a></td>
 </tr>
     }
 </table>

@@ -15,17 +15,17 @@
         @Html.Label("Admin Adı")
         @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
         <br />
-        @Html.Label("Admin Mail")
-        @Html.TextBoxFor(x => x.AdminMail, new { @class = "form-control" })
-        <br />
-        @Html.Label("Admin Şifre")
-        @Html.PasswordFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
-        <br />
+        @*@Html.Label("Admin Mail")
+            @Html.TextBoxFor(x => x.AdminMail, new { @class = "form-control" })
+            <br />
+            @Html.Label("Admin Şifre")
+            @Html.PasswordFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
+            <br />*@
         @Html.Label("Admin Durum")
-        @Html.TextBoxFor(x => x.AdminStatus, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.StatusId, (List<SelectListItem>)ViewBag.valueAdminStatus, new { @class = "form-control" })
         <br />
-        @Html.Label("Admin Rolü")
-        @Html.TextBoxFor(x => x.Role.RoleName, new { @class = "form-control" })
+        @Html.Label("Rol")
+        @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.valueAdminRole, new { @class = "form-control" })
         <br />
         <br />
         <button class="btn btn-success">Güncelle</button>

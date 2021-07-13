@@ -25,6 +25,9 @@
         @Html.DropDownListFor(x=>x.AdminRoleId,(List<SelectListItem>)ViewBag.valueAdminRole, new {@class="form-control"})
         @*@Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })*@
         @*@Html.ValidationMessageFor(x => x.CategoryDescription, "", new { @class = "text-danger" })*@
+        <br />
+        @Html.Label("Durumu Seçiniz")
+        @Html.DropDownListFor(x=>x.AdminStatusId,(List<SelectListItem>)ViewBag.valueAdminStatus, new {@class="form-control"})
         <br /><br />
         <button class="btn btn-info">Kaydet</button>
     </div>

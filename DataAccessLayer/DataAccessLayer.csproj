@@ -63,6 +63,7 @@
     <Compile Include="Abstract\IRoleDal.cs" />
     <Compile Include="Abstract\IScreenShotDal.cs" />
     <Compile Include="Abstract\ISkillAreaDal.cs" />
+    <Compile Include="Abstract\IStatusDal.cs" />
     <Compile Include="Abstract\ITalentDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="EntityFramework\EfRoleDal.cs" />
     <Compile Include="EntityFramework\EfScreenShotDal.cs" />
     <Compile Include="EntityFramework\EfSkillAreaDal.cs" />
+    <Compile Include="EntityFramework\EfStatusDal.cs" />
     <Compile Include="EntityFramework\EfTalentDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202107011807439_mig_add_screenshot2.cs" />
@@ -96,6 +98,14 @@
     <Compile Include="Migrations\202107072251129_mig_addImageDate_inImageFile.cs" />
     <Compile Include="Migrations\202107072251129_mig_addImageDate_inImageFile.designer.cs">
       <DependentUpon>202107072251129_mig_addImageDate_inImageFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130510028_mig_status.cs" />
+    <Compile Include="Migrations\202107130510028_mig_status.designer.cs">
+      <DependentUpon>202107130510028_mig_status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107130521465_mig_status2.cs" />
+    <Compile Include="Migrations\202107130521465_mig_status2.designer.cs">
+      <DependentUpon>202107130521465_mig_status2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107072251129_mig_addImageDate_inImageFile.resx">
       <DependentUpon>202107072251129_mig_addImageDate_inImageFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130510028_mig_status.resx">
+      <DependentUpon>202107130510028_mig_status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130521465_mig_status2.resx">
+      <DependentUpon>202107130521465_mig_status2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,7 +18,7 @@ namespace MvcProjeKampi.Controllers
     {
         ImageFileManager imageFileManager = new ImageFileManager(new EfImageFileDal());
 
-        HttpPostedFileBase file;
+        //HttpPostedFileBase file;
 
 
         public ActionResult Index(int? page)

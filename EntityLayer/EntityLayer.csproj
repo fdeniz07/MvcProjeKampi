@@ -83,6 +83,7 @@
     <Compile Include="Concrete\Role.cs" />
     <Compile Include="Concrete\ScreenShot.cs" />
     <Compile Include="Concrete\SkillArea.cs" />
+    <Compile Include="Concrete\Status.cs" />
     <Compile Include="Concrete\Talent.cs" />
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Dto\AdminLogInDto.cs" />

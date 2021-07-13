@@ -254,6 +254,30 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\bg_FatihDeniz.JPG" />
     <Content Include="Images\FatihDeniz.jpg" />
+    <Content Include="Images\Gallery\1.jpeg.jpeg" />
+    <Content Include="Images\Gallery\1.jpg.jpg" />
+    <Content Include="Images\Gallery\14.jpg.jpg" />
+    <Content Include="Images\Gallery\15.jpg.jpg" />
+    <Content Include="Images\Gallery\2.jpg.jpg" />
+    <Content Include="Images\Gallery\3.jpg.jpg" />
+    <Content Include="Images\Gallery\34.jpg.jpg" />
+    <Content Include="Images\Gallery\36.jpg.jpg" />
+    <Content Include="Images\Gallery\5.jpg.jpg" />
+    <Content Include="Images\Gallery\58.jpg.jpg" />
+    <Content Include="Images\Gallery\59.jpg.jpg" />
+    <Content Include="Images\Gallery\62.jpg.jpg" />
+    <Content Include="Images\Gallery\76.jpg.jpg" />
+    <Content Include="Images\Gallery\8.jpg.jpg" />
+    <Content Include="Images\Gallery\9.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %2813%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %28133%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %28161%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %282%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %2825%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %2833%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %2854%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %2857%29.jpg.jpg" />
+    <Content Include="Images\Gallery\Architecture Around the World %2889%29.jpg.jpg" />
     <Content Include="Images\Gezi\Antalya\Bungalov Olympos - Antalya.jpg" />
     <Content Include="Images\Gezi\Antalya\Cumhuriyet Meydani - Antalya.jpg" />
     <Content Include="Images\Gezi\Antalya\Kaleici ve Marina - 2 - Antalya.jpg" />
@@ -1435,7 +1459,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Gallery\" />
     <Folder Include="Images\Writer\" />
   </ItemGroup>
   <ItemGroup>

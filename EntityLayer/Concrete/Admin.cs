@@ -17,7 +17,10 @@ namespace EntityLayer.Concrete
 
         public byte[] AdminPasswordSalt { get; set; }
 
-        public bool AdminStatus { get; set; }
+        //public bool AdminStatus { get; set; }
+        public int? StatusId { get; set; }
+
+        public virtual Status Status { get; set; }
         
         public int? RoleId { get; set; }
 
