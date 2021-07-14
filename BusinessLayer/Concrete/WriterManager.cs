@@ -25,6 +25,11 @@ namespace BusinessLayer.Concrete
             return _writerDal.List();
         }
 
+        public List<Writer> GetListByWriterId(int id)
+        {
+            return _writerDal.List(x => x.WriterId == id);
+        }
+
         public void WriterAdd(Writer writer)
         {
             //CheckIfWriterExists(writer);

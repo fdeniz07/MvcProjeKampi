@@ -10,6 +10,7 @@
 {
     <div class="form-group">
         @Html.HiddenFor(x => x.AdminId, new { @class = "form-control" })
+        @Html.HiddenFor(x=>x.AdminUserName,new {@class = "form-control"})
         @Html.HiddenFor(x => x.AdminPasswordHash, new { @class = "form-control" })
         @Html.HiddenFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
         @Html.HiddenFor(x => x.AdminMail, new { @class = "form-control" })

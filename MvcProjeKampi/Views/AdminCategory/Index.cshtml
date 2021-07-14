@@ -3,33 +3,162 @@
 @using PagedList.Mvc
 @model PagedList.IPagedList<Category>
 @*@model List<Category>*@
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
-<br />
-@*<h1>@ViewBag.a</h1>*@
 
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
 
-<table class="table table-striped">
-    <tr>
-        <th>#</th>
-        <th>Kategori Adı</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-        <th>Başlıklar</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <th>@item.CategoryId</th>
-            <td>@item.CategoryName</td>
-            <td><a href="/AdminCategory/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
-            <td><a href="/AdminCategory/UpdateCategory/@item.CategoryId" class="btn btn-warning">Güncelle</a></td>
-            <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
-        </tr>
-    }
-</table>
+@{ string color = "";
+    string buttonTyp = ""; }
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="card">
+            <div class="card-header">
+                <h2>Kategori İşlemleri</h2>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%; text-align: center">#</th>
+                            <th style="width: 15%; text-align: center">Kategori Adı</th>
+                            <th style="width: 30%; text-align: center">Kategori Açıklaması</th>
+                            <th style="width: 10%; text-align: center">Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.CategoryName == "Tiyatro")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.CategoryName == "Spor")
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.CategoryName == "Yazılım")
+                            {
+                                color = "badge badge-info";
+                            }
+                            if (item.CategoryName == "Gezi")
+                            {
+                                color = "badge badge-danger";
+                            }
+                            if (item.CategoryName == "Kitap")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.CategoryName == "Film")
+                            {
+                                color = "badge badge-dark";
+                            }
+                            if (item.CategoryName == "Dizi")
+                            {
+                                color = "badge badge-primary";
+                            }
+                            if (item.CategoryName == "Sosyal Medya")
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.CategoryName == "Donanım")
+                            {
+                                color = "badge badge-info";
+                            }
+                            if (item.CategoryName == "Network ve Güvenlik")
+                            {
+                                color = "badge badge-dark";
+                            }
+                            if (item.CategoryName == "Teknoloji")
+                            {
+                                color = "badge badge-warning";
+                            }
+                            if (item.CategoryName == "Sinema")
+                            {
+                                color = "badge badge-secondary";
+                            }
+                            if (item.CategoryName == "Egitim")
+                            {
+                                color = "badge badge-danger";
+                            }
+                            if (item.CategoryName == "Cevre")
+                            {
+                                color = "badge badge-success";
+                            }
+                            if (item.CategoryName == "Yerli Sanayi")
+                            {
+                                color = "badge badge-success";
+                            }
+
+            <tr>
+                <td style="width: 1%; text-align: center">@item.CategoryId</td>
+                <td style="width: 15%; text-align: center" class="project-state">
+                    <a><span class="@color"><b>@item.CategoryName</b></span></a>
+                    <br />
+                    <small>@(((DateTime) item.CategoryDate).ToString("dd-MMM-yyyy"))</small>
+                </td>
+                <td style="width: 30%; text-align: center">@item.CategoryDescription</td>
+                <td style="width: 10%; text-align: center">
+                    @{ if (item.StatusId == 2)
+                                        {
+                        <b style="color: green"> Aktif</b> }
+                                        else
+                                        {
+                        <b style="color: red">Pasif</b> } }
+                </td>
+                <td class="project-actions">
+                    <a class="btn btn-warning btn-sm" href="/AdminCategory/UpdateCategory/@item.CategoryId" class="btn btn-warning" style="width: 20%; text-align: center">
+                        <i class="fas fa-folder">&nbsp;</i>Güncelle
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-info btn-sm" href="/Heading/HeadingByCategory/@item.CategoryId" class="btn btn-primary" style="width: 20%; text-align: center">
+                        <i class="fas fa-pencil-alt">&nbsp;</i>Başlıklar
+                    </a>&nbsp;&nbsp;&nbsp;
+                    <a class="btn" href="/AdminCategory/DeleteCategory/@item.CategoryId" style="width: 20%; text-align: center">
+                        <i class="fas fa-trash">&nbsp;</i>
+                        @{ string status = "";
+                            string statusColor = "";
+
+                            if (item.StatusId == 2)
+                            {
+                                status = "Pasif Yap";
+                                buttonTyp = "btn btn-danger";
+                                statusColor = "badge badge-danger";
+                            }
+                            if (item.StatusId == 1)
+                            {
+                                status = "Aktif Yap";
+                                buttonTyp = "btn btn-success";
+                                statusColor = "badge badge-success";
+                            }
+                <span class="@statusColor">@status</span> }
+                    </a>
+                </td>
+            </tr>}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
 <a href="/AdminCategory/AddCategory" class="btn btn-info">Yeni Kategori</a>
 
 

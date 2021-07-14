@@ -11,5 +11,9 @@ namespace EntityLayer.Concrete
         public string StatusName { get; set; }
 
         public ICollection<Admin> Admins { get; set; }
+
+        public ICollection<Heading> Headings { get; set; }
+
+        public ICollection<Category> Categories { get; set; }
     }
 }

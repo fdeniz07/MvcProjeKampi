@@ -1,11 +1,18 @@
-﻿@using MvcProjeKampi.Models
+﻿@using EntityLayer.Concrete
+
 @model MvcProjeKampi.Models.ImageViewModel
 
 @{
     ViewBag.Title = "AddImage";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <br />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.6.0.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <div class="row">
     <div class="panel-heading">
         <div class="col-md-12">
@@ -22,7 +29,7 @@
         <div class="col-md-12">
             <h6>
                 <i class="fas fa-info-circle"></i>
-                <span class="icon has-text-info">Yükleyeceğiniz resim formatı .jpg | .jpeg | .png | .gif uzantılı ve max. dosya boyutu olmalıdır</span>
+                <span class="icon has-text-info">Yükleyeceğiniz resim formatı .jpg | .jpeg | .png | .gif uzantılı ve max. dosya boyutu 5MB olmalıdır</span>
             </h6>
         </div>
     </div>
@@ -44,6 +51,7 @@
                                             @*Resim Dosyası Seç…*@
                                             <button style="display:block;width:200px; height:30px;" onclick="document.getElementById('getFile').click()">Resim Dosyası Seç…</button>
                                             <input type='file' id="getFile" style="display:none">
+
                                             @Html.TextBoxFor(x => x.FileAttach, new
                                             {
                                                 type = "file",
@@ -62,6 +70,11 @@
                                 {
                                     <span class="text-danger">@Model.Message</span>@Html.ValidationMessageFor(m => m.FileAttach, "", new { @class = "text-danger" })
                                 }
+                                @*<div>
+                                        <a href="@image.ImagePath" data-toggle="lightbox" data-title="@image.ImageName" data-gallery="gallery">
+                                            <img src="@image.ImagePath" class="img-fluid mb-2" alt="white sample" style="height: 150px; width: 400px;" />
+                                        </a>
+                                    </div>*@
                             </div>
                         </div>
                     </div>
@@ -70,6 +83,7 @@
                         </div>
                     </div>
                     <h4 class="text-danger">@ViewBag.ActionMessage</h4>
+
                     <div class="form-group">
                         <div class="col-md-offset-5 col-md-10">
                             <input type="submit" class="btn btn-danger" value="Yükle" />
@@ -78,11 +92,49 @@
                 </div>
             }
         </section>
+
     </div>
 </div>
 
 
+<script>
+    //$('#yukle').click(function () {
+    //    Swal.fire({
+    //        position: 'top-end',
+    //        icon: 'success',
+    //        title: 'Tebrikler, Resim başarılı bir şekilde eklendi',
+    //        showConfirmButton: false,
+    //        timer: 5000
+    //    })
+    //});
 
+    $('#yukle').click(function () {
+        (async () => {
+
+            const { value: file } = await Swal.fire({
+                title: 'Select image',
+                input: 'file',
+                inputAttributes: {
+                    'accept': 'image/*',
+                    'aria-label': 'Upload your profile picture'
+                }
+            })
+
+            if (file) {
+                const reader = new FileReader()
+                reader.onload = (e) => {
+                    Swal.fire({
+                        title: 'Your uploaded picture',
+                        imageUrl: e.target.result,
+                        imageAlt: 'The uploaded picture'
+                    })
+                }
+                reader.readAsDataURL(file)
+            }
+
+        })()
+    })
+</script>
 
 
 

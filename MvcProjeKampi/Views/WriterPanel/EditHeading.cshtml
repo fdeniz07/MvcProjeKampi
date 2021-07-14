@@ -19,11 +19,14 @@
         @Html.Label("Kategori")
         @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.valueCategory, new { @class = "form-control" })
         <br />
-        <label>Durumu : </label>
-        @Html.DropDownListFor(x => x.HeadingStatus, new SelectListItem[]{
+        @Html.Label("Durumu")
+        @Html.DropDownListFor(x => x.StatusId, (List<SelectListItem>)ViewBag.valueWriterStatus, new { @class = "form-control" })
+        <br />
+        @*<label>Durumu : </label>
+        @Html.DropDownListFor(x => x.Status.StatusName, new SelectListItem[]{
             new SelectListItem() {Text = " Aktif ", Value="true"},
             new SelectListItem() {Text = " Pasif ", Value="false"}})
-        <br />
+        <br />*@
         <br />
         <button class="btn btn-success">Güncelle</button>
     </div>

@@ -212,6 +212,7 @@
     <Compile Include="Controllers\AdminPanelControllers\SkillAreaController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\StatisticController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\TalentController.cs" />
+    <Compile Include="Controllers\SweetController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\AdminPanelControllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelContollers\DefaultController.cs" />
@@ -249,6 +250,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\sweetalert\bootstrap-sweetalert.png" />
+    <Content Include="Content\sweetalert\docs.css" />
+    <Content Include="Content\sweetalert\sweet-alert.css" />
+    <Content Include="Content\sweetalert\thumbs-up.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -375,6 +380,11 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="PublishNotifier.json" />
+    <Content Include="Content\sweetalert\sweet-alert.less" />
+    <Content Include="Content\sweetalert\sweet-alert-combine.less" />
+    <Content Include="Content\sweetalert\sweet-alert-animations.less" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
@@ -1456,6 +1466,9 @@
     <Content Include="Themes\fullcalendar-daygrid\main.js.map" />
     <Content Include="Themes\fullcalendar-interaction\main.js.map" />
     <Content Include="Themes\fullcalendar-timegrid\main.js.map" />
+    <Content Include="Views\Heading\HeadingByCategory.cshtml" />
+    <Content Include="Views\Heading\HeadingByWriter.cshtml" />
+    <Content Include="Views\Sweet\Alert.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

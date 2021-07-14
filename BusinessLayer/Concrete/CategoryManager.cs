@@ -21,7 +21,7 @@ namespace BusinessLayer.Concrete
 
         public void CategoryDelete(Category category)
         {
-            _categoryDal.Delete(category); // GenericRepository'den gelen Delete() metodu
+            _categoryDal.Update(category); // GenericRepository'den gelen Delete() metodu
         }
 
         public void CategoryUpdate(Category category)

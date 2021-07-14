@@ -107,6 +107,18 @@
     <Compile Include="Migrations\202107130521465_mig_status2.designer.cs">
       <DependentUpon>202107130521465_mig_status2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107131907229_mig_CategoryDate_in_category.cs" />
+    <Compile Include="Migrations\202107131907229_mig_CategoryDate_in_category.designer.cs">
+      <DependentUpon>202107131907229_mig_CategoryDate_in_category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107132306199_mig_Status_in_Heading.cs" />
+    <Compile Include="Migrations\202107132306199_mig_Status_in_Heading.designer.cs">
+      <DependentUpon>202107132306199_mig_Status_in_Heading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107132340262_mig_Status_in_Category.cs" />
+    <Compile Include="Migrations\202107132340262_mig_Status_in_Category.designer.cs">
+      <DependentUpon>202107132340262_mig_Status_in_Category.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -138,6 +150,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107130521465_mig_status2.resx">
       <DependentUpon>202107130521465_mig_status2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107131907229_mig_CategoryDate_in_category.resx">
+      <DependentUpon>202107131907229_mig_CategoryDate_in_category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107132306199_mig_Status_in_Heading.resx">
+      <DependentUpon>202107132306199_mig_Status_in_Heading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107132340262_mig_Status_in_Category.resx">
+      <DependentUpon>202107132340262_mig_Status_in_Category.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

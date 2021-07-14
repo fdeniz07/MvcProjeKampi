@@ -17,6 +17,9 @@
     @Html.Label("Kategori Açıklaması")
     @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
     <br />
+    @Html.Label("Durumu")
+    @Html.DropDownListFor(x=>x.StatusId,(List<SelectListItem>)ViewBag.valueCategoryStatus, new {@class="form-control"})
+    <br/>
     <button class="btn btn-success">Güncelle</button>
 </div>
 }

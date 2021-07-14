@@ -18,6 +18,7 @@ namespace MvcProjeKampi.Controllers
         HeadingManager headingManager = new HeadingManager(new EfHeadingDal());
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
         WriterManager writerManager = new WriterManager(new EfWriterDal());
+        StatusManager statusManager = new StatusManager(new EfStatusDal());
 
         HeadingValidator headingValidator = new HeadingValidator();
         WriterValidator writerValidator = new WriterValidator();
@@ -123,7 +124,8 @@ namespace MvcProjeKampi.Controllers
 
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             heading.WriterId = writerIdInfo;
-            heading.HeadingStatus = true; // Yazar yeni baslik eklediginde baslangic degeri aktif olarak gelecek
+            heading.StatusId = 2; // Yazar yeni baslik eklediginde baslangic degeri aktif olarak gelecek
+            //heading.HeadingStatus = true; 
 
             heading.WriterId = writerIdInfo;
             //headingManager.HeadingAdd(heading);
@@ -153,6 +155,18 @@ namespace MvcProjeKampi.Controllers
                                                        Text = x.CategoryName,
                                                        Value = x.CategoryId.ToString()
                                                    }).ToList();
+
+            List<SelectListItem> writerStatusValue = (from x in statusManager.GetList()
+                select new SelectListItem
+                {
+                    Text = x.StatusName,
+                    Value = x.StatusId.ToString()
+                }).ToList();
+
+            ViewBag.valueWriterStatus = writerStatusValue;
+
+
+
             ViewBag.valueCategory = _valueCategory;
             var headingValue = headingManager.GetByIdHeading(id);
             return View(headingValue);
@@ -169,13 +183,13 @@ namespace MvcProjeKampi.Controllers
         {
             var headingValue = headingManager.GetByIdHeading(id);
 
-            if (headingValue.HeadingStatus)
+            if (headingValue.StatusId==2) // Durumu Aktif mi?
             {
-                headingValue.HeadingStatus = false;
+                headingValue.StatusId = 1; // Durumu pasif yap
             }
             else
             {
-                headingValue.HeadingStatus = true;
+                headingValue.StatusId = 2; // Durumu aktif yap
             }
 
             headingManager.HeadingDelete(headingValue);

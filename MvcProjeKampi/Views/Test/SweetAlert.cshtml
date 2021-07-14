@@ -5,13 +5,16 @@
 }
 
 <br />
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*@
 <script src="~/Scripts/jquery-3.6.0.js"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <button class="btn btn-primary" id="btn1">Button1</button>
 <button class="btn btn-warning" id="btn2">Button2</button>
 <button class="btn btn-danger" id="btn3">Button3</button>
-
+<button class="btn btn-danger" id="btn4">Button4</button>
+<button class="btn btn-danger" id="yukle">Button5</button>
 <script>
     $('#btn1').click(function () {
         swal("Merhaba MVC Proje Kampi");
@@ -28,4 +31,44 @@
     $('#btn3').click(function () {
         swal("Tebrikler", "Basarili bir sekilde eklendi", "success");
     });
+</script>
+
+<script>
+    $('#btn4').click(function () {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Tebrikler", "Resim başarılı bir şekilde eklendi',
+            showConfirmButton: false,
+            timer: 5000
+        })
+    });
+</script>
+<script>
+    $('#yukle').click(function () {
+        (async () => {
+
+            const { value: file } = await Swal.fire({
+                title: 'Select image',
+                input: 'file',
+                inputAttributes: {
+                    'accept': 'image/*',
+                    'aria-label': 'Upload your profile picture'
+                }
+            })
+
+            if (file) {
+                const reader = new FileReader()
+                reader.onload = (e) => {
+                    Swal.fire({
+                        title: 'Your uploaded picture',
+                        imageUrl: e.target.result,
+                        imageAlt: 'The uploaded picture'
+                    })
+                }
+                reader.readAsDataURL(file)
+            }
+
+        })()
+    })
 </script>

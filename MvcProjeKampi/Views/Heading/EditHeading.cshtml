@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+@{
+    
+}
 <h2>Başlık Güncelleme Sayfası</h2>
 
 @using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
@@ -23,6 +26,9 @@
         <br/>
         @Html.Label("Kategori")
         @Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.valueCategory,new {@class="form-control"})
+        <br/>
+        @Html.Label("Durumu")
+        @Html.DropDownListFor(x=>x.StatusId,(List<SelectListItem>)ViewBag.valueHeadingStatus, new {@class="form-control"})
         <br/>
         <button class="btn btn-success">Güncelle</button>
     </div>

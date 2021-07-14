@@ -24,7 +24,7 @@ namespace MvcProjeKampi.Controllers
             var mostTitles = _context.Headings.Max(x => x.Category.CategoryName); // En fazla basliga sahip kategori adi
             ViewBag.categoryNameWithTheMostTitles = mostTitles;
 
-            var categoryStatusTrue = _context.Categories.Count(x => x.CategoryStatus == true); // Kategoriler tablosundaki aktif kategori sayisi
+            var categoryStatusTrue = _context.Categories.Count(x => x.StatusId == 2); // Kategoriler tablosundaki aktif kategori sayisi
             ViewBag.activeCategories = categoryStatusTrue;
 
             string session = (string)Session["AdminMail"];

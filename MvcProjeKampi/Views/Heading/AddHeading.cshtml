@@ -19,6 +19,9 @@
         @Html.Label("Yazar")
         @Html.DropDownListFor(x=>x.WriterId,(List<SelectListItem>)ViewBag.valueWriter,new {@class = "form-control"})
         <br />
+        @Html.Label("Durumu")
+        @Html.DropDownListFor(x=>x.StatusId,(List<SelectListItem>)ViewBag.valueHeadingStatus, new {@class="form-control"})
+        <br/>
         <button class="btn btn-info">Başlığı Oluştur</button>
     </div>
 }

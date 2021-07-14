@@ -9,8 +9,8 @@
 @using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post))
 {
 <div class="form-group">
-    @Html.Label("Yazar ID")
-    @Html.TextBoxFor(x => x.WriterId, new { @class = "form-control" })
+    @*@Html.Label("Yazar ID")*@
+    @Html.HiddenFor(x => x.WriterId, new { @class = "form-control" })
     <br/>
     @Html.Label("Yazar Adı")
     @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
@@ -24,10 +24,10 @@
     @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.WriterMail)
     <br />
-    @Html.Label("Yazar Şifre")
-    @Html.TextBoxFor(x => x.WriterPasswordHash, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.WriterPasswordHash)
-    <br />
+    @*@Html.Label("Yazar Şifre")*@
+    @Html.HiddenFor(x => x.WriterPasswordHash, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.WriterPasswordHash)
+    <br />*@
     @Html.Label("Yazar Görsel Linki")
     @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
     @Html.ValidationMessageFor(x => x.WriterImage)

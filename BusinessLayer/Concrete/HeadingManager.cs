@@ -25,6 +25,12 @@ namespace BusinessLayer.Concrete
             return _headingDal.List();
         }
 
+        public List<Heading> GetListByCategoryId(int id)
+        {
+            return _headingDal.List(x => x.CategoryId == id);
+        }
+
+
         public List<Heading> GetListByWriterId(int id)
         {
             return _headingDal.List(x => x.WriterId == id);

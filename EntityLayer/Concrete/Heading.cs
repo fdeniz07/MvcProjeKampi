@@ -14,7 +14,10 @@ namespace EntityLayer.Concrete
 
         public DateTime HeadingDate { get; set; }
 
-        public bool HeadingStatus { get; set; }
+        //public bool HeadingStatus { get; set; }
+        public int? StatusId { get; set; }
+
+        public virtual Status Status { get; set; }
 
         public int CategoryId { get; set; } //Iliskili tablonun anahtar sütunu ile ayni isimde olacak!!!
                                             //(Iliskili sinif Category tablosu, en cok hata alinabilen alan)

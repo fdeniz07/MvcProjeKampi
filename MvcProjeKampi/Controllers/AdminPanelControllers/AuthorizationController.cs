@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using BusinessLayer.Abstract;
+﻿using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
-using CoreLayer.Utilities.Cryptos.Hashing;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using EntityLayer.Dto;
-using FluentValidation.Results;
 using PagedList;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers.AdminPanelControllers
 {
@@ -34,7 +31,7 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
             List<SelectListItem> adminRoleValue = (from x in roleManager.GetRoles()
                                                    select new SelectListItem
                                                    {
-                                                       Text = x.RoleName,
+                                                       Text = x.Description,
                                                        Value = x.RoleId.ToString()
                                                    }).ToList();
 
@@ -91,13 +88,13 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
         {
             var adminValue = adminManager.GetByAdminID(id);
 
-            if (adminValue.StatusId==2)
+            if (adminValue.StatusId==2) // Durumu Aktif mi?
             {
-                adminValue.StatusId = 1;
+                adminValue.StatusId = 1; // Durumu pasif yap
             }
             else
             {
-                adminValue.StatusId=2;
+                adminValue.StatusId=2; // Durumu aktif yap
             }
 
             adminManager.AdminUpdate(adminValue);
