@@ -49,7 +49,7 @@ namespace MvcProjeKampi.Controllers
             var totalWriter = _context.Writers.Count();//Toplam Yazar sayisi
             ViewBag.totalWriter = totalWriter;
 
-            var categoryStatusTrue = _context.Categories.Count(x => x.CategoryId == 2); // Kategoriler tablosundaki aktif kategori sayisi
+            var categoryStatusTrue = _context.Categories.Count(x => x.StatusId == 2); // Kategoriler tablosundaki aktif kategori sayisi
             ViewBag.activeCategories = categoryStatusTrue;
 
             return View(files);
