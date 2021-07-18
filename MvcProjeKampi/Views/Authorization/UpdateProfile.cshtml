@@ -15,6 +15,9 @@
         @Html.Label("Admin Adı")
         @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
         <br />
+        @Html.HiddenFor(x => x.AdminMail, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.AdminPasswordHash, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.AdminPasswordSalt, new { @class = "form-control" })
         @*@Html.Label("Admin Mail")
             @Html.TextBoxFor(x => x.AdminMail, new { @class = "form-control" })
             <br />

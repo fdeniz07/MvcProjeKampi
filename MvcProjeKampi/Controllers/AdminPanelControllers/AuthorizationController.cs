@@ -137,6 +137,7 @@ namespace MvcProjeKampi.Controllers.AdminPanelControllers
         [HttpPost]
         public ActionResult UpdateProfile(Admin admin)
         {
+            admin.StatusId = 2;
             adminManager.AdminUpdate(admin);
 
             return RedirectToAction("Index");
