@@ -12,7 +12,7 @@ Username: admin2@gmail.com
 Password : 123
 
 Writer Login
-Username: emel@hotmail.com / atilla@yahoo.com
+Username: emel@hotmail.com / atilla@yahoo.com / aliyildiz@gmail.com
 Password : 123
 
 ## Special information about the camp program - Turkish - [Note Directory](https://github.com/fdeniz07/MvcProjeKampi/blob/master/Documents/Mvc%20Proje%20Kamp%C4%B1.pdf)
