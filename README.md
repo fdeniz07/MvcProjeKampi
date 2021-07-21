@@ -1,7 +1,7 @@
 
 #  ASP.NET MVC CAMP (2021 APRIL - JULY) 
 
-C#, BOOTSTRAP, N-Tier Architecture, AdminPanel, CodeFirst
+C#, BOOTSTRAP, N-Tier Architecture, AdminPanel, WriterPanel, CodeFirst
 
 ## Website Video : https://www.youtube.com/watch?v=fCrj1Vd5S-U&ab_channel=FATIHDENIZ
 ## You can access the live demo here with the following information: http://www.denizfatih.com/
