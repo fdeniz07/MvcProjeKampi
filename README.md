@@ -34,9 +34,6 @@ ASP.NET MVC is an online interactive dictionary development project. (Example Ek
 
   <img src="https://github.com/fdeniz07/MvcProjeKampi/blob/master/Screens/NLayered%20Architecture.JPG" />
 
-### Request 3 : coming soon
-
-
 
 ## ScreenShoots
  
