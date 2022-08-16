@@ -4,7 +4,7 @@
 C#, BOOTSTRAP, N-Tier Architecture, AdminPanel, WriterPanel, CodeFirst
 
 ## Website Video : https://www.youtube.com/watch?v=fCrj1Vd5S-U&ab_channel=FATIHDENIZ
-## You can access the live demo here with the following information: http://www.denizfatih.com/
+## You can access the live demo here with the following information: http://www.fatihdeniz.com/
 
 
 Admin Login
